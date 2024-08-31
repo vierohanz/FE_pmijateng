@@ -80,7 +80,7 @@
     </div>
 
     <!-- Rooms -->
-    <div id="rooms" class="grid grid-cols-5 h-100 xl:h-110 w-full mt-12">
+    <div id="rooms" class="grid grid-cols-5 h-100 xl:h-110 w-full mt-14">
         <div  class="col-span-2 px-7 py-2 border-t-4 border-b-4 border-custom-primary flex flex-col justify-between h-full">
             <div data-aos="fade-right" class="my-2 w-3/4 h-1/3 bg-rooms_1 bg-cover rounded-lg bg-center"></div>
             <div  class="my-2 w-full h-36 text-start">
@@ -112,7 +112,7 @@
                         <img  class="rounded-box h-52 xl:h-97 bg-corousel_3 bg-center bg-cover w-80 xl:w-104" />
                     </div>
                     <div class="carousel-item" data-description="An elegant room with a peaceful ambiance for your relaxation. The soft, muted colors create a soothing atmosphere, inviting you to unwind after a long day. ">
-                        <img  class="rounded-box h-52 xl:h-97 bg-corousel_4 bg-center bg-cover w-80 xl:w-104" />
+                        <img  class=" rounded-box h-52 xl:h-97 bg-corousel_4 bg-center bg-cover w-80 xl:w-104" />
                     </div>
                 </div>
                 <div id="description" class="p-4 text-left">
@@ -125,10 +125,34 @@
         </div>
     </div>
 
-    <div class="h-52 mt-12 w-full p-5">
+    <div class="h-116 mt-16  w-full pl-7 overflow-hidden">
         <div>
-            <p class="font-freehand font-bold text-custom-primary text-4xl">Meeting <span class="font-judson text-4xl font-bold text-black">Rooms</span></p>
+            <p class="font-freehand font-bold text-custom-primary text-5xl">Meeting <span class="font-judson text-5xl font-bold text-black">Rooms</span></p>
+        </div>
+        <div class=" mt-10 w-full h-104 overflow-x-auto overflow-hidden no-scrollbar">
+            <div class="flex space-x-4 snap-x snap-mandatory">
+                <div class="relative flex flex-col mt-6 text-gray-700 border-2 border-gray-100 bg-white shadow-md bg-clip-border rounded-xl w-96">
+                    <div class="p relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border bg-rooms_1 rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40"></div>
+                    <div class="p-6">
+                        <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                        UI/UX Review Check
+                        </h5>
+                        <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        The place is close to Barceloneta Beach and bus stop just 2 min by walk
+                        and near to "Naviglio" where you can enjoy the main night life in
+                        Barcelona.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button
+                        class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button">
+                        Read More
+                        </button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-
 @endsection
