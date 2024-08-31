@@ -69,6 +69,12 @@ export default {
             our_rooms: "url('/resources/images/our_rooms.svg')",
             package: "url('/resources/images/package.svg')",
             bg_toggler: "url('/resources/images/bg_toggler.jpg')",
+            rooms_1: "url('/resources/images/rooms_1.svg')",
+            rooms_2: "url('/resources/images/rooms_2.svg')",
+            corousel_1: "url('/resources/images/corousel_1.svg')",
+            corousel_2: "url('/resources/images/corousel_2.svg')",
+            corousel_3: "url('/resources/images/corousel_3.svg')",
+            corousel_4: "url('/resources/images/corousel_4.svg')",
         },
         backgroundOpacity: ({ theme }) => theme("opacity"),
         backgroundPosition: {
@@ -361,6 +367,8 @@ export default {
             poppins: ["Poppins"],
             racingsansone: ["Racing Sans One"],
             josefinSans: ["Josefin Sans"],
+            judson: ["Judson"],
+            freehand: ["Freehand"],
         },
         fontSize: {
             xs: ["0.75rem", { lineHeight: "1rem" }],
@@ -1094,6 +1102,7 @@ export default {
             "10/12": "83.333333%",
             "11/12": "91.666667%",
             "12/13": "96.666667%",
+            "13/14": "98.666667%",
             full: "100%",
             screen: "100vw",
             svw: "100svw",
@@ -1119,5 +1128,5 @@ export default {
             50: "50",
         },
     },
-    plugins: [],
+    plugins: [require("daisyui")],
 };

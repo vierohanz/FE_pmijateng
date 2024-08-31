@@ -3,6 +3,8 @@ import $ from "jquery";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "flowbite";
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
 AOS.init({
     duration: 1000,
     easing: "ease-in",
@@ -43,3 +45,67 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("grid-1").classList.remove("hidden");
     document.querySelector(".list-item").classList.add("active");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    flatpickr("#arrival-date", {
+        dateFormat: "d/m/Y",
+    });
+
+    flatpickr("#departure-date", {
+        dateFormat: "d/m/Y",
+    });
+});
+
+const guestsInput = document.getElementById("guests");
+const incrementBtn = document.getElementById("increment");
+const decrementBtn = document.getElementById("decrement");
+
+// Convert the input value to a number
+let guests = parseInt(guestsInput.value);
+
+// Increment function
+incrementBtn.addEventListener("click", () => {
+    guests++;
+    guestsInput.value = guests;
+});
+
+// Decrement function
+decrementBtn.addEventListener("click", () => {
+    if (guests > 1) {
+        // Ensure the value doesn't go below 1
+        guests--;
+        guestsInput.value = guests;
+    }
+});
+
+const carousel = document.getElementById("carousel");
+const carouselText = document.getElementById("carousel-text");
+const items = carousel.getElementsByClassName("carousel-item");
+
+function updateText() {
+    let closestItem = null;
+    let closestDistance = Number.MAX_VALUE;
+
+    Array.from(items).forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.left + rect.width / 2;
+        const carouselCenter =
+            carousel.clientWidth / 2 + carousel.getBoundingClientRect().left;
+        const distance = Math.abs(carouselCenter - itemCenter);
+
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestItem = item;
+        }
+    });
+
+    if (closestItem) {
+        const description = closestItem.getAttribute("data-description");
+        carouselText.textContent = description;
+    }
+}
+
+carousel.addEventListener("scroll", updateText);
+
+// Initial update
+updateText();
