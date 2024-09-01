@@ -75,6 +75,13 @@ export default {
             corousel_2: "url('/resources/images/corousel_2.svg')",
             corousel_3: "url('/resources/images/corousel_3.svg')",
             corousel_4: "url('/resources/images/corousel_4.svg')",
+            gallery_1: "url('/resources/images/gallery_1.svg')",
+            gallery_2: "url('/resources/images/gallery_2.svg')",
+            gallery_3: "url('/resources/images/gallery_3.svg')",
+            gallery_4: "url('/resources/images/gallery_4.svg')",
+            about: "url('/resources/images/about.svg')",
+            footer: "url('/resources/images/footer.svg')",
+            admin: "url('/resources/images/admin.svg')",
         },
         backgroundOpacity: ({ theme }) => theme("opacity"),
         backgroundPosition: {

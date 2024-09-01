@@ -45,9 +45,7 @@
         transform: translateX(0);
     }
     50% {
-        transform: translateX(
-            -20px
-        ); /* Sesuaikan nilai untuk mengubah kekuatan bouncing */
+        transform: translateX(-20px);
     }
 }
 
@@ -86,4 +84,9 @@
     50% {
         transform: translateX(-50px);
     }
+}
+
+/* trapesium */
+.trapezoid {
+    clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
