@@ -37,3 +37,53 @@
     transition: transform 0.6s ease;
     transform: scale(1.1) translateZ(50px);
 }
+
+/* efek bounce pada corousel */
+@keyframes physicalBounce {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(
+            -20px
+        ); /* Sesuaikan nilai untuk mengubah kekuatan bouncing */
+    }
+}
+
+.bounce-left {
+    animation: physicalBounce 0.4s ease-in-out;
+}
+
+.bounce-right {
+    animation: physicalBounce 0.4s ease-in-out reverse;
+}
+
+.bounce-left {
+    animation: bounce-left 0.5s;
+}
+
+.bounce-right {
+    animation: bounce-right 0.5s;
+}
+
+/* meeting rooms bounce */
+@keyframes bounce-left {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+}
+
+@keyframes bounce-right {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50px);
+    }
+}

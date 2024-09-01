@@ -7,9 +7,8 @@
   @vite('resources/js/navbar.js')
 
 </head>
-<body class="bg-white">
+<body class="bg-white overflow-x-hidden">
     <div>
-
         <!-- NAVBAR -->
         <div class="flex items-center justify-center h-36 z-50">
             <header class="w-12/13 fixed z-50">
@@ -35,7 +34,7 @@
                             Rooms
                             <span class="absolute left-0 bottom-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
                         </a>
-                        <a href="#" class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-500 group">
+                        <a href="#meetingRooms" class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-500 group">
                             Meeting rooms
                             <span class="absolute left-0 bottom-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
                         </a>

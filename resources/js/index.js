@@ -106,6 +106,59 @@ function updateText() {
 }
 
 carousel.addEventListener("scroll", updateText);
-
-// Initial update
 updateText();
+
+// memberikan efek bounce
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("carousel");
+
+    let isBouncing = false;
+
+    carousel.addEventListener("scroll", function () {
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+        const currentScroll = carousel.scrollLeft;
+
+        if (!isBouncing) {
+            if (currentScroll === 0) {
+                isBouncing = true;
+                carousel.classList.add("bounce-left");
+            } else if (currentScroll >= maxScrollLeft) {
+                isBouncing = true;
+                carousel.classList.add("bounce-right");
+            }
+        }
+    });
+
+    carousel.addEventListener("animationend", function () {
+        carousel.classList.remove("bounce-left", "bounce-right");
+        isBouncing = false;
+    });
+});
+
+// efek bounce package
+const bouncePackage = document.getElementById("bouncePackage");
+bouncePackage.addEventListener("scroll", () => {
+    const maxScrollLeft = bouncePackage.scrollWidth - bouncePackage.clientWidth;
+    const currentScrollLeft = bouncePackage.scrollLeft;
+    bouncePackage.classList.remove("bounce-left", "bounce-right");
+    if (currentScrollLeft === 0) {
+        bouncePackage.classList.add("bounce-left");
+    }
+    if (currentScrollLeft >= maxScrollLeft) {
+        bouncePackage.classList.add("bounce-right");
+    }
+});
+
+// efek bounce meeting
+const bounceMeeting = document.getElementById("bounceMeeting");
+bounceMeeting.addEventListener("scroll", () => {
+    const maxScrollLeft = bounceMeeting.scrollWidth - bounceMeeting.clientWidth;
+    const currentScrollLeft = bounceMeeting.scrollLeft;
+    bounceMeeting.classList.remove("bounce-left", "bounce-right");
+    if (currentScrollLeft === 0) {
+        bounceMeeting.classList.add("bounce-left");
+    }
+    if (currentScrollLeft >= maxScrollLeft) {
+        bounceMeeting.classList.add("bounce-right");
+    }
+});
