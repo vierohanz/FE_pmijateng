@@ -25,7 +25,7 @@ class AuthController extends Controller
             Session::put('access_token', $response['access_token']);
             Session::put('user', $response['data']);
 
-            return redirect('/homeRegister')->with(['message' => 'Selamat Datang '.$request->name.' Kami telah mengirimkan verifikasi email ke email anda']);
+            return redirect()->route('index')->with(['message' => 'Selamat Datang '.$request->name.' Kami telah mengirimkan verifikasi email ke email anda']);
         } else {
             return back()->withErrors('Gagal membuat akun');
         }
@@ -39,7 +39,7 @@ class AuthController extends Controller
             Session::put('access_token', $response['access_token']);
             Session::put('user', $response['data']);
 
-            return redirect('/homeRegister')->with(['message' => 'Selamat Datang Kembali '.session('user')['name']]);
+            return redirect()->route('index')->with(['message' => 'Selamat Datang Kembali '.session('user')['name']]);
         } else {
             return back()->withErrors('Username atau Password Salah');
         }
@@ -55,9 +55,9 @@ class AuthController extends Controller
             session()->invalidate();
             session()->flush();
 
-            return redirect()->route('home');
+            return redirect()->route('index');
         } catch (\Throwable $th) {
-            return redirect()->route('home')->withErrors(['error' => 'Error. Coba Lagi Nanti.']);
+            return redirect()->route('index')->withErrors('Error... Coba Lagi Nanti');
         }
     }
 }

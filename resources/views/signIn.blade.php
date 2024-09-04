@@ -54,19 +54,26 @@
                     </div>
                 </div>
                 <div class="row-span-9 w-full h-full py-10 justify-center items-start flex">
-                    <form action="" class="justify-start items-center flex-col flex">
+                    <form action="{{ route('signIn') }}" method="POST" class="justify-start items-center flex-col flex">
+                        @csrf
                         <p class="font-josefinSans font-bold text-4xl text-custom-secondary">Sign In</p>
                         <p class="font-poppins mt-2 font-normal text-xl text-gray-400">Enter your email and password</p>
                         <div class="mt-9 w-full xl:w-97">
                             <div>
                                 <p class="font-poppins font-medium text-black text-lg">Email</p>
-                                <input type="text"
+                                <input type="text" name="email"
                                     class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                    @error('email')
+                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                    @enderror
                             </div>
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Password</p>
-                                <input type="password"
+                                <input type="password" name="password"
                                     class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                    @error('password')
+                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                    @enderror
 
                             </div>
                         </div>
@@ -85,10 +92,9 @@
                                 class="mt-2 sm:mt-0 text-base font-medium text-[#DA251D] hover:scale-110 transition-all duration-300">Forget
                                 password?</a>
                         </div>
-                        <a href="#"
-                            class="w-full h-16 bg-[#DA251D] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">
+                        <button type="submit" class="w-full h-16 bg-[#DA251D] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">
                             Sign In
-                        </a>
+                        </button>
                         <div class="h-1 flex justify-between w-full items-center ">
                             <div class="w-full h-1 bg-gray-200"></div>
                             <p class="mx-2 font-poppins font-medium ">or</p>
@@ -97,7 +103,7 @@
                         <div
                             class="flex w-full mt-4 bg-[#F4F7FE] rounded-2xl justify-center items-center hover:scale-105 transition-all duration-300">
                             <div class="bg-google bg-contain bg-no-repeat h-7 w-10"></div>
-                            <a href="#"
+                            <a href="{{ route('google.redirect') }}"
                                 class="  flex justify-center font-normal items-center text-black font-poppins text-base rounded-2xl my-5 ">
                                 Login With Google
                             </a>

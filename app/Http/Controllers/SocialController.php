@@ -42,7 +42,7 @@ class SocialController extends Controller
 
             Session::put('user', $response['data']);
 
-            return redirect('/homeRegister')->with(['message' => 'Selamat Datang '.$googleUser->name]);
+            return redirect()->route('index')->with(['message' => 'Selamat Datang '.$googleUser->name]);
         } else {
             return back()->withErrors('Gagal membuat akun');
         }
