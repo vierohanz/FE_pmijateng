@@ -12,7 +12,6 @@
     perspective: 1000px;
     overflow: hidden;
 }
-
 .carousel-item img {
     transition: transform 0.6s ease;
 }
@@ -24,10 +23,9 @@
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
-
 .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* agar bisa zoom ke image */
@@ -48,19 +46,15 @@
         transform: translateX(-20px);
     }
 }
-
 .bounce-left {
     animation: physicalBounce 0.4s ease-in-out;
 }
-
 .bounce-right {
     animation: physicalBounce 0.4s ease-in-out reverse;
 }
-
 .bounce-left {
     animation: bounce-left 0.5s;
 }
-
 .bounce-right {
     animation: bounce-right 0.5s;
 }
@@ -75,7 +69,6 @@
         transform: translateX(50px);
     }
 }
-
 @keyframes bounce-right {
     0%,
     100% {
@@ -89,4 +82,53 @@
 /* trapesium */
 .trapezoid {
     clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* signIn click */
+@keyframes button-click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-click {
+    animation: button-click 0.3s ease;
+}
+
+/* Animasi slide left */
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-in {
+    animation: slideInRight 0.5s ease forwards;
+}
+
+/* Animasi slide right */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-out {
+    animation: slideInLeft 0.5s ease forwards;
 }

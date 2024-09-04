@@ -82,6 +82,8 @@ export default {
             about: "url('/resources/images/about.svg')",
             footer: "url('/resources/images/footer.svg')",
             admin: "url('/resources/images/admin.svg')",
+            login: "url('/resources/images/login.svg')",
+            google: "url('/resources/images/google.png')",
         },
         backgroundOpacity: ({ theme }) => theme("opacity"),
         backgroundPosition: {
