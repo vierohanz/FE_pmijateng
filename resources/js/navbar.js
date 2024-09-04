@@ -1,4 +1,3 @@
-// sticky navbar
 import $ from "jquery";
 
 window.addEventListener("scroll", function () {
