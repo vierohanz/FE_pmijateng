@@ -171,7 +171,7 @@
         <div data-aos="fade-left" class=" mt-10 w-full h-104 pl-5 overflow-x-auto overflow-hidden no-scrollbar"
             id="bounceMeeting">
             <div class="flex space-x-8 snap-x snap-mandatory mt-3">
-                <a href="#" class="hover:scale-105  duration-150 transition-all ml-3">
+                <a href="{{ route('detail') }}" class="hover:scale-105  duration-150 transition-all ml-3">
                     <div
                         class="relative flex flex-col mt-6 text-gray-700 border-2 border-gray-100 bg-white shadow-md bg-clip-border rounded-xl w-96">
                         <div

@@ -4,6 +4,7 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./node_modules/flowbite/**/*.js",
     ],
     presets: [],
     darkMode: "media", // or 'class'
@@ -1137,5 +1138,5 @@ export default {
             50: "50",
         },
     },
-    plugins: [require("daisyui")],
+    plugins: [require("daisyui"), require("flowbite/plugin")],
 };

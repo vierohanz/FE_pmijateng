@@ -75,7 +75,7 @@
                                 <input type="checkbox" checked value="" class="sr-only peer">
                                 <div
                                     class="w-5 h-5 bg-white border-2 rounded-md border-[#DA251D] peer peer-checked:border-0 peer-checked:bg-[#DA251D]">
-                                    <img class=" peer-checked:block"
+                                    <img class=" peer-checked:block "
                                         src="https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/motion-tailwind/img/icons/check.png"
                                         alt="tick">
                                 </div>
