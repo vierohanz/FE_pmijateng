@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EmailVerificationRequest;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\EmailVerificationRequest;
 
 class EmailVerificationController extends Controller
 {
-    public function __invoke(EmailVerificationRequest $request)
+    public function __invoke(EmailVerificationRequest $request) : RedirectResponse
     {
         $api_url_v1 = config('app.api_url_v1');
         $token = Session::get('access_token');

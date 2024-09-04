@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\ForgotPasswordRequest;
 
 class ForgotPasswordController extends Controller
 {
-    public function __invoke(ForgotPasswordRequest $request)
+    public function __invoke(ForgotPasswordRequest $request) : RedirectResponse
     {
         $api_url_v1 = config('app.api_url_v1');
 
