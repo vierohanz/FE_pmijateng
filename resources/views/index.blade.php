@@ -62,7 +62,7 @@
                 <label for="arrival-date" class="block text-lg font-poppins font-semibold ">Arrival date</label>
                 <div class="flex items-center border-b-2 border-white">
                     <input type="text" id="arrival-date"
-                        class="w-full text-white bg-transparent text-center text-lg focus:outline-none placeholder:text-white"
+                        class="w-full text-white bg-transparent text-center border-none text-lg focus:outline-none placeholder:text-white"
                         placeholder="dd/mm/yy" />
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6 ml-2 cursor-pointer">
@@ -76,7 +76,7 @@
                 <label for="departure-date" class="block text-lg font-poppins font-semibold">Departure date</label>
                 <div class="flex items-center border-b-2 border-white">
                     <input type="text" id="departure-date"
-                        class="w-full text-white bg-transparent text-center text-lg focus:outline-none placeholder:text-white"
+                        class="w-full text-white bg-transparent border-none text-center text-lg focus:outline-none placeholder:text-white"
                         placeholder="dd/mm/yy" />
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6 ml-2 cursor-pointer">
@@ -92,7 +92,8 @@
                     <button id="decrement"
                         class="bg-transparent text-white font-extrabold text-lg   px-3  rounded-lg bg-gray-200">-</button>
                     <input type="text" id="guests" value="1"
-                        class="w-full bg-transparent border-white text-center text-lg focus:outline-none" readonly />
+                        class="w-full border-none bg-transparent border-white text-center text-lg focus:outline-none"
+                        readonly />
                     <button id="increment"
                         class="bg-transparent text-white font-extrabold text-lg  px-2 rounded-lg bg-gray-200 ">+</button>
                 </div>

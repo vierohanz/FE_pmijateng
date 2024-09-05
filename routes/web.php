@@ -21,3 +21,7 @@ Route::get('/profile', function () {
 Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
+
+Route::get('/topbar', function () {
+    return view('topbar');
+})->name('topbar');

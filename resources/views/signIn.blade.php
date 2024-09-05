@@ -61,20 +61,20 @@
                             <div>
                                 <p class="font-poppins font-medium text-black text-lg">Email</p>
                                 <input type="text"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
                             </div>
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Password</p>
                                 <input type="password"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
 
                             </div>
                         </div>
                         <div class="flex flex-row  justify-between mt-4 w-full">
                             <label class="relative inline-flex items-center cursor-pointer select-none">
-                                <input type="checkbox" checked value="" class="sr-only peer">
+                                <input type="checkbox" value="" class="sr-only peer">
                                 <div
-                                    class="w-5 h-5 bg-white border-2 rounded-md border-[#DA251D] peer peer-checked:border-0 peer-checked:bg-[#DA251D]">
+                                    class="w-5 h-5 bg-white border-2 rounded-md  border-[#DA251D] peer peer-checked:border-0 peer-checked:bg-[#DA251D]">
                                     <img class=" peer-checked:block "
                                         src="https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/motion-tailwind/img/icons/check.png"
                                         alt="tick">
@@ -94,14 +94,14 @@
                             <p class="mx-2 font-poppins font-medium ">or</p>
                             <div class="w-full h-1 bg-gray-200"></div>
                         </div>
-                        <div
+                        <a href="#"
                             class="flex w-full mt-4 bg-[#F4F7FE] rounded-2xl justify-center items-center hover:scale-105 transition-all duration-300">
                             <div class="bg-google bg-contain bg-no-repeat h-7 w-10"></div>
-                            <a href="#"
+                            <p
                                 class="  flex justify-center font-normal items-center text-black font-poppins text-base rounded-2xl my-5 ">
                                 Login With Google
-                            </a>
-                        </div>
+                            </p>
+                        </a>
 
                         <div class="flex justify-between w-full">
                             <a href="{{ route('signUp') }}"
