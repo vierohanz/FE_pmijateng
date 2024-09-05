@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign In</title>
+    <title>Sign Up</title>
     @vite('resources/css/app.css')
     @vite('resources/js/signIn.js')
 </head>
@@ -16,7 +16,9 @@
             <div
                 class="h-full w-full col-span-1 xl:col-span-3 animate-slide-out bg-custom-third rounded-badge p-6 grid grid-rows-10">
                 <div class="row-span-9 w-full h-full py-5 justify-center items-start flex">
-                    <form action="" class="justify-start items-center flex-col flex">
+                    <form action="{{ route('signUp') }}" method="POST"
+                        class="justify-start items-center flex-col flex">
+                        @csrf
                         <p class="font-josefinSans font-bold text-4xl text-custom-secondary">Sign Up</p>
                         <p class="font-poppins mt-2 font-normal text-xl text-gray-400">Fill an input form on below</p>
                         <div class="mt-9 w-full xl:w-97">
@@ -39,13 +41,42 @@
                                 <p class="font-poppins font-medium text-black text-lg">Password Confirmation</p>
                                 <input type="password"
                                     class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                <input type="text" name="name"
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                @error('name')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mt-4">
+                                <p class="font-poppins font-medium text-black text-lg">Email</p>
+                                <input type="email" name="email"
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                @error('email')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mt-4">
+                                <p class="font-poppins font-medium text-black text-lg">Password</p>
+                                <input type="password" name="password"
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                @error('password')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mt-4">
+                                <p class="font-poppins font-medium text-black text-lg">Password Confirmation</p>
+                                <input type="password" name="password_confirmation"
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                @error('password_confirmation')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
-                        <a href="#"
+                        <button type="submit"
                             class="w-full h-16 bg-[#DA251D] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">
                             Sign Up
-                        </a>
+                        </button>
                         <a href="{{ route('signIn') }}"
                             class="flex xl:hidden font-poppins font-medium text-lg text-custom-primary">
                             go to SignIn

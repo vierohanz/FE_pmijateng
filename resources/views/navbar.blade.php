@@ -88,10 +88,20 @@
                                         Hannan</p>
                                 </div>
                             </a>
-                            <a href="{{ route('signIn') }}"
-                                class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-custom-primary hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-custom-primary border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
-                                Login
-                            </a>
+                            @if (session()->has('access_token'))
+                                <form method="POST" action="{{ route('signOut') }}">
+                                    @csrf
+                                    <button type="submit"
+                                        class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-custom-primary hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-custom-primary border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
+                                        Log Out
+                                    </button>
+                                </form>
+                            @else
+                                <a href="{{ route('signIn') }}"
+                                    class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-custom-primary hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-custom-primary border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
+                                    Login
+                                </a>
+                            @endif
                         </div>
                         <button id="toggle-button" class="ml-4 block xl:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="25px" height="25px"
@@ -127,9 +137,6 @@
                                 <span>Home</span>
                             </li>
                         </a>
-
-
-
                         <a href="#rooms"
                             class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li x-data x-on:click.prevent="$el.scrollIntoView({ behavior: 'smooth', block: 'start' })"
