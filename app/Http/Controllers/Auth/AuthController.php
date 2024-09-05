@@ -13,10 +13,11 @@ class AuthController extends Controller
 {
     protected $api_url_v1;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->api_url_v1 = config('app.api_url_v1');
     }
-    
+
     public function register(RegisterRequest $request): RedirectResponse
     {
         $response = Http::post($this->api_url_v1 . 'register', $request->validated());
@@ -25,13 +26,13 @@ class AuthController extends Controller
             Session::put('access_token', $response['access_token']);
             Session::put('user', $response['data']);
 
-            return redirect()->route('index')->with(['message' => 'Selamat Datang '.$request->name.' Kami telah mengirimkan verifikasi email ke email anda']);
+            return redirect()->route('index')->with(['message' => 'Selamat Datang ' . $request->name . ' Kami telah mengirimkan verifikasi email ke email anda']);
         } else {
             return back()->withErrors('Gagal membuat akun');
         }
     }
 
-    public function login(LoginRequest $request) : RedirectResponse
+    public function login(LoginRequest $request): RedirectResponse
     {
         $response = Http::post($this->api_url_v1 . 'login', $request->validated());
 
@@ -39,11 +40,10 @@ class AuthController extends Controller
             Session::put('access_token', $response['access_token']);
             Session::put('user', $response['data']);
 
-            return redirect()->route('index')->with(['message' => 'Selamat Datang Kembali '.session('user')['name']]);
+            return redirect()->route('index')->with(['message' => 'Selamat Datang Kembali ' . session('user')['name']]);
         } else {
             return back()->withErrors('Username atau Password Salah');
         }
-
     }
 
     public function logout(): RedirectResponse

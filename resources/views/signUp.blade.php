@@ -22,27 +22,11 @@
                         <p class="font-josefinSans font-bold text-4xl text-custom-secondary">Sign Up</p>
                         <p class="font-poppins mt-2 font-normal text-xl text-gray-400">Fill an input form on below</p>
                         <div class="mt-9 w-full xl:w-97">
-                            <div>
-                                <p class="font-poppins font-medium text-black text-lg">Name</p>
-                                <input type="text"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                            </div>
-                            <div class="mt-4">
-                                <p class="font-poppins font-medium text-black text-lg">Email</p>
-                                <input type="email"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                            </div>
-                            <div class="mt-4">
-                                <p class="font-poppins font-medium text-black text-lg">Password</p>
-                                <input type="password"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                            </div>
-                            <div class="mt-4">
-                                <p class="font-poppins font-medium text-black text-lg">Password Confirmation</p>
-                                <input type="password"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+
+                            <div class="">
+                                <p class="font-poppins font-medium text-black text-lg">name</p>
                                 <input type="text" name="name"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
                                 @error('name')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
@@ -50,7 +34,7 @@
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Email</p>
                                 <input type="email" name="email"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
                                 @error('email')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
@@ -58,7 +42,7 @@
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Password</p>
                                 <input type="password" name="password"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
                                 @error('password')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
@@ -66,7 +50,7 @@
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Password Confirmation</p>
                                 <input type="password" name="password_confirmation"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] outline-none">
+                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
                                 @error('password_confirmation')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
