@@ -235,7 +235,7 @@
             <div class="h-48 flex flex-col w-full mt-16 px-28">
                 <div class="flex w-full bg-custom-primary h-2 "></div>
                 <div class="w-full flex items-center justify-end ">
-                    <a href="{{ route('topbar') }}"
+                    <a href="{{ route('checkout') }}"
                         class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-custom-primary mt-5 rounded-2xl">Checkout</a>
                 </div>
             </div>

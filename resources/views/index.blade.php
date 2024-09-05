@@ -1,7 +1,7 @@
 @extends('navbar')
 @section('content')
     @vite('resources/js/index.js')
-
+    @vite('resources/css/app.css')
     <!-- Content Home-->
     <div id="home" class="grid grid-cols-1 -mt-36 xl:grid-cols-2 gap-4 h-114 bg-landing_page bg-cover bg-no-repeat">
         <div class="flex mt-56 z-10 xl:mt-0 flex-col items-center justify-center ">
@@ -59,9 +59,9 @@
 
         <div class="col-span-4 grid grid-cols-4 gap-5 items-center space-x-9">
             <div class="text-white text-start">
-                <label for="arrival-date" class="block text-lg font-poppins font-semibold ">Arrival date</label>
+                <label for="arrival-date" class="block text-lg font-poppins font-semibold">Arrival date</label>
                 <div class="flex items-center border-b-2 border-white">
-                    <input type="text" id="arrival-date"
+                    <input type="text" id="tanggal-masuk"
                         class="w-full text-white bg-transparent text-center border-none text-lg focus:outline-none placeholder:text-white"
                         placeholder="dd/mm/yy" />
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,7 +74,7 @@
 
             <div class="text-white text-start">
                 <label for="departure-date" class="block text-lg font-poppins font-semibold">Departure date</label>
-                <div class="flex items-center border-b-2 border-white">
+                <div id="tanggal-keluar" class="flex items-center border-b-2 border-white">
                     <input type="text" id="departure-date"
                         class="w-full text-white bg-transparent border-none text-center text-lg focus:outline-none placeholder:text-white"
                         placeholder="dd/mm/yy" />

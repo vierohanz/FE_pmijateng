@@ -33,6 +33,9 @@ Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
 
-Route::get('/topbar', function () {
-    return view('topbar');
-})->name('topbar');
+Route::get('/topbarPayment', function () {
+    return view('topbarPayment');
+})->name('topbarPayment');
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
