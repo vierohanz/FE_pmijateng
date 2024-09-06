@@ -14,7 +14,8 @@ class ProfileController extends Controller
     protected $api_url_v1;
     protected $token;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->api_url_v1 = config('app.api_url_v1');
         $this->token = Session::get('access_token');
     }
@@ -27,25 +28,25 @@ class ProfileController extends Controller
             session::forget('user');
             session::put('user', $response['data']);
 
-            return redirect()->route('account')->with('message', 'Profil Berhasil Di Updatw');
+            return redirect()->route('account')->with('update', 'Profil Berhasil Di Updatw');
         } else {
 
-            return back()->withErrors('Gagal Menyimpan Profil');
+            return back()->with('error', 'Gagal Menyimpan Profil');
         }
     }
 
     public function updatePassword(ChangePasswordRequest $request): RedirectResponse
-    {   
+    {
         $response = Http::withtoken($this->token)->put($this->api_url_v1 . 'updatePassword', $request->validated());
 
         if ($response->successful()) {
             session::forget('access_token');
             Session::put('access_token', $response['access_token']);
 
-            return back()->with('message', 'Password Berhasil Di Ubah');
+            return back()->with(['update' => 'Password Berhasil Di Ubah', 'title' => 'Update']);
         } else {
 
-            return back()->withErrors('Gagal Mengubah Password');
+            return back()->with(['error' => 'Gagal Mengubah Password', 'title' => 'Error']);
         }
     }
 }

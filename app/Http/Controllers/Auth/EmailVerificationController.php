@@ -19,10 +19,10 @@ class EmailVerificationController extends Controller
 
         if ($response->successful()) {
 
-            return back()->with('status', 'Berhasil Mengirim Verifikasi Email');
+            return back()->with(['add' => 'Berhasil Mengirim Verifikasi Email', 'title' => 'Success']);
         } else {
 
-            return back()->withErrors('Gagal Mengirim Verifikasi Email');
+            return back()->with(['error' => 'Gagal Mengirim Verifikasi Email', 'title' => 'Error']);
         }
     }
 }

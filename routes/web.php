@@ -48,5 +48,8 @@ Route::get('/historyTransaction', OrderController::class)->middleware('AuthLogin
 Route::get('/account', function () {
     return view('account');
 })->name('account');
+Route::get('/changePassword', function () {
+    return view('changePassword');
+})->name('changePassword');
 
 Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');

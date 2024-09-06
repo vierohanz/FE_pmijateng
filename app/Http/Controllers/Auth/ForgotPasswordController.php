@@ -9,7 +9,7 @@ use App\Http\Requests\ForgotPasswordRequest;
 
 class ForgotPasswordController extends Controller
 {
-    public function __invoke(ForgotPasswordRequest $request) : RedirectResponse
+    public function __invoke(ForgotPasswordRequest $request): RedirectResponse
     {
         $api_url_v1 = config('app.api_url_v1');
 
@@ -17,10 +17,10 @@ class ForgotPasswordController extends Controller
 
         if ($response->successful()) {
 
-            return back()->with('status', 'Berhasil Mengirim Link Untuk Reset Password');
+            return back()->with(['add', 'Berhasil Mengirim Link Untuk Reset Password', 'title' => 'Success']);
         } else {
 
-            return back()->withErrors('Gagal Mengirim Link Untuk Reset Password');
-        }  
+            return back()->with(['error' => 'Gagal Mengirim Link Untuk Reset Password', 'title' => 'Error']);
+        }
     }
 }

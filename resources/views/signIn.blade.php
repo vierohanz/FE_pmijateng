@@ -14,7 +14,7 @@
     <div class="h-114 w-full bg-[#EFEFEF] xl:py-24 xl:px-56">
         <div class="h-full w-full grid grid-cols-1 xl:grid-cols-5 bg-[#DA251D] rounded-badge shadow-2xl">
             <div
-                class="h-full hidden xl:flex col-span-2 rounded-l-badge p-9 bg-[#DA251D] flex-col items-center justify-cente">
+                class="h-full hidden xl:flex col-span-2 rounded-l-badge p-7 bg-[#DA251D] flex-col items-center justify-cente">
                 <div class="w-full ">
                     <a href="{{ route('index') }}"
                         class=" font-poppins text-white text-lg hover:text-xl transition-all duration-300 font-semibold">Back</a>
@@ -126,10 +126,54 @@
         </div>
     </div>
 </body>
-@if ($errors->any())
-    <div id="error-messages" data-messages="{{ json_encode($errors->all()) }}" style="display:none;"></div>
+@if (Session::has('add'))
+    <!-- Initialize Toastr for success message -->
+    <script>
+        toastr.options = {
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "progressBar": true,
+            "timeOut": "5000",
+            "closeButton": true,
+        };
+        toastr.success("{{ Session::get('add') }}");
+    </script>
+@elseif (Session::has('update'))
+    <!-- Initialize Toastr for info message -->
+    <script>
+        toastr.options = {
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "progressBar": true,
+            "timeOut": "5000",
+            "closeButton": true,
+        };
+        toastr.info("{{ Session::get('update') }}");
+    </script>
+@elseif (Session::has('delete'))
+    <!-- Initialize Toastr for delete success message -->
+    <script>
+        toastr.options = {
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "progressBar": true,
+            "timeOut": "5000",
+            "closeButton": true,
+        };
+        toastr.success("{{ Session::get('delete') }}");
+    </script>
+@elseif (Session::has('error'))
+    <!-- Initialize Toastr for error message -->
+    <script>
+        toastr.options = {
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "progressBar": true,
+            "timeOut": "5000",
+            "closeButton": true,
+        };
+        toastr.error("{{ Session::get('error') }}");
+    </script>
 @endif
-@if (session('message'))
-    <div id="flash-message" data-message="{{ session('message') }}"></div>
-@endif
+
 </html>

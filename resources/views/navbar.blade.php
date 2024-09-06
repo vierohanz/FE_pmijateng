@@ -94,7 +94,8 @@
                                             Hello</p>
                                         <p
                                             class="font-poppins text-custom-primary font-bold xs:text-base hidden xl:flex flex-col">
-                                            {{ session('user')['name'] ?? 'default' }}</p>
+                                            {{ implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)) }}
+                                        </p>
                                     </div>
                                 </a>
                             @endif
@@ -235,14 +236,80 @@
             </header>
         </div>
     </div>
-    @if ($errors->any())
-        <div id="error-messages" data-messages="{{ json_encode($errors->all()) }}" style="display:none;"></div>
-    @endif
-    
-    @if (session('message'))
-        <div id="flash-message" data-message="{{ session('message') }}"></div>
-    @endif
 
+    @if (Session::has('add'))
+        <!-- Initialize Toastr for success message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+            };
+            toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('update'))
+        <!-- Initialize Toastr for info message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+            };
+            toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('delete'))
+        <!-- Initialize Toastr for delete success message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+            };
+            toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('error'))
+        <!-- Initialize Toastr for error message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+            };
+            toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
+        </script>
+    @endif
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @yield('content')
     </div>
     </div>
