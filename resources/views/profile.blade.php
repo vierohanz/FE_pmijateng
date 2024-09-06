@@ -15,7 +15,11 @@
     <div class="grid grid-cols-1 md:grid-cols-10 h-auto md:h-screen w-full">
         <!-- Sidebar -->
         <div class="col-span-3 bg-[#DA251D] flex-col justify-start pb-10 items-center flex pt-10 md:pt-14 px-4">
-            <div class="w-48 md:w-72 h-48 md:h-72 bg-profile bg-cover border-2 border-white rounded-full"></div>
+
+            <div class="w-48 md:w-72 h-48 md:h-72 bg-profile bg-cover border-2 border-white rounded-full cursor-pointer"
+                id="profilePicture"></div>
+            <input type="file" id="fileInput" class="hidden" accept="image/*">
+
             <div class="w-full mt-4 justify-center items-center flex flex-col">
                 <p class="font-poppins text-xl md:text-2xl font-semibold text-white">Rais Hannan Rizanto</p>
                 <p class="font-poppins text-lg md:text-xl font-normal text-white">rizantohannan@gmail.com</p>
@@ -105,6 +109,50 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const profilePicture = document.getElementById('profilePicture');
+        const fileInput = document.getElementById('fileInput');
+
+        // Function to load image from LocalStorage
+        function loadProfilePicture() {
+            const savedImage = localStorage.getItem('profileImage');
+            if (savedImage) {
+                profilePicture.style.backgroundImage = `url(${savedImage})`;
+            }
+        }
+
+        // Load profile picture on page load
+        window.onload = function() {
+            loadProfilePicture();
+        };
+
+        // Add click event to trigger file input when profile picture is clicked
+        profilePicture.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Handle file input change event
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const imageUrl = e.target.result;
+
+                    // Update the profile picture
+                    profilePicture.style.backgroundImage = `url(${imageUrl})`;
+
+                    // Save the image URL to LocalStorage
+                    localStorage.setItem('profileImage', imageUrl);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 
 </html>
