@@ -23,7 +23,9 @@ class OrderController extends Controller
                 return redirect()->route('register')->withErrors(['error' => 'Email Anda tidak terdaftar.']);
                 
             }
+            // dd($bookings);
             
-            return view('checkout', ['bookings' => $bookings]);
+            
+            return view('historyTransaction', ['bookings' => $bookings]);
     }
 }

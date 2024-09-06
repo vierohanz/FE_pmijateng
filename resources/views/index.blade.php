@@ -173,7 +173,7 @@
             id="bounceMeeting">
             <div class="flex space-x-8 snap-x snap-mandatory mt-3">
                 @forelse ($meetingRooms as $meetingRoom)
-                    <a href="{{ route('detail') }}" class="hover:scale-105  duration-150 transition-all ml-9">
+                    <a href="{{ route('room.details', ['id' => $meetingRoom['id']]) }}" class="hover:scale-105  duration-150 transition-all ml-9">
                         <div
                             class="relative flex flex-col pl-5 h-97 mt-6 text-gray-700 border-2 border-gray-100 bg-white shadow-md bg-clip-border rounded-xl w-96">
                             <div
@@ -216,7 +216,7 @@
             id="bouncePackage">
             <div class="flex space-x-8 snap-x snap-mandatory mt-3">
                 @forelse ($packageRooms as $packageRoom)
-                    <a href="{{ route('detail') }}" class="hover:scale-105 duration-150 transition-all ml-3 ml-9">
+                    <a href="#" class="hover:scale-105 duration-150 transition-all ml-3 ml-9">
                         <div
                             class="relative  h-97 flex flex-col mt-6 text-gray-700 border-2 border-gray-100 bg-white shadow-md bg-clip-border rounded-xl w-96">
                             <div

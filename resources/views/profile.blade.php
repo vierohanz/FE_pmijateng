@@ -22,8 +22,8 @@
             <input type="file" id="fileInput" class="hidden" accept="image/*">
 
             <div class="w-full mt-4 justify-center items-center flex flex-col">
-                <p class="font-poppins text-xl md:text-2xl font-semibold text-white">Rais Hannan Rizanto</p>
-                <p class="font-poppins text-lg md:text-xl font-normal text-white">rizantohannan@gmail.com</p>
+                <p class="font-poppins text-xl md:text-2xl font-semibold text-white">{{ session('user')['name'] }}</p>
+                <p class="font-poppins text-lg md:text-xl font-normal text-white">{{ session('user')['email'] }}</p>
             </div>
 
             <div class="h-1 w-full bg-white my-6 md:my-10"></div>
@@ -62,17 +62,20 @@
                 </a>
             </div>
             <div class="w-full px-8 md:px-12 mt-7">
-                <a href="#"
-                    class="w-full bg-red-800 flex px-5 items-center hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-8 md:w-12 h-8 md:h-12"
-                        viewBox="0 0 512 512">
-                        <path
-                            d="M304 336v40a40 40 0 01-40 40H104a40 40 0 01-40-40V136a40 40 0 0140-40h152c22.09 0 48 17.91 48 40v40M368 336l80-80-80-80M176 256h256"
-                            fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32" />
-                    </svg>
-                    <p class="font-poppins text-base md:text-xl font-medium text-white">Log out</p>
-                </a>
+                <form method="POST" action="{{ route('signOut') }}">
+                @csrf
+                    <button type="submit"
+                        class="w-full bg-red-800 flex px-5 items-center hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-8 md:w-12 h-8 md:h-12"
+                            viewBox="0 0 512 512">
+                            <path
+                                d="M304 336v40a40 40 0 01-40 40H104a40 40 0 01-40-40V136a40 40 0 0140-40h152c22.09 0 48 17.91 48 40v40M368 336l80-80-80-80M176 256h256"
+                                fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="32" />
+                        </svg>
+                        <p class="font-poppins text-base md:text-xl font-medium text-white">Log out</p>
+                    </button>
+                </form>
             </div>
         </div>
 
