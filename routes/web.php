@@ -39,3 +39,11 @@ Route::get('/topbarPayment', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
+
+Route::get('/historyTransaction', function () {
+    return view('historyTransaction');
+})->name('historyTransaction');
+
+Route::get('/account', function () {
+    return view('account');
+})->name('account');

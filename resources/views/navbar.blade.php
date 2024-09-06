@@ -84,7 +84,10 @@
                             @else
                                 <a href="{{ route('profile') }}"
                                     class=" hover:no-underline hover:text-custom-primary hover:fill-custom-primary flex space-x-2 gap-2 justify-center items-center">
-                                    <div class="bg-profile hidden xl:flex bg-cover w-11 h-11 bg-no-repeat"></div>
+                                    <input id="fileInput" accept="image/*" style="display: none;">
+                                    <div id="profilePicture" id="fileInput" accept="image/*"
+                                        class="bg-profile  hidden xl:flex bg-cover w-12 h-12 rounded-full bg-no-repeat">
+                                    </div>
                                     <div>
                                         <p
                                             class="font-poppins text-black font-semibold xs:text-base hidden xl:flex flex-col">
