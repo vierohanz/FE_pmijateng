@@ -49,6 +49,12 @@
             </div>
         </form>
         </div>
-        
+        @if ($errors->any())
+        <div id="error-messages" data-messages="{{ json_encode($errors->all()) }}" style="display:none;"></div>
+    @endif
+    
+    @if (session('message'))
+        <div id="flash-message" data-message="{{ session('message') }}"></div>
+    @endif
     </div>
 @endsection

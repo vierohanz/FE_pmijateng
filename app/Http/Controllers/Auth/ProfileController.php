@@ -27,7 +27,7 @@ class ProfileController extends Controller
             session::forget('user');
             session::put('user', $response['data']);
 
-            return redirect()->route('account')->with('message', 'Profil Berhasil Di Updatw');
+            return redirect()->route('account')->with('message', 'Profil Berhasil Di Update');
         } else {
 
             return back()->withErrors('Gagal Menyimpan Profil');
