@@ -93,6 +93,13 @@
                                 class="mt-2 sm:mt-0 text-base font-medium text-[#DA251D] hover:scale-110 transition-all duration-300">Forget
                                 password?</a>
                         </div>
+                        <div class="mt-4"></div>
+                        <img src="{{ captcha_src() }}" alt="captcha">
+                        <input type="text" name="captcha" class="form-control @error('captcha') is-invalid @enderror" placeholder="Insert Captcha">
+                        @error('captcha')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                        
                         <button type="submit"
                             class="w-full h-16 bg-[#DA251D] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">
                             Sign In

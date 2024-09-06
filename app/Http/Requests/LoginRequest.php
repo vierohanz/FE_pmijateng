@@ -18,6 +18,14 @@ class LoginRequest extends FormRequest
         return [
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required'],
+            'captcha' => 'required|captcha',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'captcha.captcha' => 'The CAPTCHA verification failed',
         ];
     }
 }
