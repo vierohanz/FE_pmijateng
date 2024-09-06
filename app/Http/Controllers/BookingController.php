@@ -34,4 +34,15 @@ class BookingController extends Controller
         return view('detail', ['room' => $room]);
     }
 
+    public function checkOut($id)
+    {
+        $response = Http::get($this->api_url_v1 . 'room_type/getDetail', [
+            'id' => $id,
+        ]);
+
+        $room = $response->json();
+
+        return view('checkout', ['room' => $room]);
+    }
+
 }

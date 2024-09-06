@@ -76,7 +76,7 @@
 
                     <div>
                         <div>
-                            @if (session()->has('access_token'))
+                            @if (!session()->has('access_token'))
                                 <a href="{{ route('signIn') }}"
                                     class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-custom-primary hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-custom-primary border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
                                     Login
@@ -94,7 +94,7 @@
                                             Hello</p>
                                         <p
                                             class="font-poppins text-custom-primary font-bold xs:text-base hidden xl:flex flex-col">
-                                            Hannan</p>
+                                            {{ session('user')['name'] ?? 'default' }}</p>
                                     </div>
                                 </a>
                             @endif

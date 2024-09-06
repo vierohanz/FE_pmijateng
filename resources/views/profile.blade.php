@@ -22,8 +22,8 @@
             <input type="file" id="fileInput" class="hidden" accept="image/*">
 
             <div class="w-full mt-4 justify-center items-center flex flex-col">
-                <p class="font-poppins text-xl md:text-2xl font-semibold text-white">Rais Hannan Rizanto</p>
-                <p class="font-poppins text-lg md:text-xl font-normal text-white">rizantohannan@gmail.com</p>
+                <p class="font-poppins text-xl md:text-2xl font-semibold text-white">{{ session('user')['name'] }}</p>
+                <p class="font-poppins text-lg md:text-xl font-normal text-white">{{ session('user')['email'] }}</p>
             </div>
 
             <div class="h-1 w-full bg-white my-6 md:my-10"></div>

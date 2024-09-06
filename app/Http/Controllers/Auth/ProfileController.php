@@ -24,10 +24,10 @@ class ProfileController extends Controller
         $response = Http::withtoken($this->token)->put($this->api_url_v1 . 'updateProfile', $request->validated());
 
         if ($response->successful()) {
-            session::forget('response');
-            session::put('response', $response['data']);
+            session::forget('user');
+            session::put('user', $response['data']);
 
-            return redirect()->route('profile.edit')->with('status', 'Profil Berhasil Di Updatw');
+            return redirect()->route('account')->with('message', 'Profil Berhasil Di Updatw');
         } else {
 
             return back()->withErrors('Gagal Menyimpan Profil');
@@ -42,7 +42,7 @@ class ProfileController extends Controller
             session::forget('access_token');
             Session::put('access_token', $response['access_token']);
 
-            return back()->with('status', 'Password Berhasil Di Ubah');
+            return back()->with('message', 'Password Berhasil Di Ubah');
         } else {
 
             return back()->withErrors('Gagal Mengubah Password');

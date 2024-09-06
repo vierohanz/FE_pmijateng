@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
 
@@ -37,9 +38,11 @@ Route::get('/package/details/{id}', [BookingController::class, 'showPackage'])->
 Route::get('/topbarPayment', function () {
     return view('topbarPayment');
 })->name('topbarPayment');
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
+// Route::get('/checkout', function () {
+//     return view('checkout');
+// })->name('checkout');
+
+Route::get('/checkout/{id}', [BookingController::class, 'checkOut'])->name('checkout');
 
 Route::get('/historyTransaction', function () {
     return view('historyTransaction');
@@ -48,3 +51,5 @@ Route::get('/historyTransaction', function () {
 Route::get('/account', function () {
     return view('account');
 })->name('account');
+
+Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');
