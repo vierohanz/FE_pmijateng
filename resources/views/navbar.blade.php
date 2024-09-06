@@ -82,7 +82,7 @@
                                     Login
                                 </a>
                             @else
-                                <a href="{{ route('profile') }}"
+                                <a href="{{ route('account') }}"
                                     class=" hover:no-underline hover:text-custom-primary hover:fill-custom-primary flex space-x-2 gap-2 justify-center items-center">
                                     <input id="fileInput" accept="image/*" style="display: none;">
                                     <div id="profilePicture" id="fileInput" accept="image/*"
