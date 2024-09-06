@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\OrderController;
 
 Route::get('/', HomeController::class)->name('index');
 Route::get('/signIn', function () {
@@ -39,15 +39,11 @@ Route::get('/package/details/{id}', [BookingController::class, 'showPackage'])->
 Route::get('/topbarPayment', function () {
     return view('topbarPayment');
 })->name('topbarPayment');
-// Route::get('/checkout', function () {
-//     return view('checkout');
-// })->name('checkout');
 
 Route::get('/checkout/{id}', [BookingController::class, 'checkOut'])->middleware('AuthLogin')->name('checkout');
 
-Route::get('/historyTransaction', function () {
-    return view('historyTransaction');
-})->name('historyTransaction');
+Route::get('/historyTransaction', OrderController::class)->middleware('AuthLogin')->name('historyTransaction');
+
 
 Route::get('/account', function () {
     return view('account');
