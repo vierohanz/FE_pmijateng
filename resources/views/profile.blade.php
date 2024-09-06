@@ -21,7 +21,7 @@
                     class=" font-poppins text-white text-lg hover:text-xl transition-all duration-300 font-semibold ">Back</a>
             </div>
 
-            <div class="w-36 md:w-60 h-36 md:h-60 bg-black bg-cover border-2 border-white rounded-full cursor-pointer"
+            <div class="w-36 md:w-60 h-36 md:h-60 bg-black bg-cover bg-center border-2 border-white rounded-full cursor-pointer"
                 id="profilePicture">
             </div>
             <input type="file" id="fileInput" class="hidden" accept="image/*">
@@ -47,7 +47,7 @@
             </div>
             <div class="w-full px-8 md:px-12 mb-4">
                 <a href="{{ route('changePassword') }}"
-                    class="w-full bg-red-500 flex items-center px-5 hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
+                    class="w-full bg-red-500 flex items-center  px-5 hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-8 md:w-12 h-8 md:h-12"
                         viewBox="0 0 512 512">
                         <path
