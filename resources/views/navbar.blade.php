@@ -74,32 +74,25 @@
                     </div>
 
 
-                    <div class="">
-                        <div class="">
-                            <a href="{{ route('profile') }}"
-                                class="hidden hover:no-underline hover:text-custom-primary hover:fill-custom-primary flex space-x-2 gap-2 justify-center items-center">
-                                <div class="bg-profile hidden xl:flex bg-cover w-11 h-11 bg-no-repeat"></div>
-                                <div>
-                                    <p
-                                        class="font-poppins text-black font-semibold xs:text-base hidden xl:flex flex-col">
-                                        Hello</p>
-                                    <p
-                                        class="font-poppins text-custom-primary font-bold xs:text-base hidden xl:flex flex-col">
-                                        Hannan</p>
-                                </div>
-                            </a>
+                    <div>
+                        <div>
                             @if (session()->has('access_token'))
-                                <form method="POST" action="{{ route('signOut') }}">
-                                    @csrf
-                                    <button type="submit"
-                                        class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-custom-primary hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-custom-primary border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
-                                        Log Out
-                                    </button>
-                                </form>
-                            @else
                                 <a href="{{ route('signIn') }}"
                                     class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-custom-primary hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-custom-primary border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
                                     Login
+                                </a>
+                            @else
+                                <a href="{{ route('profile') }}"
+                                    class=" hover:no-underline hover:text-custom-primary hover:fill-custom-primary flex space-x-2 gap-2 justify-center items-center">
+                                    <div class="bg-profile hidden xl:flex bg-cover w-11 h-11 bg-no-repeat"></div>
+                                    <div>
+                                        <p
+                                            class="font-poppins text-black font-semibold xs:text-base hidden xl:flex flex-col">
+                                            Hello</p>
+                                        <p
+                                            class="font-poppins text-custom-primary font-bold xs:text-base hidden xl:flex flex-col">
+                                            Hannan</p>
+                                    </div>
                                 </a>
                             @endif
                         </div>
