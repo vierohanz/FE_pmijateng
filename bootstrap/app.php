@@ -12,6 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
+        $middleware->alias([
+            'AuthLogin' => \App\Http\Middleware\AuthLogin::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

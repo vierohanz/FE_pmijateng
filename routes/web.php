@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class)->name('index');
 Route::get('/signIn', function () {
+    // dd(session()->all());
     return view('signIn');
 })->name('signIn');
 
@@ -42,7 +43,7 @@ Route::get('/topbarPayment', function () {
 //     return view('checkout');
 // })->name('checkout');
 
-Route::get('/checkout/{id}', [BookingController::class, 'checkOut'])->name('checkout');
+Route::get('/checkout/{id}', [BookingController::class, 'checkOut'])->middleware('AuthLogin')->name('checkout');
 
 Route::get('/historyTransaction', function () {
     return view('historyTransaction');

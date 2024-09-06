@@ -17,7 +17,7 @@ class AuthLogin
         $response = Session::get('user');
 
         if (!$token) {
-            return redirect()->route('login')->withErrors(['error' => 'Silahkan Login Terlebih dahulu']);
+            return redirect()->route('signIn')->withErrors('Silahkan Login Terlebih dahulu');
         }
 
         if (!$response) {
@@ -28,11 +28,11 @@ class AuthLogin
                     // Store the response in session
                     Session::put('user', $apiResponse->json());
                 } else {
-                    return redirect()->route('login')->withErrors(['error' => 'Silahkan Login Terlebih dahulu']);
+                    return redirect()->route('signIn')->withErrors('Silahkan Login Terlebih dahulu');
                 }
 
             } catch (\Throwable $th) {
-                return redirect()->route('login')->withErrors(['error' => 'Silahkan Login Terlebih dahulu']);
+                return redirect()->route('signIn')->withErrors('Silahkan Login Terlebih dahulu');
             }
         }
 

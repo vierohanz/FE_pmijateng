@@ -236,9 +236,7 @@
         </div>
     </div>
     @if ($errors->any())
-    <div id="error-messages" style="display:none;">
-        {{ json_encode($errors->all()) }}
-    </div>
+        <div id="error-messages" data-messages="{{ json_encode($errors->all()) }}" style="display:none;"></div>
     @endif
     
     @if (session('message'))

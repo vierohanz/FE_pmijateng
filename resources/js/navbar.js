@@ -44,10 +44,10 @@ $('a[href*="#"]').on("click", function (e) {
 });
 
 
-//Function to display toast with error messages
+// Function to display toast with error messages
 function showErrors(errors) {
     Toastify({
-        text: errors.join('\n'), 
+        text: errors.join('\n'), // Combine all errors into one string
         duration: 2000,
         position: 'right',
         backgroundColor: 'red'
@@ -79,9 +79,9 @@ if (messageElement) {
     const messages = [messageElement.dataset.message]; 
     if (messages.length > 0) {
         showMessages(messages);
-         messageElement.remove();
     }
 }
+
 
 const profilePicture = document.getElementById("profilePicture");
 const fileInput = document.getElementById("fileInput");
