@@ -249,14 +249,14 @@
         <!-- Initialize Toastr for success message -->
         <script>
             toastr.options = {
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-bottom-right",
                 "preventDuplicates": true,
                 "progressBar": true,
                 "timeOut": "5000",
                 "debug": true,
                 "newestOnTop": false,
                 "progressBar": true,
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-bottom-right",
                 "preventDuplicates": true,
             };
             toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
@@ -265,14 +265,14 @@
         <!-- Initialize Toastr for info message -->
         <script>
             toastr.options = {
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-bottom-right",
                 "preventDuplicates": true,
                 "progressBar": true,
                 "timeOut": "5000",
                 "debug": true,
                 "newestOnTop": false,
                 "progressBar": true,
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-bottom-right",
                 "preventDuplicates": true,
             };
             toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
@@ -281,14 +281,14 @@
         <!-- Initialize Toastr for delete success message -->
         <script>
             toastr.options = {
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-bottom-right",
                 "preventDuplicates": true,
                 "progressBar": true,
                 "timeOut": "5000",
                 "debug": true,
                 "newestOnTop": false,
                 "progressBar": true,
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-bottom-right",
                 "preventDuplicates": true,
             };
             toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
@@ -297,14 +297,14 @@
         <!-- Initialize Toastr for error message -->
         <script>
             toastr.options = {
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-bottom-right",
                 "preventDuplicates": true,
                 "progressBar": true,
                 "timeOut": "5000",
                 "debug": true,
                 "newestOnTop": false,
                 "progressBar": true,
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-bottom-right",
                 "preventDuplicates": true,
             };
             toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
