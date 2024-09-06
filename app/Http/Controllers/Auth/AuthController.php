@@ -55,7 +55,7 @@ class AuthController extends Controller
             session()->invalidate();
             session()->flush();
 
-            return redirect()->route('index');
+            return redirect()->route('index')->with(['message' => 'Berhasil Log Out']);
         } catch (\Throwable $th) {
             return redirect()->route('index')->withErrors('Error... Coba Lagi Nanti');
         }

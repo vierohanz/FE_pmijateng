@@ -20,18 +20,18 @@ class BookingController extends Controller
 
         $room = $response->json();
 
-        return view('booking', ['room' => $room]);
+        return view('detail', ['room' => $room]);
     }
 
     public function showPackage($id)
     {
-        $response = Http::get($this->api_url_v1 . 'room_type/getDetailPackage', [
+        $response = Http::get($this->api_url_v1 . 'packages/getDetail', [
             'id' => $id,
         ]);
 
         $room = $response->json();
-
-        return view('booking', ['room' => $room]);
+        
+        return view('detail', ['room' => $room]);
     }
 
 }
