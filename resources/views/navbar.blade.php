@@ -235,6 +235,16 @@
             </header>
         </div>
     </div>
+    @if ($errors->any())
+    <div id="error-messages" style="display:none;">
+        {{ json_encode($errors->all()) }}
+    </div>
+    @endif
+    
+    @if (session('message'))
+        <div id="flash-message" data-message="{{ session('message') }}"></div>
+    @endif
+
     @yield('content')
     </div>
     </div>

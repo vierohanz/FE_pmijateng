@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
 
 
@@ -29,9 +30,9 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
-Route::get('/detail', function () {
-    return view('detail');
-})->name('detail');
+Route::get('/room/details/{id}', [BookingController::class, 'showRoom'])->name('room.details');
+
+Route::get('/package/details/{id}', [BookingController::class, 'showPackage'])->name('package.details');
 
 Route::get('/topbarPayment', function () {
     return view('topbarPayment');
