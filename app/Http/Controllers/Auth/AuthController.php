@@ -40,7 +40,7 @@ class AuthController extends Controller
             Session::put('access_token', $response['access_token']);
             Session::put('user', $response['data']);
 
-            return redirect()->route('index')->with(['add' => 'Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2))]);
+            return redirect()->route('index')->with(['add' => 'Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)), 'title' => 'Success']);
         } else {
             return back()->with(['error' => 'Username atau Password Salah', 'title' => 'Error']);
         }

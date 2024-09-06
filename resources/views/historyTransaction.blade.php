@@ -31,36 +31,40 @@
 
             <!-- Card List -->
             <div class="space-y-4" id="card-list">
-            @if(is_array($bookings) && count($bookings) > 0)
-                @foreach($bookings as $booking)
-                <!-- Card 1 -->
-                <div class="card flex flex-col md:flex-row items-start bg-white p-4 rounded-lg shadow-md"
-                    data-status="{{ $booking['transaction_status'] }}">
-                    <img class="w-full md:w-52 h-44 bg-cover bg-no-repeat rounded-md  md:mr-4" src="{{ $booking['room_image'] }}" alt="Image Meeting Room">
-                    <div class="flex h-44 justify-between items-start w-full">
-                        <div>
-                            <h2 class="text-xl font-semibold font-poppins text-black">{{ str_replace('_', ' ', $booking['room_type']) ?? 'default' }}</h2>
-                            <p class="text-lg font-poppins text-black">{{ $booking['order_id'] }}</p>
-                            <p class="text-base xl:text-lg font-poppins text-black mt-2">Lorem ipsum dolor sit amet,
-                                consectetur
-                                adipiscing elit. Sed
-                                do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="text-right flex flex-col justify-between h-full ">
-                            <p class="text-sm text-gray-400 whitespace-nowrap">{{ $booking['transaction_date'] }}</p>
-                            <span class="justify-center items-center flex px-3 py-1 rounded-full text-sm 
+                @if (is_array($bookings) && count($bookings) > 0)
+                    @foreach ($bookings as $booking)
+                        <!-- Card 1 -->
+                        <div class="card flex flex-col md:flex-row items-start bg-white p-4 rounded-lg shadow-md"
+                            data-status="{{ $booking['transaction_status'] }}">
+                            <img class="w-full md:w-52 h-44 bg-cover bg-no-repeat rounded-md  md:mr-4"
+                                src="{{ $booking['room_image'] }}" alt="Image Meeting Room">
+                            <div class="flex h-44 justify-between items-start w-full">
+                                <div>
+                                    <h2 class="text-xl font-semibold font-poppins text-black">
+                                        {{ str_replace('_', ' ', $booking['room_type']) ?? 'default' }}</h2>
+                                    <p class="text-lg font-poppins text-black">{{ $booking['order_id'] }}</p>
+                                    <p class="text-base xl:text-lg font-poppins text-black mt-2">Lorem ipsum dolor sit amet,
+                                        consectetur
+                                        adipiscing elit. Sed
+                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                                <div class="text-right flex flex-col justify-between h-full ">
+                                    <p class="text-sm text-gray-400 whitespace-nowrap">{{ $booking['transaction_date'] }}
+                                    </p>
+                                    <span
+                                        class="justify-center items-center flex px-3 py-1 rounded-full text-sm
                                 {{ $booking['transaction_status'] === 'success' ? 'bg-green-500 text-white' : '' }}
                                 {{ $booking['transaction_status'] === 'pending' ? 'bg-yellow-300 text-white' : '' }}
                                 {{ $booking['transaction_status'] === 'failed' ? 'bg-red-500 text-white' : '' }}">
-                                {{ ucfirst($booking['transaction_status']) }}
-                            </span>
+                                        {{ ucfirst($booking['transaction_status']) }}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                @endforeach
-            @else
-                <p class="text-center">Tidak ada pemesanan</p>
-            @endif
+                    @endforeach
+                @else
+                    <p class="text-center">Tidak ada pemesanan</p>
+                @endif
             </div>
         </div>
     </div>

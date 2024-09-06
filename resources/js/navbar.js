@@ -83,32 +83,29 @@ if (messageElement) {
 
 const profilePicture = document.getElementById("profilePicture");
 const fileInput = document.getElementById("fileInput");
+const profileDisplay = document.getElementById("profileDisplay");
+const profilePictureSidebar = document.getElementById("profilePictureSidebar");
 
-function loadProfilePicture() {
+function loadProfileImage() {
     const savedImage = localStorage.getItem("profileImage");
     if (savedImage) {
-        // Update the profile picture and show the div
+        // Update profile picture and sidebar background
         profilePicture.style.backgroundImage = `url(${savedImage})`;
-        profilePicture.classList.remove("hidden"); // Tampilkan elemen
+        profileDisplay.style.backgroundImage = `url(${savedImage})`;
+        profilePictureSidebar.style.backgroundImage = `url(${savedImage})`;
+        profilePicture.classList.remove("hidden"); // Show the profile picture div
     } else {
         // Set a default image if no profile picture is saved
         profilePicture.style.backgroundImage =
             'url("path/to/default-image.jpg")';
+        profileDisplay.style.backgroundImage =
+            'url("path/to/default-image.jpg")';
+        profilePictureSidebar.style.backgroundImage =
+            'url("path/to/default-image.jpg")';
     }
 }
 
-// Load profile picture on page load
-window.onload = function () {
-    loadProfilePicture();
-};
-
-// Add click event to trigger file input when profile picture is clicked
-profilePicture.addEventListener("click", () => {
-    fileInput.click();
-});
-
-// Handle file input change event
-fileInput.addEventListener("change", function (event) {
+function handleFileInputChange(event) {
     const file = event.target.files[0];
 
     if (file) {
@@ -117,9 +114,11 @@ fileInput.addEventListener("change", function (event) {
         reader.onload = function (e) {
             const imageUrl = e.target.result;
 
-            // Update the profile picture and show the div
+            // Update the profile picture and sidebar display
             profilePicture.style.backgroundImage = `url(${imageUrl})`;
-            profilePicture.classList.remove("hidden"); // Tampilkan elemen
+            profileDisplay.style.backgroundImage = `url(${imageUrl})`;
+            profilePictureSidebar.style.backgroundImage = `url(${imageUrl})`;
+            profilePicture.classList.remove("hidden"); // Show the profile picture div
 
             // Save the image URL to LocalStorage
             localStorage.setItem("profileImage", imageUrl);
@@ -131,4 +130,16 @@ fileInput.addEventListener("change", function (event) {
 
         reader.readAsDataURL(file);
     }
+}
+
+// Load profile image on page load
+window.onload = function () {
+    loadProfileImage();
+};
+
+// Add event listeners
+profilePicture.addEventListener("click", () => {
+    fileInput.click();
 });
+
+fileInput.addEventListener("change", handleFileInputChange);

@@ -22,7 +22,7 @@
             </div>
 
             <div class="w-36 md:w-60 h-36 md:h-60 bg-black bg-cover bg-center border-2 border-white rounded-full cursor-pointer"
-                id="profilePicture">
+                id="profilePicture" id="profileDisplay">
             </div>
             <input type="file" id="fileInput" class="hidden" accept="image/*">
 
