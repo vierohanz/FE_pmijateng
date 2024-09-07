@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
@@ -49,8 +50,13 @@ Route::get('/historyTransaction', OrderController::class)->middleware('AuthLogin
 Route::get('/account', function () {
     return view('account');
 })->name('account');
+
+Route::post('/resend-verification', EmailVerificationController::class)->name('verification.resend');
+
+
 Route::get('/changePassword', function () {
     return view('changePassword');
 })->name('changePassword');
 
+Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('updatePassword');
 Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');

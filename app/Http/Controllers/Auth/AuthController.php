@@ -28,9 +28,13 @@ class AuthController extends Controller
             notify()->success($request->name . 'Kami telah mengirimkan verifikasi email ke email anda', 'Success');
             return redirect()->route('index');
         } else {
+<<<<<<< HEAD
             notify()->error('Gagal membuat akun', 'Error');
 
             return back();
+=======
+            return back()->withErrors('Gagal Membuat Akun');
+>>>>>>> 1ea7ae1e8881c597ca29b628f4f05989695611c1
         }
     }
 
@@ -44,9 +48,13 @@ class AuthController extends Controller
             notify()->success('Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)), 'Success');
             return redirect()->route('index');
         } else {
+<<<<<<< HEAD
             return back()->withErrors([
                 'credentials' => 'Email atau password salah',
             ]);
+=======
+            return back()->withErrors('Email atau Password Salah');
+>>>>>>> 1ea7ae1e8881c597ca29b628f4f05989695611c1
         }
     }
 

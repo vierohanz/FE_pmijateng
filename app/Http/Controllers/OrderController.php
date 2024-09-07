@@ -25,7 +25,6 @@ class OrderController extends Controller
             }
             // dd($bookings);
             
-            
             return view('historyTransaction', ['bookings' => $bookings]);
     }
 }

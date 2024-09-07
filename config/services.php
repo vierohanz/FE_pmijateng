@@ -41,4 +41,8 @@ return [
         'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
 
+    'midtrans' => [
+        'clientKey' => env('MIDTRANS_CLIENT_KEY'),
+    ],
+
 ];

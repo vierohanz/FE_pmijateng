@@ -42,7 +42,7 @@ class BookingController extends Controller
 
         $room = $response->json();
 
-        return view('checkout', ['room' => $room]);
+        return view('checkout', ['room' => $room, 'api_url_v1' => $this->api_url_v1]);
     }
 
 }

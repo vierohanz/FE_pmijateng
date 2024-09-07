@@ -20,6 +20,14 @@ class RegisterRequest extends FormRequest
             'phone' => ['nullable', 'string', 'regex:/^[0-9]+$/'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'password_confirmation' => ['same:password'],
+            'captcha' => 'required|captcha',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'captcha.captcha' => 'The CAPTCHA verification failed',
         ];
     }
 
