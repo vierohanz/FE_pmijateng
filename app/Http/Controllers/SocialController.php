@@ -11,7 +11,8 @@ class SocialController extends Controller
 {
     protected $api_url_v1;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->api_url_v1 = config('app.api_url_v1');
     }
 
@@ -42,11 +43,10 @@ class SocialController extends Controller
 
             Session::put('user', $response['data']);
 
-            return redirect()->route('index')->with(['message' => 'Selamat Datang '.$googleUser->name]);
+            return redirect()->route('index')->with(['add' => 'Selamat Datang ' . $googleUser->name]);
         } else {
-            return back()->withErrors('Gagal membuat akun');
+            return back()->with('error', 'Gagal membuat akun');
         }
-
     }
 
     public function twitterRedirect()
@@ -75,9 +75,9 @@ class SocialController extends Controller
 
             Session::put('user', $response['data']);
 
-            return redirect('/homeRegister')->with(['message' => 'Selamat Datang '.$twitterUser->name]);
+            return redirect('/homeRegister')->with(['add' => 'Selamat Datang ' . $twitterUser->name]);
         } else {
-            return back()->withErrors('Gagal membuat akun');
+            return back()->with('error', 'Gagal membuat akun');
         }
     }
 }

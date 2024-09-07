@@ -1,6 +1,6 @@
 import $ from "jquery";
-import Toastify from 'toastify-js'
-import "toastify-js/src/toastify.css"
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 window.addEventListener("scroll", function () {
     var navbar = document.getElementById("navbar");
@@ -43,29 +43,28 @@ $('a[href*="#"]').on("click", function (e) {
     );
 });
 
-
 // Function to display toast with error messages
 function showErrors(errors) {
     Toastify({
-        text: errors.join('\n'), // Combine all errors into one string
+        text: errors.join("\n"), // Combine all errors into one string
         duration: 2000,
-        position: 'right',
-        backgroundColor: 'red'
+        position: "right",
+        backgroundColor: "red",
     }).showToast();
 }
 
 // Function to display toast with general messages
 function showMessages(messages) {
     Toastify({
-        text: messages.join('\n'), 
+        text: messages.join("\n"),
         duration: 2000,
-        position: 'right',
-        backgroundColor: 'green'
+        position: "right",
+        backgroundColor: "green",
     }).showToast();
 }
 
 // Check for error messages from the backend
-const errorElement = document.getElementById('error-messages');
+const errorElement = document.getElementById("error-messages");
 if (errorElement) {
     const errorMessages = JSON.parse(errorElement.dataset.messages);
     if (errorMessages.length > 0) {
@@ -74,43 +73,39 @@ if (errorElement) {
 }
 
 // Check for general messages from the backend
-const messageElement = document.getElementById('flash-message');
+const messageElement = document.getElementById("flash-message");
 if (messageElement) {
-    const messages = [messageElement.dataset.message]; 
+    const messages = [messageElement.dataset.message];
     if (messages.length > 0) {
         showMessages(messages);
     }
 }
 
-
 const profilePicture = document.getElementById("profilePicture");
 const fileInput = document.getElementById("fileInput");
+const profileDisplay = document.getElementById("profileDisplay");
+const profilePictureSidebar = document.getElementById("profilePictureSidebar");
 
-function loadProfilePicture() {
+function loadProfileImage() {
     const savedImage = localStorage.getItem("profileImage");
     if (savedImage) {
-        // Update the profile picture and show the div
+        // Update profile picture and sidebar background
         profilePicture.style.backgroundImage = `url(${savedImage})`;
-        profilePicture.classList.remove("hidden"); // Tampilkan elemen
+        profileDisplay.style.backgroundImage = `url(${savedImage})`;
+        profilePictureSidebar.style.backgroundImage = `url(${savedImage})`;
+        profilePicture.classList.remove("hidden"); // Show the profile picture div
     } else {
         // Set a default image if no profile picture is saved
         profilePicture.style.backgroundImage =
             'url("path/to/default-image.jpg")';
+        profileDisplay.style.backgroundImage =
+            'url("path/to/default-image.jpg")';
+        profilePictureSidebar.style.backgroundImage =
+            'url("path/to/default-image.jpg")';
     }
 }
 
-// Load profile picture on page load
-window.onload = function () {
-    loadProfilePicture();
-};
-
-// Add click event to trigger file input when profile picture is clicked
-profilePicture.addEventListener("click", () => {
-    fileInput.click();
-});
-
-// Handle file input change event
-fileInput.addEventListener("change", function (event) {
+function handleFileInputChange(event) {
     const file = event.target.files[0];
 
     if (file) {
@@ -119,9 +114,11 @@ fileInput.addEventListener("change", function (event) {
         reader.onload = function (e) {
             const imageUrl = e.target.result;
 
-            // Update the profile picture and show the div
+            // Update the profile picture and sidebar display
             profilePicture.style.backgroundImage = `url(${imageUrl})`;
-            profilePicture.classList.remove("hidden"); // Tampilkan elemen
+            profileDisplay.style.backgroundImage = `url(${imageUrl})`;
+            profilePictureSidebar.style.backgroundImage = `url(${imageUrl})`;
+            profilePicture.classList.remove("hidden"); // Show the profile picture div
 
             // Save the image URL to LocalStorage
             localStorage.setItem("profileImage", imageUrl);
@@ -133,4 +130,16 @@ fileInput.addEventListener("change", function (event) {
 
         reader.readAsDataURL(file);
     }
+}
+
+// Load profile image on page load
+window.onload = function () {
+    loadProfileImage();
+};
+
+// Add event listeners
+profilePicture.addEventListener("click", () => {
+    fileInput.click();
 });
+
+fileInput.addEventListener("change", handleFileInputChange);

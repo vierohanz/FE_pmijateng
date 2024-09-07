@@ -6,55 +6,115 @@
     <div class="col-span-7 h-screen p-4 md:p-5 bg-white">
         <div class="w-full h-full mx-auto bg-gray-100 shadow-md rounded-lg p-4 md:p-6">
             <!-- Form Fields -->
-        <form method="POST" action="{{ route('updateProfile') }}">
-            @csrf
-            <div class="mt-8 space-y-6">
-                <div>
-                    <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Name</label>
-                    <input type="text" value="{{ session('user')['name']}}" name="name"
-                        class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+            <form method="POST" action="{{ route('updateProfile') }}">
+                @csrf
+                <div class="mt-8 space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Name</label>
+                        <input type="text" value="{{ session('user')['name'] }}" name="name"
+                            class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Email Address</label>
+                        <input type="text" value="{{ session('user')['email'] }}" name="email" disabled
+                            class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Phone</label>
+                        <input type="text" value="{{ session('user')['phone'] ?? '' }}" name="phone"
+                            class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                    </div>
                 </div>
 
-                <div>
-                    <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Email Address</label>
-                    <input type="text" value="{{ session('user')['email']}}" name="email" disabled
-                        class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                <div class="mt-6 flex justify-end">
+                    <button type="submit"
+                        class="px-6 py-2 text-white hover:scale-105 duration-300 transition-all bg-red-500 hover:bg-red-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 font-poppins font-semibold focus:ring-red-500">
+                        Save Changes
+                    </button>
                 </div>
-
-                <div>
-                    <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Phone</label>
-                    <input type="text" value="{{ session('user')['phone'] ?? '' }}" name="phone"
-                        class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                </div>
-
-                <div>
-                    <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Password</label>
-                    <input type="password" 
-                        class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                </div>
-
-                <div>
-                    <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Birth Date</label>
-                    <input id="birth-day" type="text" placeholder="dd/mm/yy"
-                        class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-
-                </div>
-            </div>
-
-            <div class="mt-6 flex justify-end">
-                <button type="submit"
-                    class="px-6 py-2 text-white hover:scale-105 duration-300 transition-all bg-red-500 hover:bg-red-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 font-poppins font-semibold focus:ring-red-500">
-                    Save Changes
-                </button>
-            </div>
-        </form>
+            </form>
         </div>
-        @if ($errors->any())
-        <div id="error-messages" data-messages="{{ json_encode($errors->all()) }}" style="display:none;"></div>
-    @endif
-    
-    @if (session('message'))
-        <div id="flash-message" data-message="{{ session('message') }}"></div>
-    @endif
+
     </div>
+
+    @if (Session::has('add'))
+        <!-- Initialize Toastr for success message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+
+            };
+            toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('update'))
+        <!-- Initialize Toastr for info message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+
+            };
+            toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('delete'))
+        <!-- Initialize Toastr for delete success message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+
+
+            };
+            toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('error'))
+        <!-- Initialize Toastr for error message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+            };
+            toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
+        </script>
+    @endif
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 @endsection

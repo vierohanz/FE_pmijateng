@@ -173,7 +173,8 @@
             id="bounceMeeting">
             <div class="flex space-x-8 snap-x snap-mandatory mt-3">
                 @forelse ($meetingRooms as $meetingRoom)
-                    <a href="{{ route('room.details', ['id' => $meetingRoom['id']]) }}" class="hover:scale-105  duration-150 transition-all ml-9">
+                    <a href="{{ route('room.details', ['id' => $meetingRoom['id']]) }}"
+                        class="hover:scale-105  duration-150 transition-all ml-9">
                         <div
                             class="relative flex flex-col pl-5 h-97 mt-6 text-gray-700 border-2 border-gray-100 bg-white shadow-md bg-clip-border rounded-xl w-96">
                             <div
@@ -190,7 +191,7 @@
                                     {{ $meetingRoom['description'] ?? 'Tidak Ada Deskripsi' }}
                                 </p>
                             </div>
-                            <div class="p-6 pt-0">
+                            <div class="p-6 pb-6 absolute bottom-0">
                                 <button
                                     class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
@@ -233,7 +234,7 @@
                                     {{ $packageRoom['description'] ?? 'Tidak ada' }}
                                 </p>
                             </div>
-                            <div class="p-6 pt-0">
+                            <div class="p-6 pb-6 absolute bottom-0">
                                 <button
                                     class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
@@ -342,7 +343,7 @@
                 class="col-span-8 h-full  space-y-16 w-full xl:pl-5  xl:pr-52 flex flex-col justify-start xl:justify-center items-start leading-8">
                 <p data-aos="fade-down" class="font-poppins text-custom-primary text-xs xl:text-5xl font-bold">PUSDIKLAT
                     PMI JATENG</p>
-                <p data-aos="fade-up" class="font-poppins font-semibold text-xs xl:text-2xl  text-black leading-loose">
+                <p data-aos="fade-up" class="font-poppins font-normal text-xs xl:text-2xl  text-black leading-relaxed">
                     GEDUNG DIKLAT PMI PROVINSI JAWA TENGAH Terletak di kawasan perbukitan di Kota Semarang yang memiliki
                     suasana nyaman dan jauh dari kebisingan kota, sehingga cocok digunakan untuk tempat rapat, pendidikan,
                     pelatihan, seminar, dan lainnya. lingkungan Gedung Diklat yang Hijau dan rumah belajar memiliki beragam
@@ -464,4 +465,83 @@
             </div>
         </div>
     </footer>
+
+    @if (Session::has('add'))
+        <!-- Initialize Toastr for success message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+
+            };
+            toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('update'))
+        <!-- Initialize Toastr for info message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+
+            };
+            toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('delete'))
+        <!-- Initialize Toastr for delete success message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+
+
+            };
+            toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('error'))
+        <!-- Initialize Toastr for error message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+            };
+            toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
+        </script>
+    @endif
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 @endsection

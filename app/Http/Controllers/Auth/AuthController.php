@@ -26,9 +26,9 @@ class AuthController extends Controller
             Session::put('access_token', $response['access_token']);
             Session::put('user', $response['data']);
 
-            return redirect()->route('index')->with(['message' => 'Selamat Datang ' . $request->name . ' Kami telah mengirimkan verifikasi email ke email anda']);
+            return redirect()->route('index')->with(['add' => $request->name . ' Kami telah mengirimkan verifikasi email ke email anda', 'title' => 'Success']);
         } else {
-            return back()->withErrors('Gagal membuat akun');
+            return back()->with(['error' => 'Gagal membuat akun', 'title' => 'Error']);
         }
     }
 
@@ -40,9 +40,9 @@ class AuthController extends Controller
             Session::put('access_token', $response['access_token']);
             Session::put('user', $response['data']);
 
-            return redirect()->route('index')->with(['message' => 'Selamat Datang Kembali ' . session('user')['name']]);
+            return redirect()->route('index')->with(['add' => 'Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)), 'title' => 'Success']);
         } else {
-            return back()->withErrors('Username atau Password Salah');
+            return back()->with(['error' => 'Username atau Password Salah', 'title' => 'Error']);
         }
     }
 
@@ -55,9 +55,12 @@ class AuthController extends Controller
             session()->invalidate();
             session()->flush();
 
-            return redirect()->route('index')->with(['message' => 'Berhasil Log Out']);
+            return redirect()->route('index')->with([
+                'title' => 'Logout',
+                'add' => 'Berhasil logout'
+            ]);
         } catch (\Throwable $th) {
-            return redirect()->route('index')->withErrors('Error... Coba Lagi Nanti');
+            return redirect()->route('index')->with(['error' => 'Error... Coba Lagi Nanti', 'title' => 'Error']);
         }
     }
 }

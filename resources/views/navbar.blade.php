@@ -84,9 +84,8 @@
                             @else
                                 <a href="{{ route('account') }}"
                                     class=" hover:no-underline hover:text-custom-primary hover:fill-custom-primary flex space-x-2 gap-2 justify-center items-center">
-                                    <input id="fileInput" accept="image/*" style="display: none;">
-                                    <div id="profilePicture" id="fileInput" accept="image/*"
-                                        class="bg-profile  hidden xl:flex bg-cover w-12 h-12 rounded-full bg-no-repeat">
+                                    <div id="profilePicture"
+                                        class="bg-profile bg-center hidden xl:flex bg-cover xl:w-12 xl:h-12 rounded-full bg-no-repeat">
                                     </div>
                                     <div>
                                         <p
@@ -94,7 +93,8 @@
                                             Hello</p>
                                         <p
                                             class="font-poppins text-custom-primary font-bold xs:text-base hidden xl:flex flex-col">
-                                            {{ session('user')['name'] ?? 'default' }}</p>
+                                            {{ implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)) }}
+                                        </p>
                                     </div>
                                 </a>
                             @endif
@@ -113,8 +113,12 @@
                 <div id="sidebar"
                     class="z-50 transform -translate-x-full transition-transform duration-300 ease-in-out fixed top-0 left-0 h-full w-64 bg-white text-white sidebar lg:hidden">
                     <div class="h-56 bg-bg_toggler p-5">
-                        <div class="h-24 bg-profile border-2 bg-cover bottom-0 p-8 rounded-full w-24"></div>
-                        <p class="font-poppins font-semibold text-2xl mt-3">Bio One</p>
+                        <div id="profileDisplay"
+                            class="h-24 bg-profile bg-center bg-cover border-2 bottom-0 p-8 rounded-full w-24">
+                        </div>
+                        <p class="font-poppins font-semibold text-2xl mt-3">
+                            {{ implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)) }}
+                        </p>
                         <p class="font-poppins font-normal text-lg">Welcome back</p>
                     </div>
                     <ul class="font-poppins font-semibold text-custom-fourth px-2 py-1">
@@ -204,37 +208,23 @@
                             </li>
                         </a>
 
-                        <a href="{{ route('profile') }}"
-                            class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
-                            <li
-                                class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
-                                    class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
-                                    viewBox="0 0 512 512">
-                                    <path
-                                        d="M332.64 64.58C313.18 43.57 286 32 256 32c-30.16 0-57.43 11.5-76.8 32.38-19.58 21.11-29.12 49.8-26.88 80.78C156.76 206.28 203.27 256 256 256s99.16-49.71 103.67-110.82c2.27-30.7-7.33-59.33-27.03-80.6zM432 480H80a31 31 0 01-24.2-11.13c-6.5-7.77-9.12-18.38-7.18-29.11C57.06 392.94 83.4 353.61 124.8 326c36.78-24.51 83.37-38 131.2-38s94.42 13.5 131.2 38c41.4 27.6 67.74 66.93 76.18 113.75 1.94 10.73-.68 21.34-7.18 29.11A31 31 0 01432 480z" />
-                                </svg>
-                                <span>Profile</span>
-                            </li>
-                        </a>
-                        @if (!session()->has('access_token'))
-                        <a href="{{ route('signIn') }}"
-                            class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
-                            <li
-                                class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
-                                    class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
-                                    viewBox="0 0 512 512">
-                                    <path
-                                        d="M392 80H232a56.06 56.06 0 00-56 56v104h153.37l-52.68-52.69a16 16 0 0122.62-22.62l80 80a16 16 0 010 22.62l-80 80a16 16 0 01-22.62-22.62L329.37 272H176v104c0 32.05 33.79 56 64 56h152a56.06 56.06 0 0056-56V136a56.06 56.06 0 00-56-56zM80 240a16 16 0 000 32h96v-32z" />
-                                </svg>
-                                <span>Sign In</span>
-                            </li>
-                        </a>
-                         @else
-                         <form method="POST" action="{{ route('signOut') }}">
-                            @csrf
-                            <button type="submit"
+                        @if (session('access_token'))
+                            <!-- Check if the access_token exists in the session -->
+                            <a href="{{ route('account') }}"
+                                class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                                <li
+                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
+                                        class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
+                                        viewBox="0 0 512 512">
+                                        <path
+                                            d="M332.64 64.58C313.18 43.57 286 32 256 32c-30.16 0-57.43 11.5-76.8 32.38-19.58 21.11-29.12 49.8-26.88 80.78C156.76 206.28 203.27 256 256 256s99.16-49.71 103.67-110.82c2.27-30.7-7.33-59.33-27.03-80.6zM432 480H80a31 31 0 01-24.2-11.13c-6.5-7.77-9.12-18.38-7.18-29.11C57.06 392.94 83.4 353.61 124.8 326c36.78-24.51 83.37-38 131.2-38s94.42 13.5 131.2 38c41.4 27.6 67.74 66.93 76.18 113.75 1.94 10.73-.68 21.34-7.18 29.11A31 31 0 01432 480z" />
+                                    </svg>
+                                    <span>Profile</span>
+                                </li>
+                            </a>
+                        @else
+                            <a href="{{ route('signIn') }}"
                                 class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                                 <li
                                     class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
@@ -244,24 +234,90 @@
                                         <path
                                             d="M392 80H232a56.06 56.06 0 00-56 56v104h153.37l-52.68-52.69a16 16 0 0122.62-22.62l80 80a16 16 0 010 22.62l-80 80a16 16 0 01-22.62-22.62L329.37 272H176v104c0 32.05 33.79 56 64 56h152a56.06 56.06 0 0056-56V136a56.06 56.06 0 00-56-56zM80 240a16 16 0 000 32h96v-32z" />
                                     </svg>
-                                    <span>Sign Out</span>
+                                    <span>Sign In</span>
                                 </li>
-                            </button>
-                         </form>
+                            </a>
                         @endif
+
                     </ul>
                 </div>
             </header>
         </div>
     </div>
-    @if ($errors->any())
-        <div id="error-messages" data-messages="{{ json_encode($errors->all()) }}" style="display:none;"></div>
-    @endif
-    
-    @if (session('message'))
-        <div id="flash-message" data-message="{{ session('message') }}"></div>
-    @endif
 
+    @if (Session::has('add'))
+        <!-- Initialize Toastr for success message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+            };
+            toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('update'))
+        <!-- Initialize Toastr for info message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+            };
+            toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('delete'))
+        <!-- Initialize Toastr for delete success message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+            };
+            toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
+        </script>
+    @elseif (Session::has('error'))
+        <!-- Initialize Toastr for error message -->
+        <script>
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "5000",
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": true,
+            };
+            toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
+        </script>
+    @endif
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @yield('content')
     </div>
     </div>
