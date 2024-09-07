@@ -1,7 +1,5 @@
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
-import toastr from "toastr";
-import "toastr/build/toastr.min.css";
 
 function handleRedirect(event) {
     event.preventDefault(); // Mencegah redirect langsung

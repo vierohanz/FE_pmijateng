@@ -42,7 +42,7 @@ class AuthController extends Controller
 
             return redirect()->route('index')->with(['add' => 'Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)), 'title' => 'Success']);
         } else {
-            return back()->withErrors('Username atau Password Salah');
+            return back()->withErrors('Email atau Password Salah');
         }
     }
 

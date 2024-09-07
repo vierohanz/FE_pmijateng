@@ -139,5 +139,4 @@
 @if (session('message'))
     <div id="flash-message" data-message="{{ session('message') }}"></div>
 @endif
-
 </html>
