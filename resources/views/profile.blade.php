@@ -16,7 +16,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @vite('resources/css/app.css')
     @vite('resources/js/profile.js')
-    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
 </head>
 
 <body>
