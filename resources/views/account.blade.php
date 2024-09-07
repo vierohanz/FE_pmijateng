@@ -19,6 +19,21 @@
                         <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Email Address</label>
                         <input type="text" value="{{ session('user')['email'] }}" name="email" disabled
                             class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                        
+                            @if (session('user')['email_verified_at'] != null)
+                                <div class="flex justify-end items-center mt-2 space-x-2">
+                                    <p class="text-sm text-green-500">Email anda sudah terverifikasi </p>
+                                </div> 
+                            @else
+                                <!-- Container for Resend Verification Email Button -->
+                                <div class="flex justify-end items-center mt-2 space-x-2">
+                                    <p class="text-sm text-red-500">Email anda belum diverifikasi, </p>
+                                    <button type="button" id="resendVerification" class="text-sm text-red-500 hover:underline">
+                                    Kirim Ulang Verifikasi Email
+                                </button>
+                                </div>
+                            @endif
+                        
                     </div>
 
                     <div>
@@ -108,6 +123,27 @@
             toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
         </script>
     @endif
+
+    <script>
+        document.getElementById('resendVerification').addEventListener('click', function() {
+            fetch('/resend-verification', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                toastr.success('Verification email has been sent.');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                toastr.error('There was an error sending the verification email.');
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"

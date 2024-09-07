@@ -133,54 +133,11 @@
         </div>
     </div>
 </body>
-@if (Session::has('add'))
-    <!-- Initialize Toastr for success message -->
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "5000",
-            "closeButton": true,
-        };
-        toastr.success("{{ Session::get('add') }}");
-    </script>
-@elseif (Session::has('update'))
-    <!-- Initialize Toastr for info message -->
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "5000",
-            "closeButton": true,
-        };
-        toastr.info("{{ Session::get('update') }}");
-    </script>
-@elseif (Session::has('delete'))
-    <!-- Initialize Toastr for delete success message -->
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "5000",
-            "closeButton": true,
-        };
-        toastr.success("{{ Session::get('delete') }}");
-    </script>
-@elseif (Session::has('error'))
-    <!-- Initialize Toastr for error message -->
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "5000",
-            "closeButton": true,
-        };
-        toastr.error("{{ Session::get('error') }}");
-    </script>
+@if ($errors->any())
+    <div id="error-messages" data-messages="{{ json_encode($errors->all()) }}" style="display:none;"></div>
+@endif
+@if (session('message'))
+    <div id="flash-message" data-message="{{ session('message') }}"></div>
 @endif
 
 </html>

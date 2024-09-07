@@ -45,7 +45,6 @@ class ProfileController extends Controller
 
             return back()->with(['update' => 'Password Berhasil Di Ubah', 'title' => 'Update']);
         } else {
-
             return back()->with(['error' => 'Gagal Mengubah Password', 'title' => 'Error']);
         }
     }

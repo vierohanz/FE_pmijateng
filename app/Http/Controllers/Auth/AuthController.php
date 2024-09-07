@@ -28,7 +28,7 @@ class AuthController extends Controller
 
             return redirect()->route('index')->with(['add' => $request->name . ' Kami telah mengirimkan verifikasi email ke email anda', 'title' => 'Success']);
         } else {
-            return back()->with(['error' => 'Gagal membuat akun', 'title' => 'Error']);
+            return back()->withErrors('Gagal Membuat Akun');
         }
     }
 
@@ -42,7 +42,7 @@ class AuthController extends Controller
 
             return redirect()->route('index')->with(['add' => 'Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)), 'title' => 'Success']);
         } else {
-            return back()->with(['error' => 'Username atau Password Salah', 'title' => 'Error']);
+            return back()->withErrors('Username atau Password Salah');
         }
     }
 
