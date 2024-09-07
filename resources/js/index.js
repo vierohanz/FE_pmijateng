@@ -9,25 +9,6 @@ import $ from "jquery";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 
-// Inisialisasi opsi toastr
-toastr.options = {
-    positionClass: "toast-top-right",
-    preventDuplicates: true,
-    progressBar: true,
-    timeOut: "5000",
-    closeButton: true,
-};
-
-// Contoh cara memunculkan toastr
-if (window.sessionStorage.getItem("add")) {
-    toastr.success(window.sessionStorage.getItem("add"));
-} else if (window.sessionStorage.getItem("update")) {
-    toastr.info(window.sessionStorage.getItem("update"));
-} else if (window.sessionStorage.getItem("delete")) {
-    toastr.success(window.sessionStorage.getItem("delete"));
-} else if (window.sessionStorage.getItem("error")) {
-    toastr.error(window.sessionStorage.getItem("error"));
-}
 
 AOS.init({
     duration: 1000,

@@ -22,7 +22,7 @@ class ProfileController extends Controller
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $response = Http::withtoken($this->token)->put($this->api_url_v1 . 'updateProfile', $request->validated());
+        $response = Http::withtoken($this->token)->put($this->api_url_v1 . 'updateProfileaaa', $request->validated());
 
         if ($response->successful()) {
             session::forget('user');

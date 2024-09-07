@@ -36,6 +36,10 @@ class AuthLogin
             }
         }
 
+        // if($response['email_verified_at'] == null || isset($response['email_verified_at'])){
+        //     return redirect()->route('account')->withErrors('Silahkan Verifikasi Email Terlebih dahulu');
+        // }
+
         return $next($request);
     }
 }
