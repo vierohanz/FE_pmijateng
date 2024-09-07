@@ -70,15 +70,29 @@ $('#booking-form').on('submit', function(event) {
     // Error Fetch 
     .catch(error => {
         console.error('Error Fetch:', error);
-        toastr.options = {
-            "positionClass": "toast-top-center",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "3000",
-            "debug": false,
-            "newestOnTop": false,
-        };
-        toastr.error(`${error}`);
+        if (error.response.status === 403) {
+            toastr.options = {
+                "positionClass": "toast-top-center",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "3000",
+                "debug": false,
+                "newestOnTop": false,
+            };
+            toastr.error('Akses ditolak. Lakukan Verifikasi Email di Profil.');
+        }else{
+            toastr.options = {
+                "positionClass": "toast-top-center",
+                "preventDuplicates": true,
+                "progressBar": true,
+                "timeOut": "3000",
+                "debug": false,
+                "newestOnTop": false,
+            };
+            toastr.error(`${error}`);
+
+        }
+        
     });
     
 });

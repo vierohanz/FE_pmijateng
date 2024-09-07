@@ -65,5 +65,5 @@
             <input type="hidden" value="{{ session('user')['name'] }}" readonly name="name">
             <input type="hidden" value="{{ $api_url_v1 }}" readonly name="api_url_v1">
         </form>
-        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{config('services.midtrans.clientKey')}}"></script>
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
     @endsection
