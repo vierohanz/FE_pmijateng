@@ -9,6 +9,7 @@
         "laravel/framework": "^11.9",
         "laravel/socialite": "^5.16",
         "laravel/tinker": "^2.9",
+        "mckenziearts/laravel-notify": "^2.5",
         "midtrans/midtrans-php": "^2.5",
         "redot/laravel-toastify": "^1.0",
         "yoeunes/toastr": "^3.0"

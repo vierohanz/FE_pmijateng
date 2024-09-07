@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     @vite('resources/js/navbar.js')
+    @include('notify::components.notify')
+
+    @notifyCss
 </head>
 
 <body class="bg-white overflow-x-hidden">
+
+    <x:notify::notify />
     <div>
         <!-- NAVBAR -->
         <div class="flex items-center justify-center h-36 z-50">
@@ -244,81 +249,11 @@
             </header>
         </div>
     </div>
-
-    @if (Session::has('add'))
-        <!-- Initialize Toastr for success message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-            };
-            toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('update'))
-        <!-- Initialize Toastr for info message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-            };
-            toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('delete'))
-        <!-- Initialize Toastr for delete success message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-            };
-            toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('error'))
-        <!-- Initialize Toastr for error message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-            };
-            toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
-        </script>
-    @endif
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
-        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @yield('content')
+
     </div>
     </div>
+    @notifyJs
 </body>
+
+</html>

@@ -27,33 +27,33 @@
                                 <p class="font-poppins font-medium text-black text-lg">name</p>
                                 <input type="text" name="name"
                                     class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                                @error('name')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                                @enderror
+                                @if ($errors->has('name'))
+                                    <p class="text-red-500 text-sm mt-1">{{ $errors->first('password') }}</p>
+                                @endif
                             </div>
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Email</p>
                                 <input type="email" name="email"
                                     class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                                @error('email')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                                @enderror
+                                @if ($errors->has('email'))
+                                    <p class="text-red-500 text-sm mt-1">{{ $errors->first('password') }}</p>
+                                @endif
                             </div>
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Password</p>
                                 <input type="password" name="password"
                                     class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                                @error('password')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                                @enderror
+                                @if ($errors->has('password'))
+                                    <p class="text-red-500 text-sm mt-1">{{ $errors->first('password') }}</p>
+                                @endif
                             </div>
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Password Confirmation</p>
                                 <input type="password" name="password_confirmation"
                                     class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                                @error('password_confirmation')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                                @enderror
+                                @if ($errors->has('password_confirmation'))
+                                    <p class="text-red-500 text-sm mt-1">{{ $errors->first('password') }}</p>
+                                @endif
                             </div>
                         </div>
 
@@ -86,10 +86,6 @@
         </div>
     </div>
 </body>
-@if ($errors->any())
-    <div id="error-messages" data-messages="{{ json_encode($errors->all()) }}" style="display:none;"></div>
-@endif
-@if (session('message'))
-    <div id="flash-message" data-message="{{ session('message') }}"></div>
-@endif
+
+
 </html>

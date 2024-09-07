@@ -22,4 +22,15 @@ class RegisterRequest extends FormRequest
             'password_confirmation' => ['same:password'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'Email tidak boleh kosong',
+            'password.required' => 'Password tidak boleh kosong',
+            'password_confirmation.required' => 'Password confirmation tidak boleh kosong',
+            'name.required' => 'Nama tidak boleh kosong',
+            'password_confirmation.same' => 'Password confirmation tidak sama dengan password',
+        ];
+    }
 }

@@ -27,11 +27,11 @@ class ProfileController extends Controller
         if ($response->successful()) {
             session::forget('user');
             session::put('user', $response['data']);
-
-            return redirect()->route('account')->with(['update' => 'Profil Berhasil Di Update', 'title' => "Update"]);
+            notify()->info('Profil Berhasil Di Update', 'Update');
+            return redirect()->route('account');
         } else {
-
-            return back()->with(['error' => 'Gagal Menyimpan Profil', 'title' => 'Error']);
+            notify()->error('Gagal Menyimpan Profil', 'Error');
+            return back();
         }
     }
 
@@ -42,11 +42,11 @@ class ProfileController extends Controller
         if ($response->successful()) {
             session::forget('access_token');
             Session::put('access_token', $response['access_token']);
-
-            return back()->with(['update' => 'Password Berhasil Di Ubah', 'title' => 'Update']);
+            notify()->info('Password Berhasil Di Ubah', 'Update');
+            return back();
         } else {
-
-            return back()->with(['error' => 'Gagal Mengubah Password', 'title' => 'Error']);
+            notify()->error('Gagal Mengubah Password', 'Error');
+            return back();
         }
     }
 }

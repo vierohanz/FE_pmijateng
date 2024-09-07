@@ -39,16 +39,21 @@ fileInput.addEventListener("change", function (event) {
             // Save the image URL to LocalStorage
             localStorage.setItem("profileImage", imageUrl);
 
-            // Show custom toast notification using Toasify
-            Toasify({
-                title: "Profile picture updated successfully!",
-                duration: 5000, // Custom duration
-                position: "top-right",
-                style: {
-                    background: "#000", // Custom background color
-                    color: "#fff", // Custom text color
-                },
-            });
+            // Configure Toastr options before showing notification
+            toastr.options = {
+                positionClass: "toast-bottom-right",
+                preventDuplicates: true,
+                progressBar: true,
+                timeOut: "5000",
+                debug: true,
+                newestOnTop: false,
+                progressBar: true,
+                positionClass: "toast-bottom-right",
+                preventDuplicates: true,
+            };
+
+            // Show custom toast notification using Toastr
+            toastr["success"]("Sukses mengupdate profile", "Update");
         };
 
         reader.onerror = function () {

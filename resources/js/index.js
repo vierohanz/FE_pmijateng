@@ -4,6 +4,10 @@ import "flowbite";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import $ from "jquery";
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 import "toastr/build/toastr.min.css";
 AOS.init({
     duration: 1000,

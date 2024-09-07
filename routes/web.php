@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/', HomeController::class)->name('index');
 Route::get('/signIn', function () {

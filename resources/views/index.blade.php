@@ -2,6 +2,7 @@
 @section('content')
     @vite('resources/js/index.js')
     @vite('resources/css/app.css')
+
     <!-- Content Home-->
     <div id="home" class="grid grid-cols-1 -mt-36 xl:grid-cols-2 gap-4 h-114 bg-landing_page bg-cover bg-no-repeat">
         <div class="flex mt-56 z-10 xl:mt-0 flex-col items-center justify-center ">
@@ -409,10 +410,18 @@
                 <div class="lg:mx-auto text-left">
                     <h4 class="text-xl text-custom-third font-medium mb-7">Resources</h4>
                     <ul class="text-sm  transition-all duration-500">
-                        <li class="mb-6"><a href="" class="text-white text-lg">FAQs</a></li>
-                        <li class="mb-6"><a href="" class=" text-white text-lg">Quick Start</a></li>
-                        <li class="mb-6"><a href="" class=" text-white text-lg">Documentation</a></li>
-                        <li><a href="" class=" text-white text-lg">User Guide</a></li>
+                        <li class="mb-6">
+                            <p class="text-white text-lg">FAQs</p>
+                        </li>
+                        <li class="mb-6">
+                            <p class=" text-white text-lg">Quick Start</p>
+                        </li>
+                        <li class="mb-6">
+                            <p class=" text-white text-lg">Documentation</p>
+                        </li>
+                        <li>
+                            <p class=" text-white text-lg">User Guide</p>
+                        </li>
                     </ul>
                 </div>
 
@@ -433,7 +442,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="javascript:;"
+                        <a href="https://www.instagram.com/pmijateng/"
                             class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
                             <svg class="w-[1.25rem] h-[1.125rem] text-white" viewBox="0 0 15 15" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -451,7 +460,7 @@
                                     fill="currentColor" />
                             </svg>
                         </a>
-                        <a href="javascript:;"
+                        <a href="https://www.youtube.com/@PMIJateng"
                             class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
                             <svg class="w-[1.25rem] h-[0.875rem] text-white" viewBox="0 0 16 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -465,83 +474,4 @@
             </div>
         </div>
     </footer>
-
-    @if (Session::has('add'))
-        <!-- Initialize Toastr for success message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-
-            };
-            toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('update'))
-        <!-- Initialize Toastr for info message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-
-            };
-            toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('delete'))
-        <!-- Initialize Toastr for delete success message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-
-
-            };
-            toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('error'))
-        <!-- Initialize Toastr for error message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-            };
-            toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
-        </script>
-    @endif
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
-        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 @endsection

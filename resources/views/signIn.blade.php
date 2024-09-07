@@ -57,25 +57,31 @@
                     <form action="{{ route('signIn') }}" method="POST"
                         class="justify-start items-center flex-col flex">
                         @csrf
+
                         <p class="font-josefinSans font-bold text-4xl text-custom-secondary">Sign In</p>
                         <p class="font-poppins mt-2 font-normal text-xl text-gray-400">Enter your email and password</p>
                         <div class="mt-9 w-full xl:w-97">
                             <div class="">
                                 <p class="font-poppins font-medium text-black text-lg">Email</p>
                                 <input type="text" name="email"
-                                    class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-
-                                @error('email')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                                @enderror
+                                    class="autofill:border-none autofill:bg-none w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                @if ($errors->has('email'))
+                                    <p class="text-red-500 text-sm mt-1">{{ $errors->first('email') }}</p>
+                                @elseif($errors->has('credentials'))
+                                    <p class="text-red-500 text-sm  mt-1">{{ $errors->first('credentials') }}
+                                    </p>
+                                @endif
                             </div>
                             <div class="mt-4">
                                 <p class="font-poppins font-medium text-black text-lg">Password</p>
                                 <input type="password" name="password"
                                     class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-gray-100 border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
-                                @error('password')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                                @enderror
+                                @if ($errors->has('password'))
+                                    <p class="text-red-500 text-sm mt-1">{{ $errors->first('password') }}</p>
+                                @elseif($errors->has('credentials'))
+                                    <p class="text-red-500 text-sm  mt-1">{{ $errors->first('credentials') }}
+                                    </p>
+                                @endif
                             </div>
                         </div>
                         <div class="flex flex-row  justify-between mt-4 w-full">
@@ -126,54 +132,6 @@
         </div>
     </div>
 </body>
-@if (Session::has('add'))
-    <!-- Initialize Toastr for success message -->
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "5000",
-            "closeButton": true,
-        };
-        toastr.success("{{ Session::get('add') }}");
-    </script>
-@elseif (Session::has('update'))
-    <!-- Initialize Toastr for info message -->
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "5000",
-            "closeButton": true,
-        };
-        toastr.info("{{ Session::get('update') }}");
-    </script>
-@elseif (Session::has('delete'))
-    <!-- Initialize Toastr for delete success message -->
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "5000",
-            "closeButton": true,
-        };
-        toastr.success("{{ Session::get('delete') }}");
-    </script>
-@elseif (Session::has('error'))
-    <!-- Initialize Toastr for error message -->
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "progressBar": true,
-            "timeOut": "5000",
-            "closeButton": true,
-        };
-        toastr.error("{{ Session::get('error') }}");
-    </script>
-@endif
+
 
 </html>

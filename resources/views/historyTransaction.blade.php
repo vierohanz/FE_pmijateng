@@ -11,7 +11,7 @@
                     <li>
                         <button data-status="all"
                             class="status-button px-6 py-2 bg-custom-primary font-poppins font-normal xl:font-medium text-white rounded-xl">Semua
-                            Status</button>
+                        </button>
                     </li>
                     <li>
                         <button data-status="success"

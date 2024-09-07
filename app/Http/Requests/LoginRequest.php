@@ -20,4 +20,13 @@ class LoginRequest extends FormRequest
             'password' => ['required'],
         ];
     }
+    public function messages()
+    {
+        return [
+            'email.required' => 'Email tidak boleh kosong',
+            'email.email' => 'Tolong masukkan email dengan benar',
+            'password.required' => 'Password tidak boleh kosong',
+            'password.min' => 'Password minimal 8.',
+        ];
+    }
 }
