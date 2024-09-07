@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11ce40f5d7656bb711889d80b45223bd",
-
+    "content-hash": "680e9d55afb6d2b4b6d1f06b715b9ab0",
     "packages": [
         {
             "name": "brick/math",
@@ -2170,7 +2169,6 @@
             "time": "2022-04-15T14:02:14+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "mckenziearts/laravel-notify",
             "version": "v2.5",
             "source": {
@@ -2201,7 +2199,46 @@
                     ],
                     "aliases": {
                         "Notify": "Mckenziearts\\Notify\\Facades\\LaravelNotify"
-=======
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Mckenziearts\\Notify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arthur Monney",
+                    "email": "monneylobe@gmail.com"
+                }
+            ],
+            "description": "Flexible flash notifications for Laravel",
+            "keywords": [
+                "laravel",
+                "laravel-notify",
+                "notification"
+            ],
+            "support": {
+                "issues": "https://github.com/mckenziearts/laravel-notify/issues",
+                "source": "https://github.com/mckenziearts/laravel-notify"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/jvquilichini?locale.x=fr_FR",
+                    "type": "custom"
+                }
+            ],
+            "time": "2024-05-23T17:16:27+00:00"
+        },
+        {
             "name": "mews/captcha",
             "version": "3.4.2",
             "source": {
@@ -2237,7 +2274,6 @@
                     ],
                     "aliases": {
                         "Captcha": "Mews\\Captcha\\Facades\\Captcha"
->>>>>>> 1ea7ae1e8881c597ca29b628f4f05989695611c1
                     }
                 }
             },
@@ -2246,11 +2282,7 @@
                     "src/helpers.php"
                 ],
                 "psr-4": {
-<<<<<<< HEAD
-                    "Mckenziearts\\Notify\\": "src/"
-=======
                     "Mews\\Captcha\\": "src/"
->>>>>>> 1ea7ae1e8881c597ca29b628f4f05989695611c1
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2259,29 +2291,6 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
-                    "name": "Arthur Monney",
-                    "email": "monneylobe@gmail.com"
-                }
-            ],
-            "description": "Flexible flash notifications for Laravel",
-            "keywords": [
-                "laravel",
-                "laravel-notify",
-                "notification"
-            ],
-            "support": {
-                "issues": "https://github.com/mckenziearts/laravel-notify/issues",
-                "source": "https://github.com/mckenziearts/laravel-notify"
-            },
-            "funding": [
-                {
-                    "url": "https://paypal.me/jvquilichini?locale.x=fr_FR",
-                    "type": "custom"
-                }
-            ],
-            "time": "2024-05-23T17:16:27+00:00"
-=======
                     "name": "Muharrem ERİN",
                     "email": "me@mewebstudio.com",
                     "homepage": "https://github.com/mewebstudio",
@@ -2301,7 +2310,6 @@
                 "source": "https://github.com/mewebstudio/captcha/tree/3.4.2"
             },
             "time": "2024-08-16T09:27:52+00:00"
->>>>>>> 1ea7ae1e8881c597ca29b628f4f05989695611c1
         },
         {
             "name": "midtrans/midtrans-php",

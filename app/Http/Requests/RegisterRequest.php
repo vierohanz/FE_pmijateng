@@ -24,16 +24,12 @@ class RegisterRequest extends FormRequest
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'captcha.captcha' => 'The CAPTCHA verification failed',
-        ];
-    }
+
 
     public function messages()
     {
         return [
+            'captcha.captcha' => 'The CAPTCHA verification failed',
             'email.required' => 'Email tidak boleh kosong',
             'password.required' => 'Password tidak boleh kosong',
             'password_confirmation.required' => 'Password confirmation tidak boleh kosong',

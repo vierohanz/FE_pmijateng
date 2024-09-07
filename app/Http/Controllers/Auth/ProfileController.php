@@ -45,12 +45,9 @@ class ProfileController extends Controller
             notify()->info('Password Berhasil Di Ubah', 'Update');
             return back();
         } else {
-<<<<<<< HEAD
+
             notify()->error('Gagal Mengubah Password', 'Error');
             return back();
-=======
-            return back()->with(['error' => 'Gagal Mengubah Password', 'title' => 'Error']);
->>>>>>> 1ea7ae1e8881c597ca29b628f4f05989695611c1
         }
     }
 }

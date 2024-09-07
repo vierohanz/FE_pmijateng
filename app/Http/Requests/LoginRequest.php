@@ -22,15 +22,11 @@ class LoginRequest extends FormRequest
         ];
     }
 
+
     public function messages()
     {
         return [
             'captcha.captcha' => 'The CAPTCHA verification failed',
-        ];
-    }
-    public function messages()
-    {
-        return [
             'email.required' => 'Email tidak boleh kosong',
             'email.email' => 'Tolong masukkan email dengan benar',
             'password.required' => 'Password tidak boleh kosong',
