@@ -30,7 +30,6 @@ class ProfileController extends Controller
 
             return redirect()->route('account')->with(['update' => 'Profil Berhasil Di Update', 'title' => "Update"]);
         } else {
-
             return back()->with(['error' => 'Gagal Menyimpan Profil', 'title' => 'Error']);
         }
     }

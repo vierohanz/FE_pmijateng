@@ -48,7 +48,7 @@ Route::get('/historyTransaction', OrderController::class)->middleware('AuthLogin
 
 Route::get('/account', function () {
     return view('account');
-})->name('account');
+})->middleware('AuthLogin')->name('account');
 
 Route::post('/resend-verification', EmailVerificationController::class)->name('verification.resend');
 
