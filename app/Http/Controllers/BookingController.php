@@ -29,14 +29,26 @@ class BookingController extends Controller
             'id' => $id,
         ]);
 
-        $room = $response->json();
+        $packages = $response->json();
         
-        return view('detail', ['room' => $room]);
+        
+        return view('detailPackage', ['packages' => $packages]);
     }
 
     public function checkOut($id)
     {
         $response = Http::get($this->api_url_v1 . 'room_type/getDetail', [
+            'id' => $id,
+        ]);
+
+        $room = $response->json();
+
+        return view('checkout', ['room' => $room, 'api_url_v1' => $this->api_url_v1]);
+    }
+
+    public function checkOutPackage($id)
+    {
+        $response = Http::get($this->api_url_v1 . 'packages/getDetail', [
             'id' => $id,
         ]);
 

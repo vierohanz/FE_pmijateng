@@ -41,7 +41,7 @@
                             <div class="flex h-44 justify-between items-start w-full">
                                 <div>
                                     <h2 class="text-xl font-semibold font-poppins text-black">
-                                        {{ str_replace('_', ' ', $booking['room_type']) ?? 'default' }}</h2>
+                                        {{ $booking['channel'] === "packages" ? (str_replace('_', ' ', $booking['channel']) ?? 'default') : (str_replace('_', ' ', $booking['room_type']) ?? 'default') }}</h2>
                                     <p class="text-lg font-poppins text-black">{{ $booking['order_id'] }}</p>
                                     <p class="text-base xl:text-lg font-poppins text-black mt-2">Lorem ipsum dolor sit amet,
                                         consectetur

@@ -16,19 +16,19 @@
             <div id="default-carousel" class="relative h-104 xl:h-114 w-full" data-carousel="slide">
                 <div class="relative h-full w-full overflow-hidden rounded-b-badge shadow-lg">
                     <!-- Carousel Items -->
-                    @foreach ($room['room_images'] as $index => $image )
-                        <div class="{{ $loop->first ? 'block' : 'hidden' }} duration-700 ease-in-out" data-carousel-item>
-                            <img src="{{ $image }}" alt="Image Meeting Room" class="absolute block w-full h-full object-cover">
-                        </div>
-                    @endforeach
+                    @foreach($packages as $package)
+<div class="block duration-700 ease-in-out" data-carousel-item>
+    <img src="{{ $package['thumbnail'] }}" alt="Image Package" class="absolute block w-full h-full object-cover">
+</div>
+@endforeach
 
-                    <!-- Carousel Indicators -->
-                    <div class="absolute z-30 flex -translate-x-1/2 bottom-12 left-1/2 space-x-3 rtl:space-x-reverse">
-                        @foreach ($room['room_images'] as $index => $image)
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="{{ $loop->first ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}" data-carousel-slide-to="{{ $index }}">
-                            </button>
-                        @endforeach
-                    </div>
+<!-- Carousel Indicators -->
+<div class="absolute z-30 flex -translate-x-1/2 bottom-12 left-1/2 space-x-3 rtl:space-x-reverse">
+    @foreach($packages as $index => $package)
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $package['id'] }}" data-carousel-slide-to="{{ $package['id'] }}"></button>
+    @endforeach
+</div>
+
                 </div>
                 <!-- Slider controls -->
                 <button type="button"
@@ -62,11 +62,9 @@
             {{-- Corousel horizontal --}}
             <div class="h-80 xl:h-100 pl-6 w-full bg-white mt-8">
                 <div id="bounceMeeting" class="carousel carousel-center bg-white rounded-box w-full space-x-7">
-                    @foreach ($room['room_images'] as $index => $image)
                         <div class="carousel-item w-108 h-64 xl:h-96">
-                            <img src="{{ $image }}" alt="Image Meeting Room {{ $index + 1 }}" class="rounded-box w-112 h-full bg-cover bg-center">
+                            <img src="{{ $package['thumbnail'] }}" alt="Image Package {{ $package['id']}}" class="rounded-box w-112 h-full bg-cover bg-center">
                         </div>
-                    @endforeach
                 </div>
             </div>
 
@@ -74,7 +72,7 @@
             {{-- title and price --}}
             <div class="h-44 px-6 xl:px-12 w-full  grid grid-cols-2">
                 <div class="col-span-1 gap-2 flex-col flex items-start justify-start">
-                    <p class="font-josefinSans font-bold text-xl xl:text-5xl text-black">{{ $room['room_data']['room_type'] }}</p>
+                    <p class="font-josefinSans font-bold text-xl xl:text-5xl text-black">{{ $package['name'] }}</p>
                     <div class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#DA251D" viewBox="0 0 24 24"
                             class="w-3 h-3 xl:w-6 xl:h-6 ml-2">
@@ -105,7 +103,7 @@
 
                 </div>
                 <div class="col-span-1 flex-col flex justify-start items-end gap-4">
-                    <p class="font-poppins font-medium text-black text-sm xl:text-xl">Harga/kamar/malam mulai dari</p>
+                    <p class="font-poppins font-medium text-black text-sm xl:text-xl">Harga/Package mulai dari</p>
                     <div
                         class="w-40 xl:w-72 h-10 xl:h-20 rounded-full border-2 items-center justify-center flex border-custom-primary ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" height="32px" width="32px"
@@ -122,7 +120,7 @@
                                 fill="none" stroke="#DA251D" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="32" />
                         </svg>
-                        <p class="ml-2 font-poppins text-custom-primary text-base xl:text-2xl font-semibold">Rp {{(int)  $room['room_data']['price'] }}
+                        <p class="ml-2 font-poppins text-custom-primary text-base xl:text-2xl font-semibold">Rp {{(int)  $package['price_per_person'] }}/Orang
                         </p>
                     </div>
                 </div>
@@ -131,7 +129,7 @@
             {{-- description --}}
             <div class="w-full px-6 xl:px-12">
                 <p class="font-poppins text-black text-xl leading-10 text-justify  font-medium">The room is
-                {{ $room['room_data']['description'] }}
+                {{ $package['description'] }}
                 </p>
             </div>
 
@@ -147,7 +145,7 @@
                             <path
                                 d="M336 256c-20.56 0-40.44-9.18-56-25.84-15.13-16.25-24.37-37.92-26-61-1.74-24.62 5.77-47.26 21.14-63.76S312 80 336 80c23.83 0 45.38 9.06 60.7 25.52 15.47 16.62 23 39.22 21.26 63.63-1.67 23.11-10.9 44.77-26 61C376.44 246.82 356.57 256 336 256zm66-88zM467.83 432H204.18a27.71 27.71 0 01-22-10.67 30.22 30.22 0 01-5.26-25.79c8.42-33.81 29.28-61.85 60.32-81.08C264.79 297.4 299.86 288 336 288c36.85 0 71 9 98.71 26.05 31.11 19.13 52 47.33 60.38 81.55a30.27 30.27 0 01-5.32 25.78A27.68 27.68 0 01467.83 432zM147 260c-35.19 0-66.13-32.72-69-72.93-1.42-20.6 5-39.65 18-53.62 12.86-13.83 31-21.45 51-21.45s38 7.66 50.93 21.57c13.1 14.08 19.5 33.09 18 53.52-2.87 40.2-33.8 72.91-68.93 72.91zM212.66 291.45c-17.59-8.6-40.42-12.9-65.65-12.9-29.46 0-58.07 7.68-80.57 21.62-25.51 15.83-42.67 38.88-49.6 66.71a27.39 27.39 0 004.79 23.36A25.32 25.32 0 0041.72 400h111a8 8 0 007.87-6.57c.11-.63.25-1.26.41-1.88 8.48-34.06 28.35-62.84 57.71-83.82a8 8 0 00-.63-13.39c-1.57-.92-3.37-1.89-5.42-2.89z" />
                         </svg>
-                        <p class="font-poppins text-xl text-custom-secondary font-semibold">{{ $room['room_data']['capacity'] }} Guest </p>
+                        <p class="font-poppins text-xl text-custom-secondary font-semibold">{{ $package['min_person_quantity'] }} Minimum Guest </p>
                     </div>
                     <div class="col-span-1 gap-3 flex flex-col items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-16 h-16 xl:w-28 xl:h-28"
@@ -209,7 +207,7 @@
                     class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-custom-primary rounded-2xl">
                     Back
                     </a>
-                    <a href="{{ route('checkout', ['id' => $room['room_data']['id']]) }}" 
+                    <a href="{{ route('checkout-package', ['id' => $package['id']]) }}" 
                     class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-custom-primary rounded-2xl">
                     Checkout
                     </a>

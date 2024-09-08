@@ -27,10 +27,14 @@ class AuthLogin
                 // Store the response in session
                 Session::put('user', $apiResponse->json());
             } else {
+                Session::forget('access_token');
+                Session::forget('user');
                 return redirect()->route('signIn')->withErrors('Silahkan Login Terlebih dahulu');
             }
 
         } catch (\Throwable $th) {
+            Session::forget('access_token');
+            Session::forget('user');
             return redirect()->route('signIn')->withErrors('Silahkan Login Terlebih dahulu');
         }
 
