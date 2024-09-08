@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
+    @vite('resources/js/topbarPayment.js')
 </head>
 
 <body class="bg-white">
@@ -34,7 +35,7 @@
                 <!-- Step 1: Active -->
                 <div class="flex items-center">
                     <div
-                        class="relative flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-custom-primary text-white">
+                        class="relative flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-red-700 text-white">
                         1
                     </div>
                     <p class="ml-2 text-gray-800 text-xs sm:text-sm font-medium">Pesan</p>
@@ -42,7 +43,7 @@
                 <div class="w-8 sm:w-16 h-px bg-gray-400"></div>
                 <!-- Step 2 -->
                 <div class="flex items-center">
-                    <div
+                    <div id="step-2"
                         class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-500 text-white">
                         2
                     </div>
@@ -65,6 +66,8 @@
             @yield('content')
         </div>
     </div>
+
+
 </body>
 
 </html>

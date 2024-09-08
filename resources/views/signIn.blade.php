@@ -11,7 +11,7 @@
 </head>
 
 <body class="overflow-x-hidden">
-    <div class="h-114 w-full bg-[#EFEFEF] xl:py-24 xl:px-56">
+    <div class="h-117 w-full bg-[#EFEFEF] xl:py-24 xl:px-56">
         <div class="h-full w-full grid grid-cols-1 xl:grid-cols-5 bg-[#DA251D] rounded-badge shadow-2xl">
             <div
                 class="h-full hidden xl:flex col-span-2 rounded-l-badge p-7 bg-[#DA251D] flex-col items-center justify-cente">
@@ -99,13 +99,15 @@
                                 class="mt-2 sm:mt-0 text-base font-medium text-[#DA251D] hover:scale-110 transition-all duration-300">Forget
                                 password?</a>
                         </div>
-                        <div class="mt-4"></div>
-                        <img src="{{ captcha_src() }}" alt="captcha">
-                        <input type="text" name="captcha" class="form-control @error('captcha') is-invalid @enderror"
-                            placeholder="Insert Captcha">
-                        @error('captcha')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
+                        <div class="mt-4 w-full">
+                            <img src="{{ captcha_src() }}" alt="captcha" class="w-full">
+                            <input type="text" name="captcha"
+                                class="form-control focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-[#DA251D] text-black font-poppins w-full @error('captcha') is-invalid @enderror"
+                                placeholder="Insert Captcha">
+                            @error('captcha')
+                                <span class="text-red-500 text-sm">{{ $message }}</span>
+                            @enderror
+                        </div>
 
                         <button type="submit"
                             class="w-full h-16 bg-[#DA251D] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">

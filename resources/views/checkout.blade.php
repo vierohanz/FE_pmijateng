@@ -19,7 +19,8 @@
                     </div>
 
                     <div>
-                        <p for="tanggal-masuk" class="font-poppins font-semibold text-black text-base md:text-lg">Tanggal masuk
+                        <p for="tanggal-masuk" class="font-poppins font-semibold text-black text-base md:text-lg">Tanggal
+                            masuk
                         </p>
                         <input id="tanggal-masuk" name="start_date" type="text" placeholder="dd/mm/yy"
                             class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
@@ -35,11 +36,13 @@
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="text-start flex-col justify-start space-y-2 items-center">
                             <p class="font-poppins text-base md:text-lg font-semibold text-black">Harga kamar</p>
-                            <p class="font-poppins text-sm font-normal text-black">*(1x) {{ $room['room_data']['room_type'] }} (1 malam)</p>
+                            <p class="font-poppins text-sm font-normal text-black">*(1x)
+                                {{ $room['room_data']['room_type'] }} (1 malam)</p>
                             <input type="hidden" name="room_type_id" value="{{ $room['room_data']['id'] }}">
                         </div>
                         <div class="flex justify-end text-end items-center">
-                            <p class="font-poppins text-lg md:text-xl font-bold text-black">Rp {{ $room['room_data']['price'] }}</p>
+                            <p class="font-poppins text-lg md:text-xl font-bold text-black">Rp
+                                {{ $room['room_data']['price'] }}</p>
                         </div>
                     </div>
 
@@ -50,7 +53,7 @@
                             <p class="font-poppins text-base md:text-lg font-semibold text-black">Harga total</p>
                         </div>
                         <div class="flex justify-end text-end items-center">
-                            <p class="font-poppins text-lg md:text-xl font-bold text-black">Rp 300.000</p>
+                            <p id="total-price" class="font-poppins text-lg md:text-xl font-bold text-black">Rp </p>
                         </div>
                     </div>
 
@@ -65,5 +68,35 @@
             <input type="hidden" value="{{ session('user')['name'] }}" readonly name="name">
             <input type="hidden" value="{{ $api_url_v1 }}" readonly name="api_url_v1">
         </form>
-        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{config('services.midtrans.clientKey')}}"></script>
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js"
+            data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const amountInput = document.querySelector('input[name="amount"]');
+                const startDateInput = document.getElementById('tanggal-masuk');
+                const endDateInput = document.getElementById('tanggal-keluar');
+                const totalPriceElement = document.getElementById('total-price');
+                const roomPrice = {{ $room['room_data']['price'] }};
+
+                function calculateTotalPrice() {
+                    const amount = parseInt(amountInput.value) || 0;
+                    const startDate = new Date(startDateInput.value);
+                    const endDate = new Date(endDateInput.value);
+
+                    // Hitung jumlah hari
+                    const timeDiff = endDate - startDate;
+                    const dayCount = timeDiff / (1000 * 3600 * 24) || 0;
+
+                    const totalPrice = dayCount * amount * roomPrice;
+
+                    // Tampilkan harga total
+                    totalPriceElement.textContent = `Rp ${totalPrice.toLocaleString('id-ID')}`;
+                }
+
+                // Event listener untuk input perubahan
+                amountInput.addEventListener('input', calculateTotalPrice);
+                startDateInput.addEventListener('change', calculateTotalPrice);
+                endDateInput.addEventListener('change', calculateTotalPrice);
+            });
+        </script>
     @endsection

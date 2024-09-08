@@ -27,9 +27,10 @@
                         @else
                             <!-- Container for Resend Verification Email Button -->
                             <div class="flex justify-end items-center mt-2 space-x-2">
-                                <p class="text-sm text-red-500">Email anda belum diverifikasi, </p>
-                                <button type="button" id="resendVerification" class="text-sm text-red-500 hover:underline">
-                                    Kirim Ulang Verifikasi Email
+                                <p class="text-sm text-custom-primary">Email anda belum diverifikasi, </p>
+                                <button type="button" id="resendVerification"
+                                    class="text-sm font-poppins font-semibold text-custom-primary hover:text-red-900 transition-all duration-300">
+                                    Verifikasi Email
                                 </button>
                             </div>
                         @endif

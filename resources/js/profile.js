@@ -38,22 +38,6 @@ fileInput.addEventListener("change", function (event) {
 
             // Save the image URL to LocalStorage
             localStorage.setItem("profileImage", imageUrl);
-
-            // Configure Toastr options before showing notification
-            toastr.options = {
-                positionClass: "toast-bottom-right",
-                preventDuplicates: true,
-                progressBar: true,
-                timeOut: "5000",
-                debug: true,
-                newestOnTop: false,
-                progressBar: true,
-                positionClass: "toast-bottom-right",
-                preventDuplicates: true,
-            };
-
-            // Show custom toast notification using Toastr
-            toastr["success"]("Sukses mengupdate profile", "Update");
         };
 
         reader.onerror = function () {
