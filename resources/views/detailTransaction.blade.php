@@ -56,9 +56,14 @@
                             <p class="text-gray-500 font-poppins text-base">type :
                                 {{ $transaction['payment_information']['channel'] }}</p>
                             <p class="text-gray-500 font-poppins text-base">
-                                {{ $transaction['room_detail']['room_name'][0] }}</p>
-                            <p class="text-gray-500 font-poppins text-base">
                                 {{ $transaction['payment_information']['room_per_night_price'] }}</p>
+                            <p class="font-semibold font-poppins text-black text-lg">Nama Ruangan :</p>
+                                @forelse ($transaction['room_detail']['room_name'] as $item)
+                                    <p class="text-gray-500 font-poppins text-base">
+                                    {{ $item }}</p>
+                                @empty
+                                <p class="text-gray-500 font-poppins text-base"></p>     
+                                @endforelse
                         </div>
                         <div class="mb-4">
                             <h3 class="font-semibold font-poppins text-black text-lg">Keuntungan</h3>
@@ -80,7 +85,9 @@
                     <p class="font-poppins text-gray-500 text-base font-base">Tamu utama</p>
                     <p class="font-poppins text-black text-base font-semibold">
                         {{ $transaction['guest_information']['user_name'] }}</p>
-                    <p class="font-poppins text-black text-base font-semibold">08932131231 default</p>
+                    <p class="font-poppins text-black text-base font-semibold">
+                        {{ $transaction['guest_information']['phone'] }}
+                    </p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow">
                     <div class="flex items-center space-x-2 mb-4">

@@ -28,6 +28,7 @@ class DetailTransactionController extends Controller
         } else {
             return redirect()->route('historyTransaction')->with(['error', 'Failed to get transaction detail']);
         }
+        // dd($transaction);
 
         return view('detailTransaction', ['transaction' => $transaction]);
     }

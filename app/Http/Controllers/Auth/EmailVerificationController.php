@@ -18,9 +18,10 @@ class EmailVerificationController extends Controller
         $response = Http::withToken($token)->post($api_url_v1 . 'sendEmailVerif');
 
         if ($response->successful()) {
+            notify()->success('Verif Email Berhasil Di Kirim', 'Success');
             return response()->json(['message' => 'Verification email has been sent.']);
         } else {
-
+            notify()->error('Verif Email Gagal Di Kirim', 'Error');
             return response()->json(['message' => 'Failed to send verification email.'], $response->status());
         }
         
