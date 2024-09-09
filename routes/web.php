@@ -67,3 +67,4 @@ Route::post('/update-password', [ProfileController::class, 'updatePassword'])->n
 Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');
 Route::get('/availableRooms', [HomeController::class, 'availableRooms'])->name('availableRooms');
 Route::get('/detailTransaction', DetailTransactionController::class)->middleware('AuthLogin')->name('detailTransaction');
+Route::get('/checkout-package/{id}', [BookingController::class, 'checkOutPackage'])->middleware('AuthLogin')->name('checkout-package');
