@@ -54,6 +54,7 @@ Route::get('/detailTransaction', function () {
     return view('detailTransaction');
 })->name('detailTransaction');
 
+
 Route::post('/resend-verification', EmailVerificationController::class)->name('verification.resend');
 
 

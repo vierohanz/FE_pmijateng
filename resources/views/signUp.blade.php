@@ -11,7 +11,7 @@
 </head>
 
 <body class="overflow-x-hidden">
-    <div class="h-114 w-full bg-[#EFEFEF] xl:py-24 xl:px-56">
+    <div class="h-117 w-full bg-[#EFEFEF] xl:py-24 xl:px-56">
         <div class="h-full w-full grid grid-cols-1 xl:grid-cols-5 bg-[#DA251D] rounded-badge shadow-2xl">
             <div
                 class="h-full w-full col-span-1 xl:col-span-3 animate-slide-out bg-custom-third rounded-badge p-6 grid grid-rows-10">
@@ -56,10 +56,12 @@
                                 @endif
                             </div>
                         </div>
-                
+
                         <div class="mt-4"></div>
-                        <img src="{{ captcha_src() }}" alt="captcha">
-                        <input type="text" name="captcha" class="form-control @error('captcha') is-invalid @enderror" placeholder="Insert Captcha">
+                        <img src="{{ captcha_src() }}" alt="captcha" class="w-full">
+                        <input type="text" name="captcha"
+                            class="form-control focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-[#DA251D] text-black font-poppins w-full @error('captcha') is-invalid @enderror"
+                            placeholder="Insert Captcha">
                         @error('captcha')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
