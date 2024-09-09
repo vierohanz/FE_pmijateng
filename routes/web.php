@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\DetailTransactionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 
@@ -46,14 +47,11 @@ Route::get('/checkout-package/{id}', [BookingController::class, 'checkOutPackage
 
 Route::get('/historyTransaction', OrderController::class)->middleware('AuthLogin')->name('historyTransaction');
 
+Route::get('/detailTransaction', DetailTransactionController::class)->middleware('AuthLogin')->name('detailTransaction');
 
 Route::get('/account', function () {
     return view('account');
 })->middleware('AuthLogin')->name('account');
-})->name('account');
-Route::get('/detailTransaction', function () {
-    return view('detailTransaction');
-})->name('detailTransaction');
 
 
 Route::post('/resend-verification', EmailVerificationController::class)->name('verification.resend');
