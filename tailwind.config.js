@@ -19,6 +19,7 @@ export default {
             ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
             pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
             bounce: "bounce 1s infinite",
+            flip: "flip 0.6s ease-in-out",
         },
         aria: {
             busy: 'busy="true"',
@@ -641,6 +642,14 @@ export default {
             pulse: {
                 "50%": {
                     opacity: ".5",
+                },
+            },
+            flip: {
+                "0%": {
+                    transform: "rotateY(0)",
+                },
+                "100%": {
+                    transform: "rotateY(180deg)",
                 },
             },
             bounce: {

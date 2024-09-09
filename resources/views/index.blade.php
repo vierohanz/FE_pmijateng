@@ -101,13 +101,62 @@
 
             <!-- Book Now Button -->
             <div class=" flex justify-center items-center">
-                <button
+                <button onclick="openAvailable()"
                     class="bg-white border-custom-secondary border-2 text-custom-secondary font-poppins font-bold py-2 px-6 rounded-full hover:scale-110 transition-all duration-200 hover:bg-custom-secondary hover:text-custom-primary">BOOK
                     NOW</button>
             </div>
         </div>
     </div>
+    <div id="booking-details"
+        class="col-span-7 p-4 md:p-5 bg-white  transform transition duration-500 ease-in-out hidden rotate-y-180 animate-flip">
+        <div class="w-full h-full mx-auto bg-gray-100 shadow-xl rounded-lg p-4 md:p-6">
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-5 mb-6 justify-between h-16">
+                <div class="h-16 w-full space-x-5 ">
+                    <input type="text" id="searchInput" placeholder="Search"
+                        class="autofill:border-none border-black autofill:bg-none w-1/2 h-full px-4 text-lg text-black font-poppins font-normal rounded-2xl bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                    <button id="searchButton"
+                        class="px-4 py-2 w-44 bg-red-500 text-white hover:scale-110 transition-all duration-300 font-poppins text-xl font-medium h-full rounded-2xl">Search</button>
+                </div>
+                <button onclick="toggleModal()" class="  text-red-600 flex justify-start items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" class="w-8 h-8 hover:scale-110 transition-all duration-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
 
+            <!-- Room List -->
+            <div class="space-y-6 item-container inactive-card">
+                <!-- Room Card 1 -->
+                <a href="#"
+                    class="flex hover:scale-95 duration-300 transition-all items-center space-x-4 bg-white p-4 shadow rounded-lg">
+                    <img class="w-32 bg-corousel_1 bg-cover bg-center h-32 object-cover rounded-lg">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-xl text-black font-poppins">Twin Room</h3>
+                        <p class="font-poppins text-base text-black">Kamar twin kami desain secara elegan dengan perabotan
+                            modern buatan tangan, dengan luas kamar
+                            25×27 meter persegi.</p>
+                        <div class="flex items-center space-x-2 mt-2">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span>4.9</span>
+                            <span class="text-gray-500">(312 Reviews)</span>
+                        </div>
+                        <div class="flex items-center space-x-4 mt-2 font-poppins text-black">
+                            <span>1 Bed</span>
+                            <span>WiFi</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end space-y-2 ">
+                        <span class="text-lg font-semibold">Rp 280.000,00 /night</span>
+                        <button
+                            class="px-4 py-2 bg-red-500 font-poppins font-medium text-white rounded-lg hover:scale-110 duration-300 transition-all">Book
+                            now</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- Rooms -->
     <div id="rooms" class="grid grid-cols-5 h-100 xl:h-110 w-full mt-14">
         <div class="col-span-2 px-7 py-2 border-t-4 border-b-4 border-custom-primary flex flex-col justify-between h-full">
@@ -465,83 +514,39 @@
             </div>
         </div>
     </footer>
+    <script>
+        function openAvailable() {
+            const modal = document.getElementById('booking-details');
+            modal.classList.remove('hidden');
+        }
+    </script>
+    <script>
+        // Fungsi untuk menutup modal
+        function toggleModal() {
+            const modal = document.getElementById('booking-details');
+            modal.classList.add('hidden');
+            // Menambahkan kelas hidden untuk menyembunyikan modal
+        }
+    </script>
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const itemContainer = document.querySelector('.item-container');
+        const items = itemContainer.children;
 
-    @if (Session::has('add'))
-        <!-- Initialize Toastr for success message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
+        searchButton.addEventListener('click', function() {
+            const query = searchInput.value.toLowerCase().trim();
 
-            };
-            toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('update'))
-        <!-- Initialize Toastr for info message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
+            for (let item of items) {
+                const title = item.querySelector('h3').textContent.toLowerCase();
 
-            };
-            toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('delete'))
-        <!-- Initialize Toastr for delete success message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-
-
-            };
-            toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
-        </script>
-    @elseif (Session::has('error'))
-        <!-- Initialize Toastr for error message -->
-        <script>
-            toastr.options = {
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-                "progressBar": true,
-                "timeOut": "5000",
-                "debug": true,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": true,
-            };
-            toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
-        </script>
-    @endif
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
-        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+                // Show or hide the item based on the search query
+                if (title.includes(query)) {
+                    item.style.display = ''; // Show item
+                } else {
+                    item.style.display = 'none'; // Hide item
+                }
+            }
+        });
+    </script>
 @endsection

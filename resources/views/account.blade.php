@@ -22,7 +22,8 @@
 
                         @if (session('user')['email_verified_at'] != null)
                             <div class="flex justify-end items-center mt-2 space-x-2">
-                                <p class="text-sm text-green-500">Email anda sudah terverifikasi </p>
+                                <p class="text-sm text-green-500 font-poppins font-medium">Email anda sudah terverifikasi
+                                </p>
                             </div>
                         @else
                             <!-- Container for Resend Verification Email Button -->
