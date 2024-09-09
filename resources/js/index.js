@@ -51,35 +51,66 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Inisialisasi flatpickr untuk input tanggal
     flatpickr("#arrival-date", {
-        dateFormat: "d/m/Y",
+        dateFormat: "Y/m/d",
+        onChange: function (selectedDates) {
+            // Simpan tanggal kedatangan ke localStorage
+            localStorage.setItem(
+                "arrivalDate",
+                selectedDates[0] ? selectedDates[0].toISOString() : ""
+            );
+        },
     });
 
     flatpickr("#departure-date", {
-        dateFormat: "d/m/Y",
+        dateFormat: "Y/m/d",
+        onChange: function (selectedDates) {
+            // Simpan tanggal keberangkatan ke localStorage
+            localStorage.setItem(
+                "departureDate",
+                selectedDates[0] ? selectedDates[0].toISOString() : ""
+            );
+        },
     });
-});
 
-const guestsInput = document.getElementById("guests");
-const incrementBtn = document.getElementById("increment");
-const decrementBtn = document.getElementById("decrement");
+    // Ambil tanggal dari localStorage saat halaman dimuat
+    const savedArrivalDate = localStorage.getItem("arrivalDate");
+    const savedDepartureDate = localStorage.getItem("departureDate");
 
-// Convert the input value to a number
-let guests = parseInt(guestsInput.value);
-
-// Increment function
-incrementBtn.addEventListener("click", () => {
-    guests++;
-    guestsInput.value = guests;
-});
-
-// Decrement function
-decrementBtn.addEventListener("click", () => {
-    if (guests > 1) {
-        // Ensure the value doesn't go below 1
-        guests--;
-        guestsInput.value = guests;
+    if (savedArrivalDate) {
+        document
+            .getElementById("arrival-date")
+            ._flatpickr.setDate(savedArrivalDate);
     }
+
+    if (savedDepartureDate) {
+        document
+            .getElementById("departure-date")
+            ._flatpickr.setDate(savedDepartureDate);
+    }
+
+    const guestsInput = document.getElementById("guests");
+    const incrementBtn = document.getElementById("increment");
+    const decrementBtn = document.getElementById("decrement");
+
+    // Convert the input value to a number
+    let guests = parseInt(guestsInput.value);
+
+    // Increment function
+    incrementBtn.addEventListener("click", () => {
+        guests++;
+        guestsInput.value = guests;
+    });
+
+    // Decrement function
+    decrementBtn.addEventListener("click", () => {
+        if (guests > 1) {
+            // Ensure the value doesn't go below 1
+            guests--;
+            guestsInput.value = guests;
+        }
+    });
 });
 
 const carousel = document.getElementById("carousel");

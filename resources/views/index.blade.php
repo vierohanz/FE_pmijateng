@@ -58,58 +58,50 @@
             <p>room</p>
         </div>
 
-        <div class="col-span-4 grid grid-cols-4 gap-5 items-center space-x-9">
-            <div class="text-white text-start">
-                <label for="arrival-date" class="block text-lg font-poppins font-semibold">Arrival date</label>
-                <div class="flex items-center border-b-2 border-white">
-                    <input type="text" id="arrival-date"
-                        class="w-full text-white bg-transparent text-center border-none text-lg focus:outline-none placeholder:text-white"
-                        placeholder="dd/mm/yy" />
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6 ml-2 cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M8.25 9V3.75m7.5 5.25V3.75M3 12.75h18M4.5 21h15a1.5 1.5 0 001.5-1.5v-15a1.5 1.5 0 00-1.5-1.5h-15A1.5 1.5 0 003 4.5v15a1.5 1.5 0 001.5 1.5z" />
-                    </svg>
+        <form action="{{ url('/availableRooms') }}" class="col-span-4 grid grid-cols-4 gap-5 items-center space-x-9"
+            method="GET">
+            @csrf <!-- Pastikan untuk menambahkan token CSRF -->
+            <div class="col-span-4 grid grid-cols-4 gap-5 items-center space-x-9">
+                <div class="text-white text-start">
+                    <label for="arrival-date" class="block text-lg font-poppins font-semibold">Arrival date</label>
+                    <div class="flex items-center border-b-2 border-white">
+                        <input type="date" name="start_date" id="arrival-date"
+                            class="w-full text-white bg-transparent text-center border-none text-lg focus:outline-none placeholder:text-white"
+                            required />
+                    </div>
+                </div>
+
+                <div class="text-white text-start">
+                    <label for="departure-date" class="block text-lg font-poppins font-semibold">Departure date</label>
+                    <div class="flex items-center border-b-2 border-white">
+                        <input type="date" name="end_date" id="departure-date"
+                            class="w-full text-white bg-transparent border-none text-center text-lg focus:outline-none placeholder:text-white"
+                            required />
+                    </div>
+                </div>
+
+                <div class="text-white text-start">
+                    <label for="guests" class="block text-lg font-poppins font-semibold">Number of guests</label>
+                    <div class="flex items-center border-b-2 border-white">
+                        <button id="decrement" type="button" class="text-white">-</button>
+                        <input type="number" name="amount" id="guests" value="1" min="1"
+                            class="w-full border-none bg-transparent border-white text-center text-lg focus:outline-none"
+                            required />
+                        <button id="increment" type="button" class="text-white">+</button>
+                    </div>
+                </div>
+
+                <!-- Book Now Button -->
+                <div class="flex justify-center items-center">
+                    <button type="submit"
+                        class="bg-white border-custom-secondary border-2 text-custom-secondary font-poppins font-bold py-2 px-6 rounded-full hover:scale-110 transition-all duration-200 hover:bg-custom-secondary hover:text-custom-primary">BOOK
+                        NOW</button>
                 </div>
             </div>
-
-            <div class="text-white text-start">
-                <label for="departure-date" class="block text-lg font-poppins font-semibold">Departure date</label>
-                <div class="flex items-center border-b-2 border-white">
-                    <input type="text" id="departure-date"
-                        class="w-full text-white bg-transparent border-none text-center text-lg focus:outline-none placeholder:text-white"
-                        placeholder="dd/mm/yy" />
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6 ml-2 cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M8.25 9V3.75m7.5 5.25V3.75M3 12.75h18M4.5 21h15a1.5 1.5 0 001.5-1.5v-15a1.5 1.5 0 00-1.5-1.5h-15A1.5 1.5 0 003 4.5v15a1.5 1.5 0 001.5 1.5z" />
-                    </svg>
-                </div>
-            </div>
-
-            <div class="text-white text-start">
-                <label for="guests" class="block text-lg font-poppins font-semibold">Number of guests</label>
-                <div class="flex justify-center border-b-2 items-start">
-                    <button id="decrement"
-                        class="bg-transparent text-white font-extrabold text-lg   px-3  rounded-lg bg-gray-200">-</button>
-                    <input type="text" id="guests" value="1"
-                        class="w-full border-none bg-transparent border-white text-center text-lg focus:outline-none"
-                        readonly />
-                    <button id="increment"
-                        class="bg-transparent text-white font-extrabold text-lg  px-2 rounded-lg bg-gray-200 ">+</button>
-                </div>
-            </div>
-
-            <!-- Book Now Button -->
-            <div class=" flex justify-center items-center">
-                <button onclick="openAvailable()"
-                    class="bg-white border-custom-secondary border-2 text-custom-secondary font-poppins font-bold py-2 px-6 rounded-full hover:scale-110 transition-all duration-200 hover:bg-custom-secondary hover:text-custom-primary">BOOK
-                    NOW</button>
-            </div>
-        </div>
+        </form>
     </div>
-    <div id="booking-details"
-        class="col-span-7 p-4 md:p-5 bg-white  transform transition duration-500 ease-in-out hidden rotate-y-180 animate-flip">
+
+    <div id="booking-details" class="col-span-7 p-4 md:p-5 bg-white inactive-card">
         <div class="w-full h-full mx-auto bg-gray-100 shadow-xl rounded-lg p-4 md:p-6">
             <!-- Search Bar -->
             <div class="flex items-center space-x-5 mb-6 justify-between h-16">
@@ -119,6 +111,7 @@
                     <button id="searchButton"
                         class="px-4 py-2 w-44 bg-red-500 text-white hover:scale-110 transition-all duration-300 font-poppins text-xl font-medium h-full rounded-2xl">Search</button>
                 </div>
+
                 <button onclick="toggleModal()" class="  text-red-600 flex justify-start items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                         stroke="currentColor" class="w-8 h-8 hover:scale-110 transition-all duration-300">
@@ -126,35 +119,38 @@
                     </svg>
                 </button>
             </div>
-
-            <!-- Room List -->
-            <div class="space-y-6 item-container inactive-card">
-                <!-- Room Card 1 -->
-                <a href="#"
-                    class="flex hover:scale-95 duration-300 transition-all items-center space-x-4 bg-white p-4 shadow rounded-lg">
-                    <img class="w-32 bg-corousel_1 bg-cover bg-center h-32 object-cover rounded-lg">
-                    <div class="flex-1">
-                        <h3 class="font-bold text-xl text-black font-poppins">Twin Room</h3>
-                        <p class="font-poppins text-base text-black">Kamar twin kami desain secara elegan dengan perabotan
-                            modern buatan tangan, dengan luas kamar
-                            25×27 meter persegi.</p>
-                        <div class="flex items-center space-x-2 mt-2">
-                            <span class="text-yellow-500">★★★★★</span>
-                            <span>4.9</span>
-                            <span class="text-gray-500">(312 Reviews)</span>
-                        </div>
-                        <div class="flex items-center space-x-4 mt-2 font-poppins text-black">
-                            <span>1 Bed</span>
-                            <span>WiFi</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-end space-y-2 ">
-                        <span class="text-lg font-semibold">Rp 280.000,00 /night</span>
-                        <button
-                            class="px-4 py-2 bg-red-500 font-poppins font-medium text-white rounded-lg hover:scale-110 duration-300 transition-all">Book
-                            now</button>
-                    </div>
-                </a>
+            <div class="space-y-4 item-container inactive-card">
+                @if (isset($availableRooms) && count($availableRooms) > 0)
+                    @foreach ($availableRooms as $room)
+                        <a href="{{ route('room.details', ['id' => $room['id']]) }}"
+                            class="flex hover:scale-95 duration-300 transition-all items-center space-x-4 bg-white p-4 shadow rounded-lg">
+                            <img class="w-32 h-32 object-cover rounded-lg" src="{{ $room['image'] }}"
+                                alt="{{ $room['room_type'] }}">
+                            <div class="flex-1">
+                                <h3 class="font-bold text-xl text-black">{{ $room['room_type'] }}</h3>
+                                <p class="text-black">{{ $room['description'] }}</p>
+                                <div class="flex items-center space-x-2 mt-2">
+                                    <span class="text-yellow-500">★★★★★</span>
+                                    <span></span>
+                                    <span class="text-gray-500">(300\ Reviews)</span>
+                                </div>
+                                <div class="flex items-center space-x-4 mt-2 text-black">
+                                    <span>Capacity {{ $room['capacity'] }}</span>
+                                    <span>WiFi</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end space-y-2 ">
+                                <span class="text-lg font-semibold">Rp {{ number_format($room['price'], 0, ',', '.') }},00
+                                    /night</span>
+                                <button class="px-4 py-2 bg-red-500 text-white rounded-lg hover:scale-110">Book
+                                    now</button>
+                            </div>
+                        </a>
+                    @endforeach
+                @else
+                    <p class="justify-center items-center flex mt-5 font-poppins font-medium text-lg">No rooms available
+                        for the selected dates.</p>
+                @endif
             </div>
         </div>
     </div>
@@ -211,7 +207,6 @@
             </div>
         </div>
     </div>
-
     {{-- Meeting rooms --}}
     <div id="meetingRooms" class="h-104 mt-16 w-full overflow-hidden">
         <div class="pl-7">
@@ -255,7 +250,6 @@
             </div>
         </div>
     </div>
-
     {{-- Package rooms --}}
     <div id="packageRooms" class="h-104 z-10 mt-10 w-full overflow-hidden">
         <div class="pl-7">
