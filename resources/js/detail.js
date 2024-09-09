@@ -12,3 +12,8 @@ bounceMeeting.addEventListener("scroll", () => {
         bounceMeeting.classList.add("bounce-right");
     }
 });
+
+function activatePaymentStep() {
+    // Simpan status langkah pembayaran sebagai aktif
+    localStorage.setItem("paymentStepActive", "true");
+}

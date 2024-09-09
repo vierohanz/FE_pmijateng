@@ -50,6 +50,10 @@ Route::get('/historyTransaction', OrderController::class)->middleware('AuthLogin
 Route::get('/account', function () {
     return view('account');
 })->middleware('AuthLogin')->name('account');
+})->name('account');
+Route::get('/detailTransaction', function () {
+    return view('detailTransaction');
+})->name('detailTransaction');
 
 Route::post('/resend-verification', EmailVerificationController::class)->name('verification.resend');
 

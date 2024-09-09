@@ -35,7 +35,7 @@ $('#booking-form').on('submit', function(event) {
     .then(data => {
         if (data) {
             console.log('DATA:', data);
-            console.log('Snap token:', data.data.snap_token); 
+            console.log('Snap token:', data.data.snap_token);
             snap.pay(data.data.snap_token, {
                 onSuccess: function(result) {
                     console.log('Payment success:', result);
@@ -48,8 +48,8 @@ $('#booking-form').on('submit', function(event) {
                     console.log('Payment error:', result);
                     window.location.href = '/historyTransaction';
                 },
-                onClose: function() { 
-                    window.location.href = '/historyTransaction';    
+                onClose: function() {
+                    window.location.href = '/historyTransaction';
                 }
             });
         }
@@ -67,7 +67,7 @@ $('#booking-form').on('submit', function(event) {
             console.error('Fetch berhasil tapi data tidak ada / snap token tidak ada');
         }
     })
-    // Error Fetch 
+    // Error Fetch
     .catch(error => {
         console.error('Error Fetch:', error);
         if (error.response.status === 403) {
@@ -92,9 +92,9 @@ $('#booking-form').on('submit', function(event) {
             toastr.error(`${error}`);
 
         }
-        
+
     });
-    
+
 });
 
 $('#booking-form').on('submit', function(event) {
@@ -117,7 +117,7 @@ $('#booking-form').on('submit', function(event) {
     .then(data => {
         if (data) {
             console.log('DATA:', data);
-            console.log('Snap token:', data.data.snap_token); 
+            console.log('Snap token:', data.data.snap_token);
             snap.pay(data.data.snap_token, {
                 onSuccess: function(result) {
                     console.log('Payment success:', result);
@@ -130,8 +130,8 @@ $('#booking-form').on('submit', function(event) {
                     console.log('Payment error:', result);
                     window.location.href = '/historyTransaction';
                 },
-                onClose: function() { 
-                    window.location.href = '/historyTransaction';    
+                onClose: function() {
+                    window.location.href = '/historyTransaction';
                 }
             });
         }
@@ -149,7 +149,7 @@ $('#booking-form').on('submit', function(event) {
             console.error('Fetch berhasil tapi data tidak ada / snap token tidak ada');
         }
     })
-    // Error Fetch 
+    // Error Fetch
     .catch(error => {
         console.error('Error Fetch:', error);
         if (error.response.status === 403) {
@@ -175,9 +175,9 @@ $('#booking-form').on('submit', function(event) {
             toastr.error(`${errorMessage}`);
 
         }
-        
+
     });
-    
+
 });
 
 
@@ -199,7 +199,7 @@ $('#booking-package-form').on('submit', function(event) {
     .then(data => {
         if (data) {
             console.log('DATA:', data);
-            console.log('Snap token:', data.data.snap_token); 
+            console.log('Snap token:', data.data.snap_token);
             snap.pay(data.data.snap_token, {
                 onSuccess: function(result) {
                     console.log('Payment success:', result);
@@ -212,8 +212,8 @@ $('#booking-package-form').on('submit', function(event) {
                     console.log('Payment error:', result);
                     window.location.href = '/historyTransaction';
                 },
-                onClose: function() { 
-                    window.location.href = '/historyTransaction';    
+                onClose: function() {
+                    window.location.href = '/historyTransaction';
                 }
             });
         }
@@ -231,7 +231,7 @@ $('#booking-package-form').on('submit', function(event) {
             console.error('Fetch berhasil tapi data tidak ada / snap token tidak ada');
         }
     })
-    // Error Fetch 
+    // Error Fetch
     .catch(error => {
         console.error('Error Fetch:', error);
         if (error.response.status === 403) {
@@ -257,13 +257,13 @@ $('#booking-package-form').on('submit', function(event) {
             toastr.error(`${errorMessage}`);
 
         }
-        
+
     });
-    
+
 });
 
 function updateTotalPricePackage() {
-    const pricePerPersonValue = document.getElementById('price_per_person'); 
+    const pricePerPersonValue = document.getElementById('price_per_person');
     const personCountInput = document.getElementById('person-count');
     const totalPriceElement = document.getElementById('total-price-package');
 
@@ -272,10 +272,10 @@ function updateTotalPricePackage() {
     const totalPrice = pricePerPerson * personCount;
     totalPriceElement.textContent = `Rp ${totalPrice.toLocaleString()}`;
 }
-    
+
 
 function updateTotalPrice() {
-    const amountRoomValue = document.getElementById('amount_room'); 
+    const amountRoomValue = document.getElementById('amount_room');
     const PriceRoomValue = document.getElementById('room_price');
     const totalPriceElement = document.getElementById('total-price');
 

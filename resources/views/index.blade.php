@@ -163,7 +163,7 @@
     </div>
 
     {{-- Meeting rooms --}}
-    <div id="meetingRooms" class="h-104 mt-16  w-full overflow-hidden">
+    <div id="meetingRooms" class="h-104 mt-16 w-full overflow-hidden">
         <div class="pl-7">
             <p data-aos="fade-right" class="font-freehand font-bold text-custom-primary text-3xl lg:text-5xl">Meeting
                 <span data-aos="fade-up" class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>
@@ -178,7 +178,7 @@
                         <div
                             class="relative flex flex-col pl-5 h-97 mt-6 text-gray-700 border-2 border-gray-100 bg-white shadow-md bg-clip-border rounded-xl w-96">
                             <div
-                                class="p relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+                                class=" relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
                                 <img src="{{ $meetingRoom['image'] }}" alt="Image Meeting Room"
                                     style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
@@ -207,7 +207,7 @@
     </div>
 
     {{-- Package rooms --}}
-    <div id="packageRooms" class="h-104 mt-10 w-full overflow-hidden">
+    <div id="packageRooms" class="h-104 z-10 mt-10 w-full overflow-hidden">
         <div class="pl-7">
             <p data-aos="fade-right" class="font-freehand font-bold text-custom-primary text-3xl lg:text-5xl">Package
                 <span class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>

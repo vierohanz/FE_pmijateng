@@ -38,17 +38,6 @@ fileInput.addEventListener("change", function (event) {
 
             // Save the image URL to LocalStorage
             localStorage.setItem("profileImage", imageUrl);
-
-            // Show custom toast notification using Toasify
-            Toasify({
-                title: "Profile picture updated successfully!",
-                duration: 5000, // Custom duration
-                position: "top-right",
-                style: {
-                    background: "#000", // Custom background color
-                    color: "#fff", // Custom text color
-                },
-            });
         };
 
         reader.onerror = function () {

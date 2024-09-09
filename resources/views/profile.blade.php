@@ -6,21 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Profile</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
-        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     @vite('resources/css/app.css')
     @vite('resources/js/profile.js')
-    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
+    @include('notify::components.notify')
+
+    @notifyCss
 </head>
 
 <body>
-    <div class="grid grid-cols-1 md:grid-cols-10 h-auto md:h-screen w-full">
+    <x:notify::notify />
+    <div class="grid  grid-cols-1 md:grid-cols-10 h-auto md:h-screen w-full">
         <!-- Sidebar -->
         <div class="col-span-3  bg-[#DA251D] flex-col justify-start pb-10 items-center flex pt-1 md:pt-8 px-5">
             <div class="w-full pb-9  pl-4 pt-5 xl:pt-0">
@@ -104,79 +100,11 @@
         </div>
 
         <div class="col-span-7 p-4 md:p-5 bg-white w-full">
-            @if (Session::has('add'))
-                <!-- Initialize Toastr for success message -->
-                <script>
-                    toastr.options = {
-                        "positionClass": "toast-bottom-right",
-                        "preventDuplicates": true,
-                        "progressBar": true,
-                        "timeOut": "5000",
-                        "debug": true,
-                        "newestOnTop": false,
-                        "progressBar": true,
-                        "positionClass": "toast-bottom-right",
-                        "preventDuplicates": true,
-
-                    };
-                    toastr.success("{{ Session::get('add') }}", "{{ Session::get('title') }}");
-                </script>
-            @elseif (Session::has('update'))
-                <!-- Initialize Toastr for info message -->
-                <script>
-                    toastr.options = {
-                        "positionClass": "toast-bottom-right",
-                        "preventDuplicates": true,
-                        "progressBar": true,
-                        "timeOut": "5000",
-                        "debug": true,
-                        "newestOnTop": false,
-                        "progressBar": true,
-                        "positionClass": "toast-bottom-right",
-                        "preventDuplicates": true,
-
-                    };
-                    toastr.info("{{ Session::get('update') }}", "{{ Session::get('title') }}");
-                </script>
-            @elseif (Session::has('delete'))
-                <!-- Initialize Toastr for delete success message -->
-                <script>
-                    toastr.options = {
-                        "positionClass": "toast-bottom-right",
-                        "preventDuplicates": true,
-                        "progressBar": true,
-                        "timeOut": "5000",
-                        "debug": true,
-                        "newestOnTop": false,
-                        "progressBar": true,
-                        "positionClass": "toast-bottom-right",
-                        "preventDuplicates": true,
-
-
-                    };
-                    toastr.success("{{ Session::get('delete') }}", "{{ Session::get('title') }}");
-                </script>
-            @elseif (Session::has('error'))
-                <!-- Initialize Toastr for error message -->
-                <script>
-                    toastr.options = {
-                        "positionClass": "toast-bottom-right",
-                        "preventDuplicates": true,
-                        "progressBar": true,
-                        "timeOut": "5000",
-                        "debug": true,
-                        "newestOnTop": false,
-                        "progressBar": true,
-                        "positionClass": "toast-bottom-right",
-                        "preventDuplicates": true,
-                    };
-                    toastr.error("{{ Session::get('error') }}", "{{ Session::get('title') }}");
-                </script>
-            @endif
 
             @yield('content')
         </div>
     </div>
+    @notifyJs
 </body>
 
 </html>
