@@ -32,7 +32,6 @@ class BookingController extends Controller
 
         $packages = $response->json();
 
-
         return view('detailPackage', ['packages' => $packages]);
     }
 

@@ -44,16 +44,14 @@ Route::get('/topbarPayment', function () {
 })->name('topbarPayment');
 
 Route::get('/checkout/{id}', [BookingController::class, 'checkOut'])->middleware('AuthLogin')->name('checkout');
+Route::get('/checkout-package/{id}', [BookingController::class, 'checkOutPackage'])->middleware('AuthLogin')->name('checkout-package');
 
 Route::get('/historyTransaction', OrderController::class)->middleware('AuthLogin')->name('historyTransaction');
 
 
 Route::get('/account', function () {
     return view('account');
-})->name('account');
-Route::get('/detailTransaction', function () {
-    return view('detailTransaction');
-})->name('detailTransaction');
+})->middleware('AuthLogin')->name('account');
 
 
 Route::post('/resend-verification', EmailVerificationController::class)->name('verification.resend');
@@ -67,4 +65,3 @@ Route::post('/update-password', [ProfileController::class, 'updatePassword'])->n
 Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');
 Route::get('/availableRooms', [HomeController::class, 'availableRooms'])->name('availableRooms');
 Route::get('/detailTransaction', DetailTransactionController::class)->middleware('AuthLogin')->name('detailTransaction');
-Route::get('/checkout-package/{id}', [BookingController::class, 'checkOutPackage'])->middleware('AuthLogin')->name('checkout-package');
