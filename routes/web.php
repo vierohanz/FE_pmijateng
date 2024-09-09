@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\DetailTransactionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Session;
@@ -65,3 +66,4 @@ Route::get('/changePassword', function () {
 Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('updatePassword');
 Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');
 Route::get('/availableRooms', [HomeController::class, 'availableRooms'])->name('availableRooms');
+Route::get('/detailTransaction', DetailTransactionController::class)->middleware('AuthLogin')->name('detailTransaction');

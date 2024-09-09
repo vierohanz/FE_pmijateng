@@ -34,7 +34,8 @@
                 @if (is_array($bookings) && count($bookings) > 0)
                     @foreach ($bookings as $booking)
                         <!-- Card 1 -->
-                        <a href="{{ route('detailTransaction') }} " class="">
+                        <a href="{{ route('detailTransaction', ['user_email' => $booking['user_email'], 'id' => $booking['id']]) }} "
+                            class="">
                             <div class="card flex flex-col md:flex-row items-start bg-white p-4 mt-4 hover:scale-95 transition-all duration-300 rounded-lg shadow-md"
                                 data-status="{{ $booking['transaction_status'] }}">
                                 <img class="w-full md:w-52 h-44 bg-cover bg-no-repeat rounded-md  md:mr-4"
@@ -43,6 +44,8 @@
                                     <div>
                                         <h2 class="text-xl font-semibold font-poppins text-black">
                                             {{ str_replace('_', ' ', $booking['room_type']) ?? 'default' }}</h2>
+                                        <h3 class="text-s font-semibold font-poppins text-gray">
+                                            {{ str_replace('_', ' ', $booking['channel']) ?? 'default' }}</h3>
                                         <p class="text-lg font-poppins text-black">{{ $booking['order_id'] }}</p>
                                         <p class="text-base xl:text-lg font-poppins text-black mt-2">Lorem ipsum dolor sit
                                             amet,
