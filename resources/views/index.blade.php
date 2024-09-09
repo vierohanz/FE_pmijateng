@@ -109,7 +109,7 @@
         </div>
     </div>
     <div id="booking-details"
-        class="col-span-7 p-4 md:p-5 bg-white  transform transition duration-500 ease-in-out rotate-y-180 animate-flip">
+        class="col-span-7 p-4 md:p-5 bg-white  transform transition duration-500 ease-in-out hidden rotate-y-180 animate-flip">
         <div class="w-full h-full mx-auto bg-gray-100 shadow-xl rounded-lg p-4 md:p-6">
             <!-- Search Bar -->
             <div class="flex items-center space-x-5 mb-6 justify-between h-16">
@@ -119,7 +119,7 @@
                     <button id="searchButton"
                         class="px-4 py-2 w-44 bg-red-500 text-white hover:scale-110 transition-all duration-300 font-poppins text-xl font-medium h-full rounded-2xl">Search</button>
                 </div>
-                <button onclick="toggleModal()" class="  text-red-600">
+                <button onclick="toggleModal()" class="  text-red-600 flex justify-start items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                         stroke="currentColor" class="w-8 h-8 hover:scale-110 transition-all duration-300">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -128,7 +128,7 @@
             </div>
 
             <!-- Room List -->
-            <div class="space-y-6 item-container">
+            <div class="space-y-6 item-container inactive-card">
                 <!-- Room Card 1 -->
                 <a href="#"
                     class="flex hover:scale-95 duration-300 transition-all items-center space-x-4 bg-white p-4 shadow rounded-lg">
