@@ -55,4 +55,24 @@
         </div>
 
     </div>
+
+    <script>
+        document.getElementById('resendVerification').addEventListener('click', function() {
+            fetch('/resend-verification', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 @endsection
