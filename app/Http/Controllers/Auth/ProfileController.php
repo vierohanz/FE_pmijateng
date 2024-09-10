@@ -50,4 +50,9 @@ class ProfileController extends Controller
             return back();
         }
     }
+
+    public function forgetPassword()
+    {
+        return view('forgetPassword');
+    }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\EmailVerificationController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DetailTransactionController;
@@ -61,9 +62,11 @@ Route::get('/changePassword', function () {
     return view('changePassword');
 })->name('changePassword');
 
-Route::get('/forgetPassword', function () {
-    return view('forgetPassword');
-})->name('forgetPassword');
+// Route::get('/forgetPassword', function () {
+//     return view('forgetPassword');
+// })->name('forgetPassword');
+Route::get('/forgetPassword', [ProfileController::class, 'forgetPassword'])->name('forgetPassword');
+Route::post('/forgetPassword', ForgotPasswordController::class)->name('forgetPassword');
 
 Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('updatePassword');
 Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');

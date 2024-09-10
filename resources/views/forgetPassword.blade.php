@@ -21,10 +21,15 @@
                 <p class="font-poppins text-3xl font-bold text-black mb-6">Reset Password</p>
 
                 <!-- Form Input Email -->
-                <form class="w-full flex flex-col items-center" method="POST" action="">
+                <form class="w-full flex flex-col items-center" method="POST" action="{{ route('forgetPassword') }}">
                     @csrf
                     <input type="email" name="email"
                         class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-white  border-2 border-gray-300 focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                    @if ($errors->has('email'))
+                        <p class="text-red-500 text-sm mt-1">{{ $errors->first('email') }}</p>
+                    @elseif($errors->has('credentials'))
+                        <p class="text-red-500 text-sm  mt-1">{{ $errors->first('credentials') }} </p>
+                    @endif
                     <button type="submit"
                         class="mt-5 hover:scale-105 transition-all duration-300 w-full max-w-sm px-4 py-3 rounded-xl bg-custom-primary text-white font-poppins font-semibold text-lg  ">
                         Send
