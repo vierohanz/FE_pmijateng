@@ -61,6 +61,10 @@ Route::get('/changePassword', function () {
     return view('changePassword');
 })->name('changePassword');
 
+Route::get('/forgetPassword', function () {
+    return view('forgetPassword');
+})->name('forgetPassword');
+
 Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('updatePassword');
 Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');
 Route::get('/availableRooms', [HomeController::class, 'availableRooms'])->name('availableRooms');

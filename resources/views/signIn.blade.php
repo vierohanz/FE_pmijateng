@@ -95,7 +95,7 @@
                                 </div>
                                 <span class="ml-3 text-base font-medium text-black">Remember me</span>
                             </label>
-                            <a href="javascript:void(0)"
+                            <a href="{{ route('forgetPassword') }}"
                                 class="mt-2 sm:mt-0 text-base font-medium text-[#DA251D] hover:scale-110 transition-all duration-300">Forget
                                 password?</a>
                         </div>

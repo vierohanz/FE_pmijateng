@@ -86,6 +86,7 @@ export default {
             admin: "url('/resources/images/admin.svg')",
             login: "url('/resources/images/login.svg')",
             google: "url('/resources/images/google.png')",
+            reset_pw: "url('/resources/images/reset_pw.png')",
         },
         backgroundOpacity: ({ theme }) => theme("opacity"),
         backgroundPosition: {

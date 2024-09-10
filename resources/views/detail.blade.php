@@ -209,19 +209,13 @@
                         class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-custom-primary rounded-2xl">
                         Back
                     </a>
-                    <a href="{{ route('checkout', ['id' => $room['room_data']['id']]) }}" onclick="activatePaymentStep()"
+                    <a id="checkout-button" href="{{ route('checkout', ['id' => $room['room_data']['id']]) }}"
+                        onclick="activatePaymentStep()"
                         class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-custom-primary rounded-2xl">
                         Checkout
                     </a>
                 </div>
             </div>
-
         </div>
     </div>
-    <script>
-        function activatePaymentStep() {
-            // Simpan status langkah pembayaran sebagai aktif
-            localStorage.setItem("paymentStepActive", "true");
-        }
-    </script>
 @endsection

@@ -57,25 +57,19 @@ class HomeController extends Controller
             'amount' => 'required|integer|min:1',
         ]);
 
-        // Mengambil data dari query string
         $startDate = $request->input('start_date');
         $endDate = $request->input('end_date');
         $amount = $request->input('amount');
 
-        // URL API
         $url = "http://dashboard.palmerinjateng.id/api/v1/booking/availableRoomOnDate?start_date={$startDate}&end_date={$endDate}&amount={$amount}";
 
-        // Mengambil data dari API
         $response = Http::get($url);
 
-        // Cek apakah permintaan berhasil
         if ($response->successful()) {
             $availableRooms = $response->json();
 
-            // Simpan data availableRooms ke session
             session(['availableRooms' => $availableRooms]);
 
-            // Ambil data meeting rooms
             $responseData = cache()->remember('roomData', 60, function () {
                 $api_url_v1 = config('app.api_url_v1');
                 $response = Http::timeout(20)->get($api_url_v1 . 'room_type/getAll');
@@ -94,14 +88,11 @@ class HomeController extends Controller
                 ];
             });
 
-            // Pisahkan meeting rooms dan package rooms
             $meetingRooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($meetingRoom) => !in_array($meetingRoom['id'], [1, 2])) : [];
-            $packageRooms = $responseData['response2'] ?? []; // Menggunakan null coalescing operator
-
-            // Mengembalikan view dengan data yang tepat
-            return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms')); // Mengembalikan semua variabel
+            $packageRooms = $responseData['response2'] ?? [];
+            return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms'));
         }
 
-        return back()->with('error', 'Failed to retrieve available rooms.'); // Pesan kesalahan jika gagal
+        return back()->with('error', 'Failed to retrieve available rooms.');
     }
 }

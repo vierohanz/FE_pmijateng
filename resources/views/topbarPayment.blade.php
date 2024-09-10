@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     @vite('resources/js/topbarPayment.js')
+
 </head>
 
 <body class="bg-white">
@@ -44,7 +45,7 @@
                 <!-- Step 2 -->
                 <div class="flex items-center">
                     <div id="step-2"
-                        class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-500 text-white">
+                        class="flex items-center step-package justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-500 text-white">
                         2
                     </div>
                     <p class="ml-2 text-gray-800 text-xs sm:text-sm font-medium">Bayar</p>
@@ -60,14 +61,11 @@
                 </div>
             </div>
         </nav>
-
         <!-- Body Section -->
         <div class="pt-28 sm:pt-32">
             @yield('content')
         </div>
     </div>
-
-
 </body>
 
 </html>

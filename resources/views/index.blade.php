@@ -119,7 +119,8 @@
                     </svg>
                 </button>
             </div>
-            <div class="space-y-4 item-container inactive-card">
+            <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
+                class="space-y-4 item-container inactive-card ">
                 @if (isset($availableRooms) && count($availableRooms) > 0)
                     @foreach ($availableRooms as $room)
                         <a href="{{ route('room.details', ['id' => $room['id']]) }}"
