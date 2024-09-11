@@ -90,9 +90,10 @@ class HomeController extends Controller
 
             $meetingRooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($meetingRoom) => !in_array($meetingRoom['id'], [1, 2])) : [];
             $packageRooms = $responseData['response2'] ?? [];
+            notify()->success('Menemukan ruangan tersedia', 'Success');
             return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms'));
         }
-
-        return back()->with('error', 'Failed to retrieve available rooms.');
+        notify()->error('Gagal menemukan ruangan tersedia', 'Error');
+        return back();
     }
 }

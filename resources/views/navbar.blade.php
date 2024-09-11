@@ -11,6 +11,7 @@
 </head>
 
 <body class="bg-white overflow-x-hidden">
+    <x:notify::notify />
 
     <div>
         <!-- NAVBAR -->
@@ -246,10 +247,9 @@
                 </div>
             </header>
         </div>
-    </div>
-    @yield('content')
-
-    </div>
+        <div>
+            @yield('content')
+        </div>
     </div>
     @notifyJs
 </body>
