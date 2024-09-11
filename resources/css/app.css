@@ -132,3 +132,7 @@
 .animate-slide-out {
     animation: slideInLeft 0.5s ease forwards;
 }
+
+#reset-password-btn {
+    background-color: #da251d;
+}

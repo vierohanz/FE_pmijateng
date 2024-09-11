@@ -8,6 +8,7 @@ use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Session;
+use Alert;
 
 class AuthController extends Controller
 {
@@ -29,7 +30,6 @@ class AuthController extends Controller
             return redirect()->route('index');
         } else {
             notify()->error('Gagal membuat akun', 'Error');
-
             return back();
         }
     }

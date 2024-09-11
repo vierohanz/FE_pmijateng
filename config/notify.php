@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'theme' => env('NOTIFY_THEME', 'light'),
+    'theme' => env('NOTIFY_THEME', 'dark'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
             'type' => 'success',
             'model' => 'connect',
             'title' => 'User Updated',
+
         ],
     ],
-
 ];

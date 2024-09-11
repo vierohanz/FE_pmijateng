@@ -8,10 +8,16 @@
     <title>Sign In</title>
     @vite('resources/css/app.css')
     @vite('resources/js/signIn.js')
+    @include('notify::components.notify')
+    @notifyCss
 </head>
 
-<body class="overflow-x-hidden">
-    <div class="h-117 w-full bg-[#EFEFEF] xl:py-24 xl:px-56">
+<body class="overflow-x-hidden bg-white">
+    <x:notify::notify />
+    <div class="notify-container">
+        <x:notify::notify />
+    </div>
+    <div class=" w-full bg-[#EFEFEF] py-10 px-5 xl:py-24 xl:px-56">
         <div class="h-full w-full grid grid-cols-1 xl:grid-cols-5 bg-[#DA251D] rounded-badge shadow-2xl">
             <div
                 class="h-full hidden xl:flex col-span-2 rounded-l-badge p-7 bg-[#DA251D] flex-col items-center justify-cente">
@@ -55,7 +61,7 @@
                 </div>
                 <div class="row-span-9 w-full h-full py-10 justify-center items-start flex">
                     <form action="{{ route('signIn') }}" method="POST"
-                        class="justify-start items-center flex-col flex">
+                        class="flex flex-col items-center w-full max-w-md">
                         @csrf
 
                         <p class="font-josefinSans font-bold text-4xl text-custom-secondary">Sign In</p>
@@ -109,7 +115,7 @@
                             @enderror
                         </div>
 
-                        <button type="submit"
+                        <button type="submit" id="reset-password-btn"
                             class="w-full h-16 bg-[#DA251D] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">
                             Sign In
                         </button>
@@ -126,21 +132,14 @@
                         </a>
 
 
-                        <div class="flex justify-between w-full">
-                            <a href="{{ route('signUp') }}"
-                                class="flex xl:hidden font-poppins font-medium text-lg text-custom-primary">
-                                go to SignUp
-                            </a>
-                            <a href="{{ route('index') }}"
-                                class="flex xl:hidden font-poppins font-medium text-lg text-custom-primary">
-                                back
-                            </a>
-                        </div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    @notifyJs
+
 </body>
 
 </html>

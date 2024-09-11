@@ -7,13 +7,11 @@
     @vite('resources/css/app.css')
     @vite('resources/js/navbar.js')
     @include('notify::components.notify')
-
     @notifyCss
 </head>
 
 <body class="bg-white overflow-x-hidden">
 
-    <x:notify::notify />
     <div>
         <!-- NAVBAR -->
         <div class="flex items-center justify-center h-36 z-50">

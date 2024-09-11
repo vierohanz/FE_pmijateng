@@ -17,10 +17,10 @@ class ForgotPasswordController extends Controller
 
         if ($response->successful()) {
             notify()->success('Link Reset Password berhasil di kirim', 'Success');
-            return back()->with(['add', 'Berhasil Mengirim Link Untuk Reset Password', 'title' => 'Success']);
+            return back();
         } else {
             notify()->error('Link Reset Password Gagal di kirim', 'Error');
-            return back()->with(['error' => 'Gagal Mengirim Link Untuk Reset Password', 'title' => 'Error']);
+            return back();
         }
     }
 }

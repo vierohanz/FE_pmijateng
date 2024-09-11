@@ -8,9 +8,14 @@
     <title>Forget Password</title>
     @vite('resources/css/app.css')
     @vite('resources/js/forgetPassword.js')
+    @include('notify::components.notify')
+
+    @notifyCss
 </head>
 
 <body class="flex justify-center h-screen w-full bg-gray-100 items-center">
+    <x:notify::notify />
+
     <div class="h-auto w-full max-w-4xl bg-white rounded-3xl flex flex-col shadow-2xl p-6">
         <a href="{{ route('signIn') }}"
             class="w-fit cursor-pointer font-poppins font-semibold text-lg text-custom-primary hover:scale-105 transition-all duration-300">
@@ -30,14 +35,16 @@
                     @elseif($errors->has('credentials'))
                         <p class="text-red-500 text-sm  mt-1">{{ $errors->first('credentials') }} </p>
                     @endif
-                    <button type="submit"
-                        class="mt-5 hover:scale-105 transition-all duration-300 w-full max-w-sm px-4 py-3 rounded-xl bg-custom-primary text-white font-poppins font-semibold text-lg  ">
+                    <button id="reset-password-btn" type="submit"
+                        class="mt-5 hover:scale-105 transition-all duration-300 w-full max-w-sm px-4 py-3 rounded-xl bg-cus text-white font-poppins font-semibold text-lg">
                         Send
                     </button>
                 </form>
             </div>
         </div>
     </div>
+
+    @notifyJs
 </body>
 
 </html>
