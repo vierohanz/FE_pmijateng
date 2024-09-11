@@ -23,7 +23,7 @@
                 <!-- Form Input Email -->
                 <form class="w-full flex flex-col items-center" method="POST" action="">
                     @csrf
-                    <input type="email" name="email"
+                    <input type="email" name="email" placeholder="Email"
                         class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-white  border-2 border-gray-300 focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
                     <button type="submit"
                         class="mt-5 hover:scale-105 transition-all duration-300 w-full max-w-sm px-4 py-3 rounded-xl bg-custom-primary text-white font-poppins font-semibold text-lg  ">

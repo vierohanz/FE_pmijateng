@@ -211,7 +211,7 @@
     {{-- Meeting rooms --}}
     <div id="meetingRooms" class="h-104 mt-16 w-full overflow-hidden">
         <div class="pl-7">
-            <p data-aos="fade-right" class="font-freehand font-bold text-custom-primary text-3xl lg:text-5xl">Meeting
+            <p data-aos="fade-right" class="font-freehand font-bold text-custom-primary text-3xl lg:text-5xl">Regular
                 <span data-aos="fade-up" class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>
             </p>
         </div>
