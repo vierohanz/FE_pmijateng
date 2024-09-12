@@ -19,7 +19,7 @@ class ForgotPasswordController extends Controller
             notify()->success('Link Reset Password berhasil di kirim', 'Success');
             return back();
         } else {
-            notify()->error('Link Reset Password Gagal di kirim', 'Error');
+            notify()->error('Link Reset Password Gagal di kirim, Coba Lagi', 'Error');
             return back();
         }
     }

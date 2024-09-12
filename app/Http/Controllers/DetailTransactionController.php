@@ -29,7 +29,8 @@ class DetailTransactionController extends Controller
             $transaction['check_in'] = Carbon::parse($transaction['check_in'])->translatedFormat('d F Y');
             $transaction['check_out'] = Carbon::parse($transaction['check_out'])->translatedFormat('d F Y');
         } else {
-            return redirect()->route('historyTransaction')->with(['error', 'Failed to get transaction detail']);
+            notify()->error('Failed to get transaction detail', 'Error');
+            return redirect()->route('historyTransaction');
         }
 
         return view('detailTransaction', ['transaction' => $transaction]);

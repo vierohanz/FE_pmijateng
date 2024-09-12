@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', HomeController::class)->name('index');
 Route::get('/signIn', function () {
-    // dd(session()->all());
     return view('signIn');
 })->name('signIn');
 

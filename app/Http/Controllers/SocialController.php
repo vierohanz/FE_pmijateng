@@ -45,7 +45,9 @@ class SocialController extends Controller
 
             return redirect()->route('index')->with(['add' => 'Selamat Datang ' . $googleUser->name]);
         } else {
-            return back()->with('error', 'Gagal membuat akun');
+            $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+            notify()->error($errorMessage, 'Error');
+            return back();
         }
     }
 
@@ -77,7 +79,9 @@ class SocialController extends Controller
 
             return redirect('/homeRegister')->with(['add' => 'Selamat Datang ' . $twitterUser->name]);
         } else {
-            return back()->with('error', 'Gagal membuat akun');
+            $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+            notify()->error($errorMessage, 'Error');
+            return back();
         }
     }
 }

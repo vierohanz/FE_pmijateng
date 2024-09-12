@@ -24,7 +24,9 @@ class OrderController extends Controller
                 $bookings = $response->json();
                 
             } elseif ($response->status() == 401) {
-                return redirect()->route('register')->withErrors(['error' => 'Email Anda tidak terdaftar.']);
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Email tidak terdaftar atau tidak tersedia';
+                notify()->error($errorMessage, 'Error');
+                return redirect()->route('register');
                 
             }
             
