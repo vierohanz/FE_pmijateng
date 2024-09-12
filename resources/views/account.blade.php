@@ -68,11 +68,9 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log('success:', data);
                 window.location.reload();
             })
             .catch(error => {
-                console.error('Error:', error);
                 window.location.reload();
             });
         });
