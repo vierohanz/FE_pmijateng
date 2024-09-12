@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', HomeController::class)->name('index');
 Route::get('/signIn', function () {
-    // dd(session()->all());
     return view('signIn');
 })->name('signIn');
 
@@ -62,9 +61,6 @@ Route::get('/changePassword', function () {
     return view('changePassword');
 })->name('changePassword');
 
-// Route::get('/forgetPassword', function () {
-//     return view('forgetPassword');
-// })->name('forgetPassword');
 Route::get('/forgetPassword', [ProfileController::class, 'forgetPassword'])->name('forgetPassword');
 Route::post('/forgetPassword', ForgotPasswordController::class)->name('forgetPassword');
 

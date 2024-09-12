@@ -16,6 +16,7 @@ class AuthLogin
         $api_url_v1 = config('app.api_url_v1');
 
         if (!$token) {
+            notify()->error('Silahkan Login Terlebih dahulu', 'Error');
             return redirect()->route('signIn')->withErrors('Silahkan Login Terlebih dahulu');
         }
 
@@ -25,10 +26,12 @@ class AuthLogin
             if ($apiResponse->successful()) {
                 Session::put('user', $apiResponse->json());
             } else {
-                return redirect()->route('signIn')->withErrors('Silahkan Login Terlebih dahulu');
+                notify()->error('Silahkan Login Terlebih dahulu', 'Error');
+                return redirect()->route('signIn');
             }
         } catch (\Throwable $th) {
-            return redirect()->route('signIn')->withErrors('Silahkan Login Terlebih dahulu');
+            notify()->error('Silahkan Login Terlebih dahulu', 'Error');
+            return redirect()->route('signIn');
         }
 
         return $next($request);

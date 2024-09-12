@@ -53,7 +53,9 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+
     'api_url_v1' => env('APP_API_V1', 'http://localhost'),
+    'api_url_v2' => env('APP_API_V2', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------

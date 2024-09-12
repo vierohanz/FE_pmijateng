@@ -24,6 +24,7 @@ class HomeController extends Controller
                     return [
                         'response' => [],
                         'response2' => [],
+                        'error' => 'API request failed with status: ' . $response->status() . ' and ' . $response2->status(),
                     ];
                 }
 
@@ -39,6 +40,20 @@ class HomeController extends Controller
                 'error' => 'Request failed: ' . $e->getMessage(),
             ];
         }
+        catch (\Illuminate\Http\Client\RequestException $e) {
+            return [
+                'response' => [],
+                'response2' => [],
+                'error' => 'Request failed: ' . $e->getMessage(),
+            ];
+        }
+        catch (\Exception $e) {
+            return [
+                'response' => [],
+                'response2' => [],
+                'error' => 'An unexpected error occurred: ' . $e->getMessage(),
+            ];
+        }
 
         // Pastikan untuk memeriksa apakah kunci ada sebelum mengaksesnya
         $rooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($room) => in_array($room['id'], [1, 2])) : [];
@@ -50,6 +65,7 @@ class HomeController extends Controller
 
     public function availableRooms(Request $request)
     {
+        $api_url_v1 = config('app.api_url_v1');
         // Validasi input
         $request->validate([
             'start_date' => 'required|date',
@@ -61,7 +77,7 @@ class HomeController extends Controller
         $endDate = $request->input('end_date');
         $amount = $request->input('amount');
 
-        $url = "http://dashboard.palmerinjateng.id/api/v1/booking/availableRoomOnDate?start_date={$startDate}&end_date={$endDate}&amount={$amount}";
+        $url =  $api_url_v1 . "booking/availableRoomOnDate?start_date={$startDate}&end_date={$endDate}&amount={$amount}";
 
         $response = Http::get($url);
 
@@ -89,9 +105,10 @@ class HomeController extends Controller
             });
 
             $meetingRooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($meetingRoom) => !in_array($meetingRoom['id'], [1, 2])) : [];
+            $rooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($room) => in_array($room['id'], [1, 2])) : [];
             $packageRooms = $responseData['response2'] ?? [];
             notify()->success('Menemukan ruangan tersedia', 'Success');
-            return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms'));
+            return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms', 'rooms'));
         }
         notify()->error('Gagal menemukan ruangan tersedia', 'Error');
         return back();

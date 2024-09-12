@@ -25,8 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 $("#booking-form").on("submit", function (event) {
     event.preventDefault();
+    const accessToken = window.accessToken;
 
     const apiUrlV1 = $('input[name="api_url_v1"]').val();
+    const apiUrlV2 = $('input[name="api_url_v2"]').val();
     var formData = {
         user_email: $('input[name="user_email"]').val(),
         room_type_id: $('input[name="room_type_id"]').val(),
@@ -37,10 +39,13 @@ $("#booking-form").on("submit", function (event) {
         phone: $('input[name="phone"]').val(),
         side: "client",
     };
-    console.log(apiUrlV1);
 
     axios
-        .post(`${apiUrlV1}booking/generateToken`, formData)
+        .post(`${apiUrlV2}booking/generateToken`, formData, {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        })
         .then((data) => {
             if (data) {
                 console.log("DATA:", data);
@@ -92,9 +97,10 @@ $("#booking-form").on("submit", function (event) {
                 toastr.error(
                     "Akses ditolak. Lakukan Verifikasi Email di Profil."
                 );
-            } else {
+            }
+            else {
                 const errorMessage =
-                    error.response?.data?.error || "Booking gagal disimpan";
+                    error.response?.data?.error || error.response?.data?.message  || "Booking gagal disimpan";
                 toastr.options = {
                     positionClass: "toast-top-center",
                     preventDuplicates: true,
@@ -110,8 +116,10 @@ $("#booking-form").on("submit", function (event) {
 
 $("#booking-package-form").on("submit", function (event) {
     event.preventDefault();
+    const accessToken = window.accessToken;
 
     const apiUrlV1 = $('input[name="api_url_v1"]').val();
+    const apiUrlV2 = $('input[name="api_url_v2"]').val();
     var formData = {
         user_email: $('input[name="user_email"]').val(),
         package_id: $('input[name="package_id"]').val(),
@@ -120,10 +128,13 @@ $("#booking-package-form").on("submit", function (event) {
         person_count: $('input[name="person_count"]').val(),
         side: "client",
     };
-    console.log(apiUrlV1);
 
     axios
-        .post(`${apiUrlV1}booking/packageToken`, formData)
+        .post(`${apiUrlV2}booking/packageToken`, formData, {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        })
         .then((data) => {
             if (data) {
                 console.log("DATA:", data);
@@ -177,7 +188,7 @@ $("#booking-package-form").on("submit", function (event) {
                 );
             } else {
                 const errorMessage =
-                    error.response?.data?.error || "Booking gagal disimpan";
+                    error.response?.data?.error || error.response?.data?.message || "Booking gagal disimpan";
                 toastr.options = {
                     positionClass: "toast-top-center",
                     preventDuplicates: true,

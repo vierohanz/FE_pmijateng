@@ -21,7 +21,7 @@ class EmailVerificationController extends Controller
             notify()->success('Verif Email Berhasil Di Kirim', 'Success');
             return response()->json(['message' => 'Verification email has been sent.']);
         } else {
-            notify()->error('Verif Email Gagal Di Kirim', 'Error');
+            notify()->error('Verif Email Gagal Di Kirim, Coba Lagi', 'Error');
             return response()->json(['message' => 'Failed to send verification email.'], $response->status());
         }
         
