@@ -105,9 +105,10 @@ class HomeController extends Controller
             });
 
             $meetingRooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($meetingRoom) => !in_array($meetingRoom['id'], [1, 2])) : [];
+            $rooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($room) => in_array($room['id'], [1, 2])) : [];
             $packageRooms = $responseData['response2'] ?? [];
             notify()->success('Menemukan ruangan tersedia', 'Success');
-            return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms'));
+            return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms', 'rooms'));
         }
         notify()->error('Gagal menemukan ruangan tersedia', 'Error');
         return back();
