@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 
 class DetailTransactionController extends Controller
 {
@@ -13,8 +14,10 @@ class DetailTransactionController extends Controller
         $api_url_v1 = config('app.api_url_v1');
         $userEmail = $request->query('user_email');
         $id = $request->query('id');
+        $api_url_v2 = config('app.api_url_v2');
+        $token = Session::get('access_token');
 
-        $response = Http::timeout(20)->get($api_url_v1 . 'user_transaction/detail', [
+        $response = Http::withToken($token)->get($api_url_v2 . 'user_transaction/detail', [
             'user_email' => $userEmail,
             'id' => $id,
         ]);
@@ -28,7 +31,6 @@ class DetailTransactionController extends Controller
         } else {
             return redirect()->route('historyTransaction')->with(['error', 'Failed to get transaction detail']);
         }
-        // dd($transaction);
 
         return view('detailTransaction', ['transaction' => $transaction]);
     }

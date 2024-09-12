@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Http;
 class BookingController extends Controller
 {
     protected $api_url_v1;
+    protected $api_url_v2;
 
     public function __construct()
     {
         $this->api_url_v1 = config('app.api_url_v1');
+        $this->api_url_v2 = config('app.api_url_v2');
     }
 
     public function showRoom($id)
@@ -43,7 +45,7 @@ class BookingController extends Controller
 
         $room = $response->json();
 
-        return view('checkout', ['room' => $room, 'api_url_v1' => $this->api_url_v1]);
+        return view('checkout', ['room' => $room, 'api_url_v1' => $this->api_url_v1, 'api_url_v2' => $this->api_url_v2]);
     }
 
     public function checkOutPackage($id)
@@ -54,6 +56,6 @@ class BookingController extends Controller
 
         $room = $response->json();
 
-        return view('checkout', ['room' => $room, 'api_url_v1' => $this->api_url_v1]);
+        return view('checkout', ['room' => $room, 'api_url_v1' => $this->api_url_v1, 'api_url_v2' => $this->api_url_v2]);
     }
 }

@@ -231,10 +231,10 @@
                             <div class="p-6 ">
                                 <h5
                                     class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                                    {{ str_replace('_', ' ', $room['room_type']) ?? 'Tidak Ada' }}
+                                    {{ str_replace('_', ' ', $room['room_type']) ?? '' }}
                                 </h5>
                                 <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                    {{ $room['description'] ?? 'Tidak Ada Deskripsi' }}
+                                    {{ $room['description'] ?? '' }}
                                 </p>
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
@@ -262,10 +262,10 @@
                             <div class="p-6 ">
                                 <h5
                                     class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                                    {{ str_replace('_', ' ', $meetingRoom['room_type']) ?? 'Tidak Ada' }}
+                                    {{ str_replace('_', ' ', $meetingRoom['room_type']) ?? '' }}
                                 </h5>
                                 <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                    {{ $meetingRoom['description'] ?? 'Tidak Ada Deskripsi' }}
+                                    {{ $meetingRoom['description'] ?? '' }}
                                 </p>
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
@@ -305,10 +305,10 @@
                             <div class="p-6">
                                 <h5
                                     class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                                    {{ $packageRoom['name'] ?? 'Tidak ada' }}
+                                    {{ $packageRoom['name'] ?? '' }}
                                 </h5>
                                 <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                    {{ $packageRoom['description'] ?? 'Tidak ada' }}
+                                    {{ $packageRoom['description'] ?? '' }}
                                 </p>
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
