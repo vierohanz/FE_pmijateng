@@ -43,8 +43,8 @@ Route::get('/topbarPayment', function () {
     return view('topbarPayment');
 })->name('topbarPayment');
 
-Route::get('/checkout/{id}', [BookingController::class, 'checkOut'])->middleware('AuthLogin')->name('checkout');
-Route::get('/checkout-package/{id}', [BookingController::class, 'checkOutPackage'])->middleware('AuthLogin')->name('checkout-package');
+Route::get('/checkout/{id}', [BookingController::class, 'checkOut'])->middleware(['AuthLogin', 'AuthEmailVerified'])->name('checkout');
+Route::get('/checkout-package/{id}', [BookingController::class, 'checkOutPackage'])->middleware(['AuthLogin', 'AuthEmailVerified'])->name('checkout-package');
 
 Route::get('/historyTransaction', OrderController::class)->middleware('AuthLogin')->name('historyTransaction');
 

@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         //
         $middleware->alias([
             'AuthLogin' => \App\Http\Middleware\AuthLogin::class,
+            'AuthEmailVerified' => \App\Http\Middleware\AuthEmailVerified::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

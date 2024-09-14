@@ -133,7 +133,7 @@
                                 <div class="flex items-center space-x-2 mt-2">
                                     <span class="text-yellow-500">★★★★★</span>
                                     <span></span>
-                                    <span class="text-gray-500">(300\ Reviews)</span>
+                                    <span class="text-gray-500"></span>
                                 </div>
                                 <div class="flex items-center space-x-4 mt-2 text-black">
                                     <span>Capacity {{ $room['capacity'] }}</span>
