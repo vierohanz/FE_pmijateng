@@ -70,44 +70,52 @@ class HomeController extends Controller
             $endDate = $request->input('end_date');
             $amount = $request->input('amount');
 
+            $availableRooms = [];
+
+            $responseData = cache()->remember('roomData', 60, function () {
+                $api_url_v1 = config('app.api_url_v1');
+                $response = Http::timeout(20)->get($api_url_v1 . 'room_type/getAll');
+                $response2 = Http::timeout(20)->get($api_url_v1 . 'packages/getAll');
+
+                if ($response->failed()) {
+                    return [
+                        'response' => [],
+                        'response2' => $response2->json(),
+                    ];
+                } elseif ($response2->failed()) {
+                    return [
+                        'response' => $response->json(),
+                        'response2' => [],
+                    ];
+                }
+
+                return [
+                    'response' => $response->json(),
+                    'response2' => $response2->json(),
+                ];
+            });
+
+            $meetingRooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($meetingRoom) => !in_array($meetingRoom['id'], [1, 2])) : [];
+            $rooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($room) => in_array($room['id'], [1, 2])) : [];
+            $packageRooms = $responseData['response2'] ?? [];
+
             $url =  $api_url_v1 . "booking/availableRoomOnDate?start_date={$startDate}&end_date={$endDate}&amount={$amount}";
 
-            $response = Http::get($url);
+            $response_available = Http::get($url);
 
-            if ($response->successful()) {
-                $availableRooms = $response->json();
+            if ($response_available->successful()) {
+                $availableRooms = $response_available->json();
 
                 session(['availableRooms' => $availableRooms]);
 
-                $responseData = cache()->remember('roomData', 60, function () {
-                    $api_url_v1 = config('app.api_url_v1');
-                    $response = Http::timeout(20)->get($api_url_v1 . 'room_type/getAll');
-                    $response2 = Http::timeout(20)->get($api_url_v1 . 'packages/getAll');
-
-                    if ($response->failed()) {
-                        return [
-                            'response' => [],
-                            'response2' => $response2->json(),
-                        ];
-                    } elseif ($response2->failed()) {
-                        return [
-                            'response' => $response->json(),
-                            'response2' => [],
-                        ];
-                    }
-
-                    return [
-                        'response' => $response->json(),
-                        'response2' => $response2->json(),
-                    ];
-                });
-
-                $meetingRooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($meetingRoom) => !in_array($meetingRoom['id'], [1, 2])) : [];
-                $rooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($room) => in_array($room['id'], [1, 2])) : [];
-                $packageRooms = $responseData['response2'] ?? [];
-                notify()->success('Menemukan ruangan tersedia', 'Success');
+                notify()->success( 'Menemukan ruangan tersedia','Sukses');
+                return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms', 'rooms'));
+            } else{
+                $errorMessage = $response_available->json()[0] ?? $response_available->json('error') ?? $response_available->json('message') ?? 'Gagal menemukan ruangan tersedia';
+                notify()->error($errorMessage, 'Error');
                 return view('index', compact('availableRooms', 'meetingRooms', 'packageRooms', 'rooms'));
             }
+            
         } catch (RequestException $e) {
             $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.';
             notify()->error($errorMessage, 'Error');
