@@ -31,7 +31,7 @@ class ForgotPasswordController extends Controller
             return back(); 
 
         } catch (\Exception $e) {
-            $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Link Reset Password Gagal di kirim, Coba Lagi';
+            $errorMessage = 'Link Reset Password Gagal di kirim, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return back();
         }

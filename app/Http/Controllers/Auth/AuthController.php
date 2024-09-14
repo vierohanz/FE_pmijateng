@@ -40,7 +40,7 @@ class AuthController extends Controller
             notify()->error($errorMessage, 'Error');
             return back();
         } catch (\Exception $e) {
-            $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Register Gagal Coba Lagi';
+            $errorMessage = 'Register Gagal Coba Lagi, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return back();
         }
@@ -69,7 +69,7 @@ class AuthController extends Controller
             return back();
 
         } catch (\Exception $e) {
-            $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Login Gagal Coba Lagi';
+            $errorMessage = 'Login Gagal Coba Lagi, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return back();
         }
@@ -89,21 +89,18 @@ class AuthController extends Controller
                 notify()->success('Berhasil logout', 'Success');
                 return redirect()->route('index');
             } else {
-                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Login';
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Logout';
                 notify()->error($errorMessage, 'Error');
                 return back();
             }
 
-        } catch (\Throwable $th) {
-            notify()->error('Error... Coba Lagi Nanti', 'Error');
-            return redirect()->route('index');
         } catch (RequestException $e) {
             $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.'; 
             notify()->error($errorMessage, 'Error');
             return back();
 
         } catch (\Exception $e) {
-            $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Logout Gagal Coba Lagi';
+            $errorMessage = 'Logout Gagal Coba Lagi, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return back();
         }

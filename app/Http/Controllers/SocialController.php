@@ -29,7 +29,6 @@ class SocialController extends Controller
             $googleUser = Socialite::driver('google')->user();
             $password = Str::random(24);
 
-            // Send POST request to API endpoint
             $response = Http::post($this->api_url_v1 . 'registerSocial', [
                 'email' => $googleUser->email,
                 'name' => $googleUser->name,
@@ -37,9 +36,7 @@ class SocialController extends Controller
                 'password' => $password,
             ]);
 
-            // Return response from API to client
             if ($response->successful()) {
-                // Store access token in session
                 $accessToken = $response->json()['access_token'];
                 Session::put('access_token', $accessToken);
 
@@ -49,19 +46,18 @@ class SocialController extends Controller
 
                 return redirect()->route('index')->with(['add' => 'Selamat Datang ' . $googleUser->name]);
             } else {
-                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Login atau Register akun';
                 notify()->error($errorMessage, 'Error');
                 return back();
             }
             
-        }
-        catch (RequestException $e) {
+        } catch (RequestException $e) {
             $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.';
             notify()->error($errorMessage, 'Error');
             return back();
     
         } catch (\Exception $e) {
-            $errorMessage =  $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Register Gagal Coba Lagi';
+            $errorMessage = 'Register atau Login Gagal, Server Error';
             notify()->error($errorMessage, 'Error');
             return back();
         }
@@ -79,7 +75,6 @@ class SocialController extends Controller
             $twitterUser = Socialite::driver('twitter')->user();
             $password = Str::random(24);
 
-            // Send POST request to API endpoint
             $response = Http::post($this->api_url_v1 . 'registerSocial', [
                 'email' => $twitterUser->email,
                 'name' => $twitterUser->name,
@@ -87,9 +82,7 @@ class SocialController extends Controller
                 'password' => $password,
             ]);
 
-            // Return response from API to client
             if ($response->successful()) {
-                // Store access token in session
                 $accessToken = $response->json()['access_token'];
                 Session::put('access_token', $accessToken);
 
@@ -99,7 +92,7 @@ class SocialController extends Controller
 
                 return redirect('/homeRegister')->with(['add' => 'Selamat Datang ' . $twitterUser->name]);
             } else {
-                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Login atau Register akun';
                 notify()->error($errorMessage, 'Error');
                 return back();
             }
@@ -110,7 +103,7 @@ class SocialController extends Controller
             return back();
     
         } catch (\Exception $e) {
-            $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Register Gagal Coba Lagi';
+            $errorMessage = 'Register atau Login Gagal Coba Lagi';
             notify()->error($errorMessage, 'Error');
             return back();
         }

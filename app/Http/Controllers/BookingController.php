@@ -26,13 +26,12 @@ class BookingController extends Controller
                 $room = $response->json();
                 return view('detail', ['room' => $room]);
             }else{
-                $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal menemukan ruangan, coba lagi nanti';
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal menemukan ruangan, coba lagi nanti';
                 notify()->error( $errorMessage, 'Error');
                 return back();
             }
-        }
-        catch (\Exception $e) {
-            $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal menemukan ruangan, coba lagi nanti';
+        } catch (\Exception $e) {
+            $errorMessage = 'Gagal menemukan ruangan, Menunggu Server';
             notify()->error( $errorMessage, 'Error');
             return back();
         }
@@ -50,13 +49,12 @@ class BookingController extends Controller
                 $packages = $response->json();
                 return view('detailPackage', ['packages' => $packages]);
             } else {
-                $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal menemukan paket';
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal menemukan paket';
                 notify()->error( $errorMessage, 'Error');
                 return back();
             }
-        }
-        catch (\Exception $e) {
-            $errorMessage =  $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal menemukan paket';
+        } catch (\Exception $e) {
+            $errorMessage = 'Gagal menemukan paket, Menunggu Server';
             notify()->error( $errorMessage, 'Error');
             return back();
         }
@@ -72,9 +70,13 @@ class BookingController extends Controller
             if ($response->successful()){
                 $room = $response->json();
                 return view('checkout', ['room' => $room, 'api_url_v1' => $this->api_url_v1, 'api_url_v2' => $this->api_url_v2]);
+            } else {
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal melakukan checkout, coba lagi nanti';
+                notify()->error( $errorMessage, 'Error');
+                return back();
             }
         } catch (\Exception $e) {
-            $errorMessage =  $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal melakukan checkout, coba lagi nanti';
+            $errorMessage = 'Gagal melakukan checkout, Menunggu Server';
             notify()->error( $errorMessage, 'Error');
             return back();
         }
@@ -90,9 +92,13 @@ class BookingController extends Controller
             if ($response->successful()){
                 $room = $response->json();
                 return view('checkout', ['room' => $room, 'api_url_v1' => $this->api_url_v1, 'api_url_v2' => $this->api_url_v2]);
+            } else {
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal melakukan checkout, coba lagi nanti';
+                notify()->error( $errorMessage, 'Error');
+                return back();
             }
         } catch (\Exception $e) {
-            $errorMessage =  $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal melakukan checkout, coba lagi nanti';
+            $errorMessage = 'Gagal melakukan checkout, Menunggu Server';
             notify()->error( $errorMessage, 'Error');
             return back();
         }

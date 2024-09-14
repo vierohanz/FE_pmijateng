@@ -34,7 +34,7 @@ class EmailVerificationController extends Controller
             return response()->json(['message' => $errorMessage], 504);
 
         } catch (\Exception $e) {
-            $errorMessage =  $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Verif Email Gagal Di Kirim, Coba Lagi';
+            $errorMessage =  'Verif Email Gagal Di Kirim, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return response()->json(['message' => $errorMessage], 500);
         }

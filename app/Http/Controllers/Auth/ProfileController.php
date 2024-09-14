@@ -42,7 +42,7 @@ class ProfileController extends Controller
             return back();
 
         } catch (\Exception $e) {
-            $errorMessage =  $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Mengubah Profil';
+            $errorMessage = 'Gagal Mengubah Profil, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return back();
         }
@@ -70,7 +70,7 @@ class ProfileController extends Controller
                 return back();
 
         } catch (\Exception $e) {
-            $errorMessage =  $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Mengubah Password';
+            $errorMessage = 'Gagal Mengubah Password, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return back();
         }

@@ -21,9 +21,15 @@ class HomeController extends Controller
                 $response = Http::timeout(20)->get($api_url_v1 . 'room_type/getAll');
                 $response2 = Http::timeout(20)->get($api_url_v1 . 'packages/getAll');
 
-                if ($response->failed() || $response2->failed()) {
+                if ($response->failed()) {
                     return [
                         'response' => [],
+                        'response2' => $response2->json(),
+                        'error' => 'API request failed with status: ' . $response->status() . ' and ' . $response2->status(),
+                    ];
+                } elseif ($response2->failed()) {
+                    return [
+                        'response' => $response->json(),
                         'response2' => [],
                         'error' => 'API request failed with status: ' . $response->status() . ' and ' . $response2->status(),
                     ];
@@ -34,8 +40,7 @@ class HomeController extends Controller
                     'response2' => $response2->json(),
                 ];
             });
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             return [
                 'response' => [],
                 'response2' => [],
@@ -79,9 +84,14 @@ class HomeController extends Controller
                     $response = Http::timeout(20)->get($api_url_v1 . 'room_type/getAll');
                     $response2 = Http::timeout(20)->get($api_url_v1 . 'packages/getAll');
 
-                    if ($response->failed() || $response2->failed()) {
+                    if ($response->failed()) {
                         return [
                             'response' => [],
+                            'response2' => $response2->json(),
+                        ];
+                    } elseif ($response2->failed()) {
+                        return [
+                            'response' => $response->json(),
                             'response2' => [],
                         ];
                     }
@@ -104,7 +114,7 @@ class HomeController extends Controller
             return back();
 
         } catch (\Exception $e) {
-            $errorMessage =  $response->json('error') ?? $response->json('message') ?? 'Gagal menemukan ruangan tersedia';
+            $errorMessage =  'Gagal menemukan ruangan tersedia';
             notify()->error($errorMessage, 'Error');
             return back();
         }

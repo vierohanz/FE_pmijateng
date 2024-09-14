@@ -28,12 +28,16 @@ class OrderController extends Controller
                 $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Email tidak terdaftar atau tidak tersedia';
                 notify()->error($errorMessage, 'Error');
                 return redirect()->route('register');        
+            } else {
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Mendapatkan List Transaksi, Coba lagi';
+                notify()->error($errorMessage, 'Error');
+                return redirect()->route('historyTransaction');
             }
             
             return view('historyTransaction', ['bookings' => $bookings]);
         }
         catch (\Exception $e) {
-            $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Mendapatkan List Transaksi, Coba lagi';
+            $errorMessage = 'Gagal Mendapatkan List Transaksi, Coba lagi';
             notify()->error($errorMessage, 'Error');
             return redirect()->route('historyTransaction');
         }

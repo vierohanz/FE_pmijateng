@@ -43,7 +43,7 @@ class DetailTransactionController extends Controller
             return redirect()->route('historyTransaction');
 
         } catch (\Exception $e) {
-            $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Mendapatkan Detail Transaksi, Coba lagi';
+            $errorMessage ='Gagal Mendapatkan Detail Transaksi, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return redirect()->route('historyTransaction');
         }
