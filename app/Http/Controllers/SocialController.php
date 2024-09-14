@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Http\Client\RequestException;
 
 class SocialController extends Controller
 {
@@ -24,31 +25,47 @@ class SocialController extends Controller
 
     public function googleCallback()
     {
-        $googleUser = Socialite::driver('google')->user();
-        $password = Str::random(24);
+        try {
+            $googleUser = Socialite::driver('google')->user();
+            $password = Str::random(24);
 
-        // Send POST request to API endpoint
-        $response = Http::post($this->api_url_v1 . 'registerSocial', [
-            'email' => $googleUser->email,
-            'name' => $googleUser->name,
-            'phone' => $googleUser->phone ?? '',
-            'password' => $password,
-        ]);
+            // Send POST request to API endpoint
+            $response = Http::post($this->api_url_v1 . 'registerSocial', [
+                'email' => $googleUser->email,
+                'name' => $googleUser->name,
+                'phone' => $googleUser->phone ?? '',
+                'password' => $password,
+            ]);
 
-        // Return response from API to client
-        if ($response->successful()) {
-            // Store access token in session
-            $accessToken = $response->json()['access_token'];
-            Session::put('access_token', $accessToken);
+            // Return response from API to client
+            if ($response->successful()) {
+                // Store access token in session
+                $accessToken = $response->json()['access_token'];
+                Session::put('access_token', $accessToken);
 
-            Session::put('user', $response['data']);
+                Session::put('user', $response['data']);
 
-            return redirect()->route('index')->with(['add' => 'Selamat Datang ' . $googleUser->name]);
-        } else {
-            $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+                notify()->success('Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)), 'Success');
+
+                return redirect()->route('index')->with(['add' => 'Selamat Datang ' . $googleUser->name]);
+            } else {
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+                notify()->error($errorMessage, 'Error');
+                return back();
+            }
+            
+        }
+        catch (RequestException $e) {
+            $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.';
+            notify()->error($errorMessage, 'Error');
+            return back();
+    
+        } catch (\Exception $e) {
+            $errorMessage =  $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Register Gagal Coba Lagi';
             notify()->error($errorMessage, 'Error');
             return back();
         }
+    
     }
 
     public function twitterRedirect()
@@ -58,28 +75,42 @@ class SocialController extends Controller
 
     public function twitterCallback()
     {
-        $twitterUser = Socialite::driver('twitter')->user();
-        $password = Str::random(24);
+        try {
+            $twitterUser = Socialite::driver('twitter')->user();
+            $password = Str::random(24);
 
-        // Send POST request to API endpoint
-        $response = Http::post($this->api_url_v1 . 'registerSocial', [
-            'email' => $twitterUser->email,
-            'name' => $twitterUser->name,
-            'phone' => $twitterUser->phone ?? '',
-            'password' => $password,
-        ]);
+            // Send POST request to API endpoint
+            $response = Http::post($this->api_url_v1 . 'registerSocial', [
+                'email' => $twitterUser->email,
+                'name' => $twitterUser->name,
+                'phone' => $twitterUser->phone ?? '',
+                'password' => $password,
+            ]);
 
-        // Return response from API to client
-        if ($response->successful()) {
-            // Store access token in session
-            $accessToken = $response->json()['access_token'];
-            Session::put('access_token', $accessToken);
+            // Return response from API to client
+            if ($response->successful()) {
+                // Store access token in session
+                $accessToken = $response->json()['access_token'];
+                Session::put('access_token', $accessToken);
 
-            Session::put('user', $response['data']);
+                Session::put('user', $response['data']);
 
-            return redirect('/homeRegister')->with(['add' => 'Selamat Datang ' . $twitterUser->name]);
-        } else {
-            $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+                notify()->success('Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)), 'Success');
+
+                return redirect('/homeRegister')->with(['add' => 'Selamat Datang ' . $twitterUser->name]);
+            } else {
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+                notify()->error($errorMessage, 'Error');
+                return back();
+            }
+        }
+        catch (RequestException $e) {
+            $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.';
+            notify()->error($errorMessage, 'Error');
+            return back();
+    
+        } catch (\Exception $e) {
+            $errorMessage = $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Register Gagal Coba Lagi';
             notify()->error($errorMessage, 'Error');
             return back();
         }

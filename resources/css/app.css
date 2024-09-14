@@ -136,3 +136,7 @@
 #reset-password-btn {
     background-color: #da251d;
 }
+
+.notify {
+    z-index: 99999;
+}

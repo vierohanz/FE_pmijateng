@@ -47,11 +47,7 @@
                                         <h3 class="text-s font-semibold font-poppins text-gray">
                                             {{ str_replace('_', ' ', $booking['channel']) ?? 'default' }}</h3>
                                         <p class="text-lg font-poppins text-black">{{ $booking['order_id'] }}</p>
-                                        <p class="text-base xl:text-lg font-poppins text-black mt-2">Lorem ipsum dolor sit
-                                            amet,
-                                            consectetur
-                                            adipiscing elit. Sed
-                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <p class="text-base xl:text-lg font-poppins text-black mt-2"></p>
                                     </div>
                                     <div class="text-right flex flex-col justify-between h-full ">
                                         <p class="text-sm text-gray-400 whitespace-nowrap">
@@ -59,9 +55,9 @@
                                         </p>
                                         <span
                                             class="justify-center items-center flex px-3 py-1 rounded-full text-sm
-                                    {{ $booking['transaction_status'] === 'success' ? 'bg-green-500 text-white' : '' }}
-                                    {{ $booking['transaction_status'] === 'pending' ? 'bg-yellow-300 text-white' : '' }}
-                                    {{ $booking['transaction_status'] === 'failed' ? 'bg-red-500 text-white' : '' }}">
+                                            {{ $booking['transaction_status'] === 'success' ? 'bg-green-500 text-white' : '' }}
+                                            {{ $booking['transaction_status'] === 'pending' ? 'bg-yellow-300 text-white' : '' }}
+                                            {{ $booking['transaction_status'] === 'failed' ? 'bg-red-500 text-white' : '' }}">
                                             {{ ucfirst($booking['transaction_status']) }}
                                         </span>
                                     </div>

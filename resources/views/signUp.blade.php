@@ -49,7 +49,7 @@
                             <img src="{{ captcha_src() }}" alt="captcha" class="w-full  mb-2">
                             <input type="text" name="captcha"
                                 class="form-control focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-[#DA251D] text-black font-poppins w-full @error('captcha') is-invalid @enderror"
-                                placeholder="Insert Captcha">
+                                placeholder="insert the sum result above">
                             @error('captcha')
                                 <span class="text-red-500 text-sm">{{ $message }}</span>
                             @enderror
