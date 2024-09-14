@@ -11,7 +11,6 @@ class DetailTransactionController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $api_url_v1 = config('app.api_url_v1');
         $userEmail = $request->query('user_email');
         $id = $request->query('id');
         $api_url_v2 = config('app.api_url_v2');

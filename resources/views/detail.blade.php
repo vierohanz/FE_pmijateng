@@ -65,8 +65,6 @@
                     @endforeach
                 </div>
             </div>
-
-
             {{-- title and price --}}
             <div class="h-44 px-6 xl:px-12 w-full  grid grid-cols-2">
                 <div class="col-span-1 gap-2 flex-col flex items-start justify-start">

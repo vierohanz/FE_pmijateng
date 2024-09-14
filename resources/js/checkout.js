@@ -43,8 +43,8 @@ $("#booking-form").on("submit", function (event) {
     axios
         .post(`${apiUrlV2}booking/generateToken`, formData, {
             headers: {
-                'Authorization': `Bearer ${accessToken}`
-            }
+                Authorization: `Bearer ${accessToken}`,
+            },
         })
         .then((data) => {
             if (data) {
@@ -97,10 +97,11 @@ $("#booking-form").on("submit", function (event) {
                 toastr.error(
                     "Akses ditolak. Lakukan Verifikasi Email di Profil."
                 );
-            }
-            else {
+            } else {
                 const errorMessage =
-                    error.response?.data?.error || error.response?.data?.message  || "Booking gagal disimpan";
+                    error.response?.data?.error ||
+                    error.response?.data?.message ||
+                    "Booking gagal disimpan";
                 toastr.options = {
                     positionClass: "toast-top-center",
                     preventDuplicates: true,
@@ -132,8 +133,8 @@ $("#booking-package-form").on("submit", function (event) {
     axios
         .post(`${apiUrlV2}booking/packageToken`, formData, {
             headers: {
-                'Authorization': `Bearer ${accessToken}`
-            }
+                Authorization: `Bearer ${accessToken}`,
+            },
         })
         .then((data) => {
             if (data) {
@@ -188,7 +189,9 @@ $("#booking-package-form").on("submit", function (event) {
                 );
             } else {
                 const errorMessage =
-                    error.response?.data?.error || error.response?.data?.message || "Booking gagal disimpan";
+                    error.response?.data?.error ||
+                    error.response?.data?.message ||
+                    "Booking gagal disimpan";
                 toastr.options = {
                     positionClass: "toast-top-center",
                     preventDuplicates: true,
