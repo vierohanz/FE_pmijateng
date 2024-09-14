@@ -27,10 +27,10 @@ class AuthController extends Controller
             if ($response->successful()) {
                 Session::put('access_token', $response['access_token']);
                 Session::put('user', $response['data']);
-                notify()->success($request->name . 'Kami telah mengirimkan verifikasi email ke email anda', 'Success');
+                notify()->success( implode(' ', array_slice(explode(' ', session('user')['name'] ?? ''), 0, 2)) . ' Kami telah mengirimkan verifikasi email ke email anda', 'Success');
                 return redirect()->route('index');
             } else {
-                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun';
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun, coba lagi';
                 notify()->error($errorMessage, 'Error');
                 return back();
             }
@@ -55,14 +55,14 @@ class AuthController extends Controller
             if ($response->successful()) {
                 Session::put('access_token', $response['access_token']);
                 Session::put('user', $response['data']);
-                notify()->success('Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)), 'Success');
+                notify()->success('Selamat Datang ' . implode(' ', array_slice(explode(' ', session('user')['name'] ?? ''), 0, 2)), 'Success');
                 return redirect()->route('index');
             } else {
-                // Handle error response from the API
                 $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Login';
                 notify()->error($errorMessage, 'Error');
                 return back();
             }
+            
         } catch (RequestException $e) {
             $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.';
             notify()->error($errorMessage, 'Error');
