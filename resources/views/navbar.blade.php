@@ -8,6 +8,7 @@
     @vite('resources/js/navbar.js')
     @include('notify::components.notify')
     @notifyCss
+
 </head>
 
 <body class="bg-white overflow-x-hidden">
