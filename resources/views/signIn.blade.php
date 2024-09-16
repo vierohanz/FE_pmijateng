@@ -27,10 +27,10 @@
                 </div>
                 <div
                     class="h-full hidden xl:flex col-span-2 rounded-l-badge p-9 bg-[#DA251D] flex-col items-center justify-center">
-                    <p class="font-poppins font-extrabold text-5xl text-white text-center">Hello, Friend!</p>
-                    <p class="mt-7 font-poppins font-normal text-2xl text-white text-center">Please create an account
-                        first
-                        before continuing your journey.</p>
+                    <p class="font-poppins font-extrabold text-5xl text-white text-center">Hallo, Kawan!</p>
+                    <p class="mt-7 font-poppins font-normal text-2xl text-white text-center">Tolong buat akun terlebih
+                        dahulu
+                        sebelum melanjutkan.</p>
                     <div class="w-64 h-16 mt-10">
                         <a href="{{ route('signUp') }}"
                             onclick="this.querySelector('div').classList.add('animate-click');">
@@ -65,7 +65,7 @@
                         @csrf
 
                         <p class="font-josefinSans font-bold text-4xl text-custom-secondary">Sign In</p>
-                        <p class="font-poppins mt-2 font-normal text-xl text-gray-400">Enter your email and password</p>
+                        <p class="font-poppins mt-2 font-normal text-xl text-gray-400">Masukkan email dan password</p>
                         <div class="mt-9 w-full xl:w-97">
                             <div class="">
                                 <p class="font-poppins font-medium text-black text-lg">Email</p>
@@ -102,14 +102,14 @@
                                 <span class="ml-3 text-base font-medium text-black">Remember me</span>
                             </label>
                             <a href="{{ route('forgetPassword') }}"
-                                class="mt-2 sm:mt-0 text-base font-medium text-[#DA251D] hover:scale-110 transition-all duration-300">Forget
+                                class="mt-2 sm:mt-0 text-base font-medium text-[#DA251D] hover:scale-110 transition-all duration-300">Lupa
                                 password?</a>
                         </div>
                         <div class="mt-4 w-full">
                             <img src="{{ captcha_src() }}" alt="captcha" class="w-full">
                             <input type="text" name="captcha"
                                 class="form-control focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-[#DA251D] text-black font-poppins w-full @error('captcha') is-invalid @enderror"
-                                placeholder="insert the sum result above">
+                                placeholder="masukkan">
                             @error('captcha')
                                 <span class="text-red-500 text-sm">{{ $message }}</span>
                             @enderror
@@ -130,9 +130,6 @@
                             <span class="font-normal text-black font-poppins text-base rounded-2xl ml-4">Login With
                                 Google</span>
                         </a>
-
-
-
                     </form>
                 </div>
             </div>

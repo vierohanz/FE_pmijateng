@@ -27,10 +27,10 @@
                         class="flex flex-col items-center w-full max-w-md">
                         @csrf
                         <p class="font-josefinSans font-bold text-4xl text-custom-secondary">Sign Up</p>
-                        <p class="font-poppins mt-2 font-normal text-xl text-gray-400">Fill an input form below</p>
+                        <p class="font-poppins mt-2 font-normal text-xl text-gray-400">Isi semua form di bawah</p>
 
                         <div class="mt-9 w-full">
-                            @foreach (['name' => 'Name', 'email' => 'Email', 'password' => 'Password', 'password_confirmation' => 'Password Confirmation'] as $field => $label)
+                            @foreach (['name' => 'Nama', 'email' => 'Email', 'password' => 'Password', 'password_confirmation' => 'Konfirmasi password'] as $field => $label)
                                 <div class="mt-4">
                                     <label
                                         class="font-poppins font-medium text-black text-lg">{{ $label }}</label>
@@ -49,7 +49,7 @@
                             <img src="{{ captcha_src() }}" alt="captcha" class="w-full  mb-2">
                             <input type="text" name="captcha"
                                 class="form-control focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-[#DA251D] text-black font-poppins w-full @error('captcha') is-invalid @enderror"
-                                placeholder="insert the sum result above">
+                                placeholder="masukkan">
                             @error('captcha')
                                 <span class="text-red-500 text-sm">{{ $message }}</span>
                             @enderror
@@ -67,9 +67,9 @@
 
             <div
                 class="h-full hidden xl:flex col-span-2 rounded-r-badge p-9 bg-[#DA251D] flex-col items-center justify-center">
-                <p class="font-poppins font-extrabold text-5xl text-white text-center">Welcome Back!</p>
-                <p class="mt-7 font-poppins font-normal text-2xl text-white text-center">To keep connected with us,
-                    please enter your account.</p>
+                <p class="font-poppins font-extrabold text-5xl text-white text-center">Jumpa lagi!</p>
+                <p class="mt-7 font-poppins font-normal text-2xl text-white text-center">Agar tetap terhubung masukkan
+                    akun anda dahulu.</p>
                 <div class="w-64 h-16 mt-10">
                     <a href="{{ route('signIn') }}" onclick="this.querySelector('div').classList.add('animate-click');">
                         <div

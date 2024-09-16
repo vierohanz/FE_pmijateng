@@ -10,13 +10,13 @@
                 @csrf
                 <div class="mt-8 space-y-6">
                     <div>
-                        <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Name</label>
+                        <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Nama</label>
                         <input type="text" value="{{ session('user')['name'] }}" name="name"
                             class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
                     </div>
 
                     <div>
-                        <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Email Address</label>
+                        <label class="block text-gray-700 font-semibold font-poppins text-lg mb-2">Alamat Email</label>
                         <input type="text" value="{{ session('user')['email'] }}" name="email" disabled
                             class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
 
@@ -59,20 +59,20 @@
     <script>
         document.getElementById('resendVerification').addEventListener('click', function() {
             fetch('/resend-verification', {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({})
-            })
-            .then(response => response.json())
-            .then(data => {
-                window.location.reload();
-            })
-            .catch(error => {
-                window.location.reload();
-            });
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    window.location.reload();
+                })
+                .catch(error => {
+                    window.location.reload();
+                });
         });
     </script>
 @endsection
