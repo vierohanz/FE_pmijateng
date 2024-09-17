@@ -12,11 +12,9 @@
     @notifyCss
 </head>
 
-<body class="overflow-x-hidden bg-white">
+<body class="overflow-x-hidden  bg-white">
     <x:notify::notify />
-    <div class="notify-container">
-        <x:notify::notify />
-    </div>
+
     <div class=" w-full bg-[#EFEFEF] py-10 px-5 xl:py-24 xl:px-56">
         <div class="h-full w-full grid grid-cols-1 xl:grid-cols-5 bg-[#DA251D] rounded-badge shadow-2xl">
             <div

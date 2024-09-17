@@ -17,7 +17,7 @@
             <a href="#meetingRooms" data-aos="fade-up">
                 <div
                     class="bg-red-500 ls:w-40 sm:w-48 lg:w-60 h-52 rounded-3xl p-2 hover:scale-110 transition-all duration-300">
-                    <div class="bg-our_rooms bg-cover h-32 w-full rounded-3xl"></div>
+                    <div class="bg-our_rooms bg-center bg-cover h-32 w-full rounded-3xl"></div>
                     <div class="flex justify-center items-center h-16 space-x-3">
                         <p class="font-poppins font-semibold text-lg text-white">Data ruang</p>
                         <div class="w-8 h-8 bg-white rounded-lg flex justify-center items-center">
@@ -101,10 +101,10 @@
         </form>
     </div>
 
-    <div id="booking-details" class="col-span-7 p-4 md:p-5 bg-white inactive-card">
+    <div id="booking-details" class="col-span-7 hidden xl:flex p-4 md:p-5 bg-white inactive-card">
         <div class="w-full h-full mx-auto bg-gray-100 shadow-xl rounded-lg p-4 md:p-6">
             <!-- Search Bar -->
-            <div class="flex items-center space-x-5 mb-6 justify-between h-16">
+            <div class="hidden xl:flex items-center space-x-5 mb-6 justify-between h-16">
                 <div class="h-16 w-full space-x-5 ">
                     <input type="text" id="searchInput" placeholder="Search"
                         class="autofill:border-none border-black autofill:bg-none w-1/2 h-full px-4 text-lg text-black font-poppins font-normal rounded-2xl bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
@@ -164,7 +164,7 @@
                 <p data-aos="fade-right" class="font-judson text-xl xl:text-5xl text-black font-medium">style and</p>
                 <p data-aos="fade-right" class="font-judson text-xl xl:text-5xl text-black font-medium">comfort</p>
             </div>
-            <div data-aos="fade-left" class="my-2 w-3/4 h-1/3 bg-rooms_2 bg-cover rounded-lg bg-center ml-auto"></div>
+            <div data-aos="fade-left" class="my-2 w-3/4 h-1/3 bg-corousel_4 bg-cover rounded-lg bg-center ml-auto"></div>
         </div>
         <div class="col-span-3 flex border-t-4 border-b-4 border-custom-primary">
             <div class="w-1 h-full">
@@ -393,53 +393,56 @@
             </div>
             <div class="h-full w-full grid grid-rows-2 gap-5">
                 <div data-aos="fade-down" class="shadow-lg carousel-item">
-                    <img class="h-full w-full bg-cover bg-center bg-gallery_2">
+                    <img class="h-full w-full bg-cover bg-center bg-gallery_4">
                 </div>
                 <div data-aos="fade-up" class="shadow-lg carousel-item">
                     <img class=" h-full w-full bg-cover bg-center bg-gallery_3">
                 </div>
             </div>
             <div data-aos="fade-left" class="shadow-lg carousel-item">
-                <img class="h-full w-full bg-cover bg-center bg-gallery_4">
+                <img class="h-full w-full bg-cover bg-center bg-gallery_2">
             </div>
         </div>
     </div>
 
     {{-- About us --}}
-    <div id="about_us" class="h-100 2xl:h-108 w-full  mt-16">
-        <div class="h-10 w-full pl-5 xl:pl-7">
+    <div id="about_us" class="w-full mt-16">
+        <div class="w-full pl-5 xl:pl-7">
             <p class="font-freehand text-custom-primary font-bold text-3xl xl:text-5xl">About Us</p>
         </div>
-        <div class="grid grid-cols-12 h-full gap-7 p-5 mt-12">
+        <div class="grid grid-cols-12 gap-7 p-5 mt-12">
+            <!-- Left section -->
             <div data-aos="fade-right"
-                class="ml-2 col-span-3 h-52 xl:h-full w-full bg-yellow-300 p-5 bg-about bg-cover bg-center trapezoid">
+                class="col-span-12 md:col-span-4 xl:col-span-3 h-52 xl:h-auto bg-yellow-300 p-5 bg-about bg-cover bg-center trapezoid">
             </div>
-            <div data-aos="fade-down" class="bg-custom-primary h-52 xl:h-full w-3 xl:w-20"></div>
-            <div class="col-span-8 h-full w-full xl:pl-5 xl:pr-52">
-                <div class="grid grid-rows-6  2xl:h-full space-y-4">
-                    <p data-aos="fade-down"
-                        class="font-poppins flex items-end text-custom-primary text-xs xl:text-5xl font-bold">
+
+            <!-- Middle divider -->
+            <div data-aos="fade-down" class="hidden md:block md:w-3 xl:w-20 bg-custom-primary"></div>
+
+            <!-- Right section (text) -->
+            <div class="col-span-12 md:col-span-8 xl:pl-5 xl:pr-52">
+                <div class="grid grid-rows-6 gap-4">
+                    <p data-aos="fade-down" class="font-poppins text-custom-primary text-xl xl:text-5xl font-bold">
                         PUSDIKLAT PMI JATENG
                     </p>
-                    <p data-aos="fade-up"
-                        class="row-span-5 flex justify-center items-center font-poppins font-normal text-xs 2xl:text-2xl text-black xl:leading-[3rem] mt-4">
-
+                    <p data-aos="fade-up" class="row-span-5 text-xs md:text-sm xl:text-2xl text-black xl:leading-[3rem]">
                         GEDUNG DIKLAT PMI PROVINSI JAWA TENGAH terletak di kawasan perbukitan di Kota Semarang yang memiliki
                         suasana nyaman dan jauh dari kebisingan kota. Dengan lokasi yang strategis, gedung ini sangat cocok
                         digunakan untuk berbagai kegiatan, seperti tempat rapat, pendidikan, pelatihan, seminar, dan
                         lainnya.
-
+                        <br /><br />
                         Lingkungan Gedung Diklat yang hijau dan rumah belajar memiliki beragam fasilitas yang tersedia,
                         termasuk ruang pertemuan yang modern, akses Wi-Fi cepat, serta area parkir yang luas untuk
-                        kenyamanan pengunjung. Kami juga menawarkan pilihan menu hidangan yang berinovasi sehat dan lezat,
-                        disiapkan dengan bahan-bahan berkualitas tinggi untuk memenuhi selera berbagai kalangan.
-
-
+                        kenyamanan
+                        pengunjung. Kami juga menawarkan pilihan menu hidangan yang berinovasi sehat dan lezat, disiapkan
+                        dengan
+                        bahan-bahan berkualitas tinggi untuk memenuhi selera berbagai kalangan.
                     </p>
                 </div>
             </div>
         </div>
     </div>
+
 
     {{-- --}}
     <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" id="contact"

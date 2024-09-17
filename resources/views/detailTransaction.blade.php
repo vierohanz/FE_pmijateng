@@ -58,12 +58,12 @@
                             <p class="text-gray-500 font-poppins text-base">
                                 {{ $transaction['payment_information']['room_per_night_price'] }}</p>
                             <p class="font-semibold font-poppins text-black text-lg">Nama Ruangan :</p>
-                                @forelse ($transaction['room_detail']['room_name'] as $item)
-                                    <p class="text-gray-500 font-poppins text-base">
+                            @forelse ($transaction['room_detail']['room_name'] as $item)
+                                <p class="text-gray-500 font-poppins text-base">
                                     {{ $item }}</p>
-                                @empty
-                                <p class="text-gray-500 font-poppins text-base"></p>     
-                                @endforelse
+                            @empty
+                                <p class="text-gray-500 font-poppins text-base"></p>
+                            @endforelse
                         </div>
                         <div class="mb-4">
                             <h3 class="font-semibold font-poppins text-black text-lg">Keuntungan</h3>
@@ -130,6 +130,99 @@
 
                 </div>
             </div>
+
+            <div class="p-4 h-40 w-1/2 mt-5 bg-white mx-auto rounded-lg shadow-md grid grid-rows-6 gap-4">
+                <div class="row-span-2 h-full w-full">
+                    <p class="font-poppins font-semibold text-2xl text-black">Berikan ulasan</p>
+                </div>
+                <div class="row-span-4 h-full w-full grid gap-4 grid-cols-6">
+                    <div class="col-span-1 bg-detail_transaction bg-contain bg-center bg-no-repeat"></div>
+                    <div class="col-span-5 grid-rows-3 grid  w-full">
+                        <div class="flex items-center space-x-1">
+                            <!-- Bintang 1 -->
+                            <svg id="star1"
+                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(1)"
+                                onmouseout="resetStars()" onclick="rateStar(1)">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                            </svg>
+                            <!-- Bintang 2 -->
+                            <svg id="star2"
+                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(2)"
+                                onmouseout="resetStars()" onclick="rateStar(2)">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                            </svg>
+                            <!-- Bintang 3 -->
+                            <svg id="star3"
+                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(3)"
+                                onmouseout="resetStars()" onclick="rateStar(3)">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                            </svg>
+                            <!-- Bintang 4 -->
+                            <svg id="star4"
+                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(4)"
+                                onmouseout="resetStars()" onclick="rateStar(4)">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                            </svg>
+                            <!-- Bintang 5 -->
+                            <svg id="star5"
+                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(5)"
+                                onmouseout="resetStars()" onclick="rateStar(5)">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="h-[0.1px] w-full flex justify-center items-center bg-[#C2C2C2]"></div>
+                        <div class="h-[0.1px] w-full flex justify-center items-center bg-[#C2C2C2]"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                let currentRating = 0;
+
+                function hoverStar(star) {
+
+                    for (let i = 1; i <= star; i++) {
+                        document.getElementById("star" + i).classList.remove("text-gray-400");
+                        document.getElementById("star" + i).classList.add("text-yellow-300");
+                    }
+                }
+
+                function resetStars() {
+                    for (let i = 1; i <= 5; i++) {
+                        if (i <= currentRating) {
+                            document
+                                .getElementById("star" + i)
+                                .classList.remove("text-gray-400");
+                            document
+                                .getElementById("star" + i)
+                                .classList.add("text-yellow-300");
+                        } else {
+                            document
+                                .getElementById("star" + i)
+                                .classList.remove("text-yellow-300");
+                            document.getElementById("star" + i).classList.add("text-gray-400");
+                        }
+                    }
+                }
+
+                function rateStar(rating) {
+                    currentRating = rating;
+                    resetStars();
+                    console.log("Rating yang dipilih: " + currentRating);
+                }
+            </script>
+
             <div class="h-16 mt-6 mb-2 w-full flex justify-end items-center">
                 @if ($transaction['payment_information']['payment_status'] === 'pending')
                     <div class="h-16 mt-6 w-full flex justify-end items-center">
@@ -144,6 +237,7 @@
             </div>
         </div>
     </div>
+
     <script>
         document.getElementById('payment-button').addEventListener('click', function() {
             var snapToken = `{{ $transaction['payment_information']['snap_token'] }}`;
