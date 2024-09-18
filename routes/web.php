@@ -10,6 +10,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DetailTransactionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ReviewStar;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', HomeController::class)->name('index');
@@ -68,3 +69,5 @@ Route::post('/update-password', [ProfileController::class, 'updatePassword'])->n
 Route::post('/update-profile', [ProfileController::class, 'update'])->name('updateProfile');
 Route::get('/availableRooms', [HomeController::class, 'availableRooms'])->name('availableRooms');
 Route::get('/detailTransaction', DetailTransactionController::class)->middleware('AuthLogin')->name('detailTransaction');
+
+Route::post('/submit-review', [ReviewStar::class, 'postReview'])->name('postReview');

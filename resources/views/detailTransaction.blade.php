@@ -131,112 +131,149 @@
                 </div>
             </div>
 
-            <div class="p-4 h-40 w-1/2 mt-5 bg-white mx-auto rounded-lg shadow-md grid grid-rows-6 gap-4">
+            <div class="p-4 h-56 w-1/2 mt-5 bg-white mx-auto rounded-lg shadow-md grid grid-rows-6 gap-4">
                 <div class="row-span-2 h-full w-full">
                     <p class="font-poppins font-semibold text-2xl text-black">Berikan ulasan</p>
                 </div>
                 <div class="row-span-4 h-full w-full grid gap-4 grid-cols-6">
                     <div class="col-span-1 bg-detail_transaction bg-contain bg-center bg-no-repeat"></div>
-                    <div class="col-span-5 grid-rows-3 grid  w-full">
+                    <div class="col-span-5 grid-rows-3 grid h-full w-full">
                         <div class="flex items-center space-x-1">
-                            <!-- Bintang 1 -->
-                            <svg id="star1"
-                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(1)"
-                                onmouseout="resetStars()" onclick="rateStar(1)">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
-                            </svg>
-                            <!-- Bintang 2 -->
-                            <svg id="star2"
-                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(2)"
-                                onmouseout="resetStars()" onclick="rateStar(2)">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
-                            </svg>
-                            <!-- Bintang 3 -->
-                            <svg id="star3"
-                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(3)"
-                                onmouseout="resetStars()" onclick="rateStar(3)">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
-                            </svg>
-                            <!-- Bintang 4 -->
-                            <svg id="star4"
-                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(4)"
-                                onmouseout="resetStars()" onclick="rateStar(4)">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
-                            </svg>
-                            <!-- Bintang 5 -->
-                            <svg id="star5"
-                                class="w-8 h-8 text-gray-400 hover:text-yellow-300 cursor-pointer fill-current"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onmouseover="hoverStar(5)"
-                                onmouseout="resetStars()" onclick="rateStar(5)">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
-                            </svg>
+                            <!-- Star Ratings -->
+                            @for ($i = 1; $i <= 5; $i++)
+                                <svg id="star{{ $i }}" class="w-8 h-8 text-gray-400 cursor-pointer fill-current"
+                                    onmouseover="highlightStars({{ $i }})" onmouseout="resetStars()"
+                                    onclick="rateStar({{ $i }})">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                                </svg>
+                            @endfor
                         </div>
-                        <div class="h-[0.1px] w-full flex justify-center items-center bg-[#C2C2C2]"></div>
-                        <div class="h-[0.1px] w-full flex justify-center items-center bg-[#C2C2C2]"></div>
 
+                        <div class="row-span-2 w-full flex justify-center items-center">
+                            <!-- Review Input -->
+                            <input type="text" name="review" placeholder="Tuliskan ulasan Anda"
+                                class="h-full w-full px-4 text-lg text-black font-poppins font-normal rounded-lg bg-white border-2 border-gray-200 focus:border-[#DA251D] outline-none focus:outline-none focus:ring-0 focus:ring-offset-0">
+                        </div>
                     </div>
+                </div>
+                <div class="h-12 w-full flex justify-end items-center">
+                    <button type="button" id="submitReviewBtn"
+                        class="px-4 py-2 autofill:border-none autofill:bg-none bg-custom-primary text-white font-poppins text-base font-semibold rounded-lg hover:scale-105 transition-all duration-200 ">
+                        Submit Review
+                    </button>
                 </div>
             </div>
 
-            <script>
-                let currentRating = 0;
 
-                function hoverStar(star) {
 
-                    for (let i = 1; i <= star; i++) {
-                        document.getElementById("star" + i).classList.remove("text-gray-400");
-                        document.getElementById("star" + i).classList.add("text-yellow-300");
-                    }
-                }
 
-                function resetStars() {
-                    for (let i = 1; i <= 5; i++) {
-                        if (i <= currentRating) {
-                            document
-                                .getElementById("star" + i)
-                                .classList.remove("text-gray-400");
-                            document
-                                .getElementById("star" + i)
-                                .classList.add("text-yellow-300");
-                        } else {
-                            document
-                                .getElementById("star" + i)
-                                .classList.remove("text-yellow-300");
-                            document.getElementById("star" + i).classList.add("text-gray-400");
-                        }
-                    }
-                }
-
-                function rateStar(rating) {
-                    currentRating = rating;
-                    resetStars();
-                    console.log("Rating yang dipilih: " + currentRating);
-                }
-            </script>
-
-            <div class="h-16 mt-6 mb-2 w-full flex justify-end items-center">
-                @if ($transaction['payment_information']['payment_status'] === 'pending')
-                    <div class="h-16 mt-6 w-full flex justify-end items-center">
-                        <a id="payment-button"
-                            class="cursor-pointer h-full w-56 bg-custom-primary flex justify-center items-center font-poppins text-white font-semibold text-xl hover:scale-105 transition-all duration-300 rounded-3xl ">
-                            Payment
-                        </a>
-                        <script src="https://app.sandbox.midtrans.com/snap/snap.js"
-                            data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
-                    </div>
-                @endif
-            </div>
         </div>
     </div>
+
+    <script>
+        // Fungsi untuk mendapatkan parameter dari URL
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1); // Mengambil query string tanpa tanda tanya
+            const queryArray = queryString.split('&'); // Memisahkan parameter berdasarkan '&'
+
+            queryArray.forEach(param => {
+                const [key, value] = param.split('=');
+                params[decodeURIComponent(key)] = decodeURIComponent(value.replace(/\+/g,
+                    ' ')); // Decode dan simpan dalam objek
+            });
+
+            return params;
+        }
+        const queryParams = getQueryParams();
+        const userEmail = queryParams.user_email;
+        const userTransactionId = queryParams.id;
+        console.log("User Email:", userEmail);
+        console.log("Transaction ID:", userTransactionId);
+
+        let selectedScore = 0; // Untuk menyimpan skor yang dipilih
+        const reviewInput = document.querySelector('input[name="review"]'); // Ambil elemen input review
+
+        // Fungsi untuk menyoroti bintang saat di-hover
+        function highlightStars(star) {
+            for (let i = 1; i <= star; i++) {
+                document.getElementById(`star${i}`).classList.add('text-yellow-300');
+            }
+        }
+
+        // Fungsi untuk mengatur skor saat bintang diklik
+        function rateStar(star) {
+            selectedScore = star; // Simpan skor yang dipilih
+            highlightStars(star); // Sorot bintang yang dipilih
+        }
+
+        // Fungsi untuk mereset bintang ke skor yang sudah dipilih
+        function resetStars() {
+            for (let i = 1; i <= 5; i++) {
+                const starElement = document.getElementById(`star${i}`);
+                if (i <= selectedScore) {
+                    starElement.classList.add('text-yellow-300'); // Sorot jika skor sudah dipilih
+                } else {
+                    starElement.classList.remove('text-yellow-300'); // Hapus sorotan jika tidak dipilih
+                }
+            }
+        }
+
+        // Event listener untuk hover bintang
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById(`star${i}`).addEventListener('mouseover', function() {
+                highlightStars(i); // Sorot bintang saat di-hover
+            });
+            document.getElementById(`star${i}`).addEventListener('mouseout', resetStars); // Reset saat mouse keluar
+            document.getElementById(`star${i}`).addEventListener('click', function() {
+                rateStar(i); // Set skor saat bintang diklik
+            });
+        }
+
+        // Event listener untuk tombol kirim ulasan
+        document.getElementById('submitReviewBtn').addEventListener('click', function() {
+            const review = reviewInput.value;
+
+            if (review.trim() === '' || selectedScore === 0) {
+                alert('Silakan isi ulasan dan pilih skor.');
+                return;
+            }
+
+            fetch(`https://dashboard.palmerinjateng.id/api/v1/review/postReview?user_transaction_id=${userTransactionId}&user_email=${userEmail}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        review: review,
+                        score: selectedScore,
+                    }),
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        return Promise.reject(response);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    alert('Ulasan berhasil dikirim!');
+                    reviewInput.value = ''; // Reset input setelah berhasil
+                })
+                .catch(error => {
+                    if (error.json) {
+                        error.json().then(errData => {
+                            alert('Terjadi kesalahan: ' + errData.message);
+                        });
+                    } else {
+                        alert('Terjadi kesalahan. Silakan coba lagi.');
+                    }
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
 
     <script>
         document.getElementById('payment-button').addEventListener('click', function() {
