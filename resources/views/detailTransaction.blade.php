@@ -131,7 +131,8 @@
                 </div>
             </div>
 
-            <div class="p-4 h-56 w-1/2 mt-5 bg-white mx-auto rounded-lg shadow-md grid grid-rows-6 gap-4">
+            <div id="reviewSection"
+                class="p-4 w-full md:w-1/2 mt-5 bg-white mx-auto rounded-lg shadow-md grid grid-rows-6 gap-4">
                 <div class="row-span-2 h-full w-full">
                     <p class="font-poppins font-semibold text-2xl text-black">Berikan ulasan</p>
                 </div>
@@ -163,117 +164,15 @@
                         Submit Review
                     </button>
                 </div>
+                <div class="h-1 w-full bg-gray-300"></div>
+                <div class="flex flex-col">
+                    <div id="reviewScore" class="flex items-center"></div> <!-- Update div ini -->
+                    <p id="reviewText" class="font-poppins text-gray-400 font-medium">Kamarnya nyaman dan enak</p>
+                </div>
             </div>
-
-
-
 
         </div>
     </div>
-
-    <script>
-        // Fungsi untuk mendapatkan parameter dari URL
-        function getQueryParams() {
-            const params = {};
-            const queryString = window.location.search.substring(1); // Mengambil query string tanpa tanda tanya
-            const queryArray = queryString.split('&'); // Memisahkan parameter berdasarkan '&'
-
-            queryArray.forEach(param => {
-                const [key, value] = param.split('=');
-                params[decodeURIComponent(key)] = decodeURIComponent(value.replace(/\+/g,
-                    ' ')); // Decode dan simpan dalam objek
-            });
-
-            return params;
-        }
-        const queryParams = getQueryParams();
-        const userEmail = queryParams.user_email;
-        const userTransactionId = queryParams.id;
-        console.log("User Email:", userEmail);
-        console.log("Transaction ID:", userTransactionId);
-
-        let selectedScore = 0; // Untuk menyimpan skor yang dipilih
-        const reviewInput = document.querySelector('input[name="review"]'); // Ambil elemen input review
-
-        // Fungsi untuk menyoroti bintang saat di-hover
-        function highlightStars(star) {
-            for (let i = 1; i <= star; i++) {
-                document.getElementById(`star${i}`).classList.add('text-yellow-300');
-            }
-        }
-
-        // Fungsi untuk mengatur skor saat bintang diklik
-        function rateStar(star) {
-            selectedScore = star; // Simpan skor yang dipilih
-            highlightStars(star); // Sorot bintang yang dipilih
-        }
-
-        // Fungsi untuk mereset bintang ke skor yang sudah dipilih
-        function resetStars() {
-            for (let i = 1; i <= 5; i++) {
-                const starElement = document.getElementById(`star${i}`);
-                if (i <= selectedScore) {
-                    starElement.classList.add('text-yellow-300'); // Sorot jika skor sudah dipilih
-                } else {
-                    starElement.classList.remove('text-yellow-300'); // Hapus sorotan jika tidak dipilih
-                }
-            }
-        }
-
-        // Event listener untuk hover bintang
-        for (let i = 1; i <= 5; i++) {
-            document.getElementById(`star${i}`).addEventListener('mouseover', function() {
-                highlightStars(i); // Sorot bintang saat di-hover
-            });
-            document.getElementById(`star${i}`).addEventListener('mouseout', resetStars); // Reset saat mouse keluar
-            document.getElementById(`star${i}`).addEventListener('click', function() {
-                rateStar(i); // Set skor saat bintang diklik
-            });
-        }
-
-        // Event listener untuk tombol kirim ulasan
-        document.getElementById('submitReviewBtn').addEventListener('click', function() {
-            const review = reviewInput.value;
-
-            if (review.trim() === '' || selectedScore === 0) {
-                alert('Silakan isi ulasan dan pilih skor.');
-                return;
-            }
-
-            fetch(`https://dashboard.palmerinjateng.id/api/v1/review/postReview?user_transaction_id=${userTransactionId}&user_email=${userEmail}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        review: review,
-                        score: selectedScore,
-                    }),
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        return Promise.reject(response);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log(data);
-                    alert('Ulasan berhasil dikirim!');
-                    reviewInput.value = ''; // Reset input setelah berhasil
-                })
-                .catch(error => {
-                    if (error.json) {
-                        error.json().then(errData => {
-                            alert('Terjadi kesalahan: ' + errData.message);
-                        });
-                    } else {
-                        alert('Terjadi kesalahan. Silakan coba lagi.');
-                    }
-                    console.error('Error:', error);
-                });
-        });
-    </script>
-
 
     <script>
         document.getElementById('payment-button').addEventListener('click', function() {

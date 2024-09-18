@@ -8,50 +8,45 @@ use Illuminate\Support\Facades\Session;
 
 class ReviewStar extends Controller
 {
+    protected $api_url_v1;
+    protected $api_url_v2;
+
+    public function __construct()
+    {
+        $this->api_url_v1 = config('app.api_url_v1');
+        $this->api_url_v2 = config('app.api_url_v2');
+    }
+
     public function postReview(Request $request)
     {
+        // Validasi input
+        $request->validate([
+            'review' => 'required|string',
+            'score' => 'required|integer|min:1|max:5',
+            'user_email' => 'required|email',
+            'user_transaction_id' => 'required|string',
+        ]);
+
         try {
-            // URL API yang diambil dari file konfigurasi
-            $api_url_v1 = config('app.api_url_v1');
-
-            // Mendapatkan access token dari session
-            $token = Session::get('access_token');
-
-            // Mengambil userTransactionId dan userEmail dari request (bisa dari URL atau form)
-            $userTransactionId = $request->input('user_transaction_id');
-            $userEmail = Session::get('user_email');
-            $review = $request->input('review');
-            $score = $request->input('score');
-
-            // Membuat POST request ke API untuk mengirimkan review
-            $response = Http::withToken($token)->post($api_url_v1 . '/review/postReview', [
-                'user_transaction_id' => $userTransactionId,
-                'user_email' => $userEmail,
-                'review' => $review,
-                'score' => $score,
+            // Kirim review ke API
+            $response = Http::post($this->api_url_v1 . 'review/postReview', [
+                'review' => $request->input('review'),
+                'score' => $request->input('score'),
+                'user_email' => $request->input('user_email'),
+                'user_transaction_id' => $request->input('user_transaction_id'),
             ]);
 
-            // Mengecek apakah request berhasil
             if ($response->successful()) {
-                notify()->success("Review berhasil dikirim", 'Success');
-                return redirect()->route('historyTransaction'); // Arahkan kembali ke halaman riwayat transaksi
+                return response()->json([
+                    'message' => 'Ulasan berhasil dikirim!',
+                    'data' => $response->json(),
+                ]);
             } else {
-                // Jika request gagal, ambil kode status dan isi body error dari respons API
-                $statusCode = $response->status();
-                $errorBody = $response->body(); // Mendapatkan keseluruhan body response
-
-                // Kamu juga bisa mengambil JSON response jika tersedia
-                $errorJson = $response->json();
-
-                // Menampilkan pesan error (termasuk kode status dan body error)
-                notify()->error("Error: $statusCode - $errorBody", 'Error');
-                return redirect()->route('historyTransaction');
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal mengirim ulasan, coba lagi nanti.';
+                return response()->json(['error' => $errorMessage], 400);
             }
         } catch (\Exception $e) {
-            // Penanganan error umum
-            $errorMessage = 'Terjadi kesalahan saat mengirimkan review, coba lagi nanti.';
-            notify()->error($errorMessage, 'Error');
-            return redirect()->route('historyTransaction');
+            return response()->json(['error' => 'Terjadi kesalahan: ' . $e->getMessage()], 500);
         }
     }
 }

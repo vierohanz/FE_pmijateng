@@ -326,7 +326,7 @@
     </div>
 
     {{-- our services --}}
-    <div id="services" class="h-124 xl:h-101 mt-14 w-full">
+    <div id="services" class="h-120 md:h-80 xl:h-101 mt-14 w-full">
         <div data-aos="fade-zoom" class="grid grid-cols-8 items-center">
             <div class="col-span-2 xl:col-span-2 h-1 w-full bg-custom-primary"></div>
             <div class="col-span-3 xl:col-span-1 flex justify-center">
@@ -334,10 +334,10 @@
             </div>
             <div class="col-span-3 xl:col-span-5 h-1 w-full bg-custom-primary"></div>
         </div>
-        <div class="h-116 w-full mt-10 grid grid-rows-4 xl:grid-cols-4 gap-4 p-10 justify-items-center">
+        <div class="h-116 w-full mt-10 grid grid-rows-4 md:grid-cols-4 gap-4 p-10 justify-items-center">
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 xl:h-80 flex-col gap-3 flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px] xl:w-[170px] xl:h-[170px]"
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
                         d="M392 208h-24v-5.74A63.93 63.93 0 00321.65 96a111 111 0 00-27.59-47.29A108.62 108.62 0 00216 16c-29.91 0-57.78 12.28-79 34.68a56 56 0 00-67.51 77.54A63.91 63.91 0 0080 231.39V440a56.06 56.06 0 0056 56h176a56.06 56.06 0 0056-56v-8h24a72.08 72.08 0 0072-72v-80a72.08 72.08 0 00-72-72zM176 416a16 16 0 01-32 0V256a16 16 0 0132 0zm64 0a16 16 0 01-32 0V256a16 16 0 0132 0zm64 0a16 16 0 01-32 0V256a16 16 0 0132 0zm16-224c-8.33 0-20.55-5.18-26.69-11.31A16 16 0 00282 176H160a16 16 0 00-15 10.53c-6.83 18.68-23.6 21.47-33 21.47a32 32 0 010-64c.09 0 9.12.34 16.4 5.8a16 16 0 1019.2-25.6A63.69 63.69 0 00112 112a63.55 63.55 0 00-14 1.57A24 24 0 01120 80a23.78 23.78 0 0119.38 9.84 51.35 51.35 0 014.71 7.9A16 16 0 00176 96c0-6.77-3.61-15.17-10.76-25-.46-.63-1-1.25-1.45-1.86C178.39 55.44 196.64 48 216 48a76.86 76.86 0 0155.23 23.18A80.2 80.2 0 01292.61 142a16 16 0 0012.73 18.71 16.29 16.29 0 003 .28 16 16 0 0015.7-13 111.78 111.78 0 001.96-19.42 32 32 0 01-6 63.43zm112 168a40 40 0 01-40 40h-24V240h24a40 40 0 0140 40z" />
@@ -345,8 +345,8 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Makanan Lezat</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 xl:h-80 flex-col gap-3 flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px] xl:w-[170px] xl:h-[170px]"
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
                         d="M357.57 223.94a79.48 79.48 0 0056.58-23.44l77-76.95c6.09-6.09 6.65-16 .85-22.39a16 16 0 00-23.17-.56l-68.63 68.58a12.29 12.29 0 01-17.37 0c-4.79-4.78-4.53-12.86.25-17.64l68.33-68.33a16 16 0 00-.56-23.16A15.62 15.62 0 00440.27 56a16.71 16.71 0 00-11.81 4.9l-68.27 68.26a12.29 12.29 0 01-17.37 0c-4.78-4.78-4.53-12.86.25-17.64l68.33-68.31a16 16 0 00-.56-23.16A15.62 15.62 0 00400.26 16a16.73 16.73 0 00-11.81 4.9L311.5 97.85a79.49 79.49 0 00-23.44 56.59v8.23a16 16 0 01-4.69 11.33l-35.61 35.62a4 4 0 01-5.66 0L68.82 36.33a16 16 0 00-22.58-.06C31.09 51.28 23 72.47 23 97.54c-.1 41.4 21.66 89 56.79 124.08l85.45 85.45A64.79 64.79 0 00211 326a64 64 0 0016.21-2.08 16.24 16.24 0 014.07-.53 15.93 15.93 0 0110.83 4.25l11.39 10.52a16.12 16.12 0 014.6 11.23v5.54a47.73 47.73 0 0013.77 33.65l90.05 91.57.09.1a53.29 53.29 0 0075.36-75.37L302.39 269.9a4 4 0 010-5.66L338 228.63a16 16 0 0111.32-4.69z" />
@@ -356,8 +356,8 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Restaurant</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 xl:h-80 flex-col gap-3 flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px] xl:w-[170px] xl:h-[170px]"
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
                         d="M388 448a92 92 0 1192-92 92.1 92.1 0 01-92 92zm0-152a60 60 0 1060 60 60.07 60.07 0 00-60-60zM124 448a92 92 0 1192-92 92.1 92.1 0 01-92 92zm0-152a60 60 0 1060 60 60.07 60.07 0 00-60-60zM320 128a31.89 31.89 0 0032-32.1A31.55 31.55 0 00320.2 64a32 32 0 10-.2 64z" />
@@ -367,8 +367,8 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Fitness</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 xl:h-80 flex-col gap-3 flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px] xl:w-[170px] xl:h-[170px]"
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
                         d="M429.55 119.49a16 16 0 00-17.06-7.1c-18.64 4.19-37.06 9-54.73 14.22-35.06 10.39-69.33 23.92-107.85 42.59-18.62 9.05-26 13.35-48 26.13l-4.5 2.67c-32.95 19-57.09 40-73.79 64.29C105.29 288.89 96 320 96 354.64c0 40.74 15.71 77.1 44.24 102.37C169 482.52 209.06 496 256 496c46.76 0 86.89-14.33 116-41.43 28.35-26.35 44-63.39 44-104.29 0-25-6.19-47-12.17-68.22-12.59-44.69-23.46-83.29 24.71-144.13a16 16 0 001.01-18.44zM219 119.55C168.46 92.08 101.46 80.69 98.63 80.22A16 16 0 0081 90.55a16.47 16.47 0 003.79 16.84c31.84 33.78 32.86 68.79 28.65 104.63a4.45 4.45 0 002.5 4.54 4.44 4.44 0 005.08-.9c16.39-16.51 36.37-31.52 60.4-45.39l4.48-2.6C208 154.8 216.23 150 236 140.41l2.69-1.3a4 4 0 00.64-6.83A178.59 178.59 0 00219 119.55zM234.26 91.45c3.44 1.87 7.09 4 10.9 6.29a189.31 189.31 0 0129.57 22.39 4 4 0 004.28.76 672 672 0 0169.65-25q7-2.07 14.08-4a4 4 0 002.53-5.62c-8.27-16.83-14.67-28.9-15.15-29.79A16 16 0 00336 48c-1.91 0-33.28.36-76.87 21.3a279 279 0 00-26.39 14.51 4 4 0 00.22 6.94zM209.33 60.79c7.3-4.77 14.74-9.22 22.25-13.31a2 2 0 00.24-3.36c-26-19.57-49.73-27-51.15-27.42a16 16 0 00-17.56 5.82 217.63 217.63 0 00-19.28 32.38 2 2 0 001.29 2.81c13.61 3.57 29.4 8.29 45.61 14.29a2 2 0 001.79-.2z" />
@@ -410,17 +410,16 @@
         <div class="w-full pl-5 xl:pl-7">
             <p class="font-freehand text-custom-primary font-bold text-3xl xl:text-5xl">About Us</p>
         </div>
-        <div class="grid grid-cols-12 gap-7 p-5 mt-12">
-            <!-- Left section -->
-            <div data-aos="fade-right"
-                class="col-span-12 md:col-span-4 xl:col-span-3 h-52 xl:h-auto bg-yellow-300 p-5 bg-about bg-cover bg-center trapezoid">
+        <div class="flex flex-col md:flex-row gap-7 p-5 mt-12">
+            <!-- Left section (image) -->
+            <div data-aos="fade-right" class="w-full md:w-1/3 h-52 xl:h-auto p-5 bg-about bg-cover bg-center trapezoid">
             </div>
 
             <!-- Middle divider -->
-            <div data-aos="fade-down" class="hidden md:block md:w-3 xl:w-20 bg-custom-primary"></div>
+            <div data-aos="fade-down" class="hidden md:block md:w-3 md:bg-custom-primary"></div>
 
             <!-- Right section (text) -->
-            <div class="col-span-12 md:col-span-8 xl:pl-5 xl:pr-52">
+            <div class="w-full md:w-2/3 xl:pl-5 xl:pr-52">
                 <div class="grid grid-rows-6 gap-4">
                     <p data-aos="fade-down" class="font-poppins text-custom-primary text-xl xl:text-5xl font-bold">
                         PUSDIKLAT PMI JATENG
@@ -435,8 +434,7 @@
                         termasuk ruang pertemuan yang modern, akses Wi-Fi cepat, serta area parkir yang luas untuk
                         kenyamanan
                         pengunjung. Kami juga menawarkan pilihan menu hidangan yang berinovasi sehat dan lezat, disiapkan
-                        dengan
-                        bahan-bahan berkualitas tinggi untuk memenuhi selera berbagai kalangan.
+                        dengan bahan-bahan berkualitas tinggi untuk memenuhi selera berbagai kalangan.
                     </p>
                 </div>
             </div>
@@ -446,13 +444,45 @@
 
     {{-- --}}
     <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" id="contact"
-        class="hidden xl:flex bg-footer h-104 w-full mt-48 justify-center items-center  flex-col">
-        <div class="w-28 h-28 xl:w-48 xl:h-48 bg-admin rounded-full"></div>
-        <p class="font-judson font-semibold text-xl xl:text-4xl text-yellow-400 mt-4">Admin PMI</p>
-        <p class="font-poppins font-semibold text-lg xl:text-xl px-104 text-center text-custom-third mt-4">Menginap di
-            Pusdiklat sangatlah nyaman, tenang, dan banyak tukang cimol</p>
-        <p class="font-poppins font-semibold text-lg xl:text-xl text-center mt-8 text-custom-third">PT. Menyala Polines</p>
+        class="hidden xl:flex bg-footer h-104 w-full mt-48 justify-center items-center flex-col">
+        <div id="controls-carousel" class="relative w-full" data-carousel="static">
+            <div class="relative bg-gray-500/50  mx-40 h-56 overflow-hidden rounded-lg md:h-96">
+                <div id="carousel-content"></div>
+            </div>
+
+            <!-- Previous Button -->
+            <button type="button"
+                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev>
+                <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50  group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 1 1 5l4 4" />
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+
+            <!-- Next Button -->
+            <button type="button"
+                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next>
+                <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30  group-hover:bg-white/50  group-focus:ring-white group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
     </div>
+
+
 
     {{-- footer --}}
     <footer data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" class="w-full bg-gray-800">

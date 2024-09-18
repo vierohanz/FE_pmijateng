@@ -58,6 +58,7 @@
                     </div>
                 </div>
                 <div class="row-span-9 w-full h-full py-10 justify-center items-start flex">
+
                     <form action="{{ route('signIn') }}" method="POST"
                         class="flex flex-col items-center w-full max-w-md">
                         @csrf

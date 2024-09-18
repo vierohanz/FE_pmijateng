@@ -5,7 +5,7 @@ import { globSync } from "glob";
 export default defineConfig({
     plugins: [
         laravel({
-            input: ["resources/css/app.css", "resources/js/app.js"],
+            input: globSync("resources/{css,js,plugins}/**/*.{css,js}"),
             refresh: true,
         }),
     ],

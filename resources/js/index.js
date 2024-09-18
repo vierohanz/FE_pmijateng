@@ -197,3 +197,51 @@ bounceMeeting.addEventListener("scroll", () => {
         bounceMeeting.classList.add("bounce-right");
     }
 });
+
+async function loadReviews() {
+    try {
+        const response = await fetch(
+            "https://dashboard.palmerinjateng.id/api/v1/review/getTopReview"
+        );
+        const reviews = await response.json();
+        const carouselContent = document.getElementById("carousel-content");
+
+        reviews.forEach((review, index) => {
+            const stars = renderStars(review.score);
+            const reviewItem = `
+                    <div class="duration-700 ease-in-out ${
+                        index === 0 ? "block" : "hidden"
+                    }" data-carousel-item>
+                        <div class="flex flex-col xl:flex-row justify-center items-center h-full w-full space-x-4 p-4">
+                            <div class="flex-shrink-0 w-28 h-28 xl:w-48 xl:h-48 bg-admin rounded-full"></div>
+                            <div class="text-center xl:text-left mt-4 xl:mt-0">
+                                <p class="font-judson font-semibold text-xl xl:text-4xl text-yellow-400">${
+                                    review.name
+                                }</p>
+                                <div class="flex justify-center xl:justify-start space-x-1 mt-2">
+                                    ${stars}
+                                </div>
+                                <p class="font-poppins font-semibold text-lg xl:text-xl px-4 xl:px-0 text-custom-third mt-4">
+                                    ${review.review}
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>`;
+            carouselContent.insertAdjacentHTML("beforeend", reviewItem);
+        });
+    } catch (error) {
+        console.error("Error loading reviews:", error);
+    }
+}
+
+function renderStars(score) {
+    let stars = "";
+    for (let i = 0; i < score; i++) {
+        stars += `<svg aria-hidden="true" class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.566 4.82a1 1 0 00.95.69h5.065c.969 0 1.371 1.24.588 1.81l-4.1 2.98a1 1 0 00-.364 1.118l1.566 4.82c.3.921-.755 1.688-1.54 1.118l-4.1-2.98a1 1 0 00-1.175 0l-4.1 2.98c-.784.57-1.838-.197-1.539-1.118l1.566-4.82a1 1 0 00-.364-1.118L.83 10.247c-.783-.57-.38-1.81.588-1.81h5.066a1 1 0 00.95-.69l1.565-4.82z"/>
+                      </svg>`;
+    }
+    return stars;
+}
+loadReviews();

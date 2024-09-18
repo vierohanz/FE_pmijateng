@@ -70,4 +70,4 @@ Route::post('/update-profile', [ProfileController::class, 'update'])->name('upda
 Route::get('/availableRooms', [HomeController::class, 'availableRooms'])->name('availableRooms');
 Route::get('/detailTransaction', DetailTransactionController::class)->middleware('AuthLogin')->name('detailTransaction');
 
-Route::post('/submit-review', [ReviewStar::class, 'postReview'])->name('postReview');
+Route::post('review/getReviewForCurrentTransaction', [ReviewStar::class, 'postReview']);
