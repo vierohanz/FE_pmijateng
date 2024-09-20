@@ -130,6 +130,18 @@
 
                 </div>
             </div>
+            <div class="h-16 mt-6 mb-2 w-full flex justify-end items-center">
+                @if ($transaction['payment_information']['payment_status'] === 'pending')
+                    <div class="h-16 mt-6 w-full flex justify-end items-center">
+                        <a id="payment-button"
+                            class="cursor-pointer h-full w-56 bg-custom-primary flex justify-center items-center font-poppins text-white font-semibold text-xl hover:scale-105 transition-all duration-300 rounded-3xl ">
+                            Payment
+                        </a>
+                        <script src="https://app.sandbox.midtrans.com/snap/snap.js"
+                            data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
+                    </div>
+                @endif
+            </div>
 
             <div id="reviewSection"
                 class="p-4 w-full md:w-1/2 mt-5 bg-white mx-auto rounded-lg shadow-md grid grid-rows-6 gap-4">
@@ -167,7 +179,7 @@
                 <div class="h-1 w-full bg-gray-300"></div>
                 <div class="flex flex-col">
                     <div id="reviewScore" class="flex items-center"></div> <!-- Update div ini -->
-                    <p id="reviewText" class="font-poppins text-gray-400 font-medium">Kamarnya nyaman dan enak</p>
+                    <p id="reviewText" class="mt-1 font-poppins text-gray-400 font-medium"></p>
                 </div>
             </div>
 
