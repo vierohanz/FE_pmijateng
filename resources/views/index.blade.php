@@ -166,11 +166,11 @@
             </div>
             <div data-aos="fade-left" class="my-2 w-3/4 h-1/3 bg-corousel_4 bg-cover rounded-lg bg-center ml-auto"></div>
         </div>
-        <div class="col-span-3 flex border-t-4 border-b-4 border-custom-primary">
+        <div class="col-span-3 flex border-t-4 border-b-4 border-red-500">
             <div class="w-1 h-full">
-                <div class="h-24 xl:h-44 w-full bg-custom-primary"></div>
+                <div class="h-24 xl:h-44 w-full bg-red-500"></div>
                 <p class="rotate-90 font-judson font-bold text-3xl text-red-500 my-2">Rooms</p>
-                <div class="mt-24 h-64 xl:h-97 w-full bg-custom-primary"></div>
+                <div class="mt-24 h-64 xl:h-97 w-full bg-red-500"></div>
             </div>
             <div class="w-full h-full ml-2 xl:ml-5 my-2 xl:my-5">
                 <div data-aos="fade-left" class="text-left p-4">
@@ -200,7 +200,7 @@
                         "Ini adalah kamar mewah kami dengan tempat tidur ukuran king dan fasilitas modern."
                     </p>
                     <button
-                        class="mt-4 px-4 py-2 bg-red-600 text-white rounded-md font-medium hover:scale-110 transition-all duration-300">View
+                        class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md font-medium hover:scale-110 transition-all duration-300">View
                         More</button>
                 </div>
 
@@ -238,7 +238,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -269,7 +269,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -312,7 +312,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -328,15 +328,15 @@
     {{-- our services --}}
     <div id="services" class="h-120 md:h-80 xl:h-101 mt-14 w-full">
         <div data-aos="fade-zoom" class="grid grid-cols-8 items-center">
-            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-custom-primary"></div>
+            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-red-500"></div>
             <div class="col-span-3 xl:col-span-1 flex justify-center">
                 <p class="font-judson  text-2xl xl:text-4xl text-black font-bold text-center">Our Services</p>
             </div>
-            <div class="col-span-3 xl:col-span-5 h-1 w-full bg-custom-primary"></div>
+            <div class="col-span-3 xl:col-span-5 h-1 w-full bg-red-500"></div>
         </div>
         <div class="h-116 w-full mt-10 grid grid-rows-4 md:grid-cols-4 gap-4 p-10 justify-items-center">
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-red-500 fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -345,7 +345,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Makanan Lezat</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-red-500 fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -356,7 +356,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Restaurant</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-red-500 fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -367,7 +367,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Fitness</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-red-500 fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -381,11 +381,11 @@
     {{-- Our Gallery --}}
     <div class="h-96 xl:h-110 mt-10 w-full">
         <div data-aos="fade-zoom" class="grid grid-cols-9 items-center">
-            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-custom-primary"></div>
+            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-red-500"></div>
             <div class="col-span-3 xl:col-span-1 flex justify-center">
                 <p class="font-judson  text-2xl xl:text-4xl text-black font-bold text-center">Our Gallery</p>
             </div>
-            <div class="col-span-4 xl:col-span-6 h-1 w-full bg-custom-primary"></div>
+            <div class="col-span-4 xl:col-span-6 h-1 w-full bg-red-500"></div>
         </div>
         <div class="grid mt-10 h-80 xl:h-108 grid-cols-3 gap-5 p-5">
             <div data-aos="fade-right" class="shadow-lg carousel-item">
@@ -416,7 +416,7 @@
             </div>
 
             <!-- Middle divider -->
-            <div data-aos="fade-down" class="hidden md:block md:w-3 md:bg-custom-primary"></div>
+            <div data-aos="fade-down" class="hidden md:block md:w-3 md:bg-red-500"></div>
 
             <!-- Right section (text) -->
             <div class="w-full md:w-2/3 xl:pl-5 xl:pr-52">
@@ -552,7 +552,7 @@
                         reserved.</span>
                     <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
                         <a href="javascript:;"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g id="Social Media">
@@ -563,7 +563,7 @@
                             </svg>
                         </a>
                         <a href="https://www.instagram.com/pmijateng/"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg class="w-[1.25rem] h-[1.125rem] text-white" viewBox="0 0 15 15" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -572,7 +572,7 @@
                             </svg>
                         </a>
                         <a href="javascript:;"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg class="w-[1rem] h-[1rem] text-white" viewBox="0 0 13 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -581,7 +581,7 @@
                             </svg>
                         </a>
                         <a href="https://www.youtube.com/@PMIJateng"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg class="w-[1.25rem] h-[0.875rem] text-white" viewBox="0 0 16 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"

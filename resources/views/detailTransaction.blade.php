@@ -4,7 +4,7 @@
     @vite('resources/css/app.css')
     <div class="h-full p-4 md:p-5 bg-white">
         <div class="p-4 md:p-5 bg-gray-100 rounded-lg">
-            <div class="h-auto md:h-36 rounded-xl w-full bg-custom-primary grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0">
+            <div class="h-auto md:h-36 rounded-xl w-full bg-red-500 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0">
                 <div class="flex-col flex p-5 justify-center items-start space-y-2">
                     <p class="font-poppins font-bold text-white text-2xl" id="status-text">
                         {{ $transaction['payment_information']['payment_status'] }}</p>
@@ -35,7 +35,7 @@
                             <p class="text-gray-400 text-lg md:text-xl font-poppins font-medium">14:00</p>
                         </div>
                         <div class="flex justify-center items-center">
-                            <p class="bg-custom-primary text-white font-poppins font-semibold rounded-full py-2 px-10">
+                            <p class="bg-red-500 text-white font-poppins font-semibold rounded-full py-2 px-10">
                                 {{ $transaction['total_night'] }}
                                 Malam</p>
                         </div>
@@ -134,7 +134,7 @@
                 @if ($transaction['payment_information']['payment_status'] === 'pending')
                     <div class="h-16 mt-6 w-full flex justify-end items-center">
                         <a id="payment-button"
-                            class="cursor-pointer h-full w-56 bg-custom-primary flex justify-center items-center font-poppins text-white font-semibold text-xl hover:scale-105 transition-all duration-300 rounded-3xl ">
+                            class="cursor-pointer h-full w-56 bg-red-500 flex justify-center items-center font-poppins text-white font-semibold text-xl hover:scale-105 transition-all duration-300 rounded-3xl ">
                             Payment
                         </a>
                         <script src="https://app.sandbox.midtrans.com/snap/snap.js"
@@ -166,13 +166,13 @@
                         <div class="row-span-2 w-full flex justify-center items-center">
                             <!-- Review Input -->
                             <input type="text" name="review" placeholder="Tuliskan ulasan Anda"
-                                class="h-full w-full px-4 text-lg text-black font-poppins font-normal rounded-lg bg-white border-2 border-gray-200 focus:border-[#DA251D] outline-none focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                class="h-full w-full px-4 text-lg text-black font-poppins font-normal rounded-lg bg-white border-2 border-gray-200 focus:border-[#F05252] outline-none focus:outline-none focus:ring-0 focus:ring-offset-0">
                         </div>
                     </div>
                 </div>
                 <div class="h-12 w-full flex justify-end items-center">
                     <button type="button" id="submitReviewBtn"
-                        class="px-4 py-2 autofill:border-none autofill:bg-none bg-custom-primary text-white font-poppins text-base font-semibold rounded-lg hover:scale-105 transition-all duration-200 ">
+                        class="px-4 py-2 autofill:border-none autofill:bg-none bg-red-500 text-white font-poppins text-base font-semibold rounded-lg hover:scale-105 transition-all duration-200 ">
                         Submit Review
                     </button>
                 </div>
