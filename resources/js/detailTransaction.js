@@ -1,4 +1,3 @@
-import party from "party-js";
 import Swal from "sweetalert2";
 
 document.addEventListener("DOMContentLoaded", function () {
