@@ -46,6 +46,7 @@ class HomeController extends Controller
                 'response2' => [],
             ];
         }
+        
 
         // Pastikan untuk memeriksa apakah kunci ada sebelum mengaksesnya
         $rooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($room) => in_array($room['id'], [1, 2])) : [];
