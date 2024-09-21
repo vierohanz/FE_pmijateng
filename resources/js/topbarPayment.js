@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (isPaymentStepActive === "true") {
         step2.classList.remove("bg-gray-500");
-        step2.classList.add("bg-red-500");
+        step2.classList.add("bg-red-600");
     }
     localStorage.removeItem("paymentStepActive");
 });
@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Mengubah warna step-2 menjadi merah
         const step2 = document.getElementById("step-2");
         if (step2) {
-            step2.classList.add("bg-red-500");
+            step2.classList.add("bg-red-600");
             step2.classList.remove("bg-gray-500"); // Menghapus kelas warna abu-abu
-            step2.classList.add("bg-red-500"); // Menambahkan kelas warna merah
+            step2.classList.add("bg-red-600"); // Menambahkan kelas warna merah
         }
     }
 });
@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Mengubah warna step-2 menjadi merah
         const step2 = document.getElementById("step-2");
         if (step2) {
-            step2.classList.add("bg-red-500");
+            step2.classList.add("bg-red-600");
             step2.classList.remove("bg-gray-500");
-            step2.classList.add("bg-red-500");
+            step2.classList.add("bg-red-600");
         }
     }
 });

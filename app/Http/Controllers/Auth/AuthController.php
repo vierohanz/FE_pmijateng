@@ -27,14 +27,13 @@ class AuthController extends Controller
             if ($response->successful()) {
                 Session::put('access_token', $response['access_token']);
                 Session::put('user', $response['data']);
-                notify()->success( implode(' ', array_slice(explode(' ', session('user')['name'] ?? ''), 0, 2)) . ' Kami telah mengirimkan verifikasi email ke email anda', 'Success');
+                notify()->success(implode(' ', array_slice(explode(' ', session('user')['name'] ?? ''), 0, 2)) . ' Kami telah mengirimkan verifikasi email ke email anda', 'Success');
                 return redirect()->route('index');
             } else {
                 $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal membuat akun, coba lagi';
                 notify()->error($errorMessage, 'Error');
                 return back();
             }
-
         } catch (RequestException $e) {
             $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.';
             notify()->error($errorMessage, 'Error');
@@ -44,7 +43,6 @@ class AuthController extends Controller
             notify()->error($errorMessage, 'Error');
             return back();
         }
-
     }
 
     public function login(LoginRequest $request): RedirectResponse
@@ -62,18 +60,15 @@ class AuthController extends Controller
                 notify()->error($errorMessage, 'Error');
                 return back();
             }
-            
         } catch (RequestException $e) {
             $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.';
             notify()->error($errorMessage, 'Error');
             return back();
-
         } catch (\Exception $e) {
             $errorMessage = 'Login Gagal Coba Lagi, Menunggu Server';
             notify()->error($errorMessage, 'Error');
             return back();
         }
-
     }
 
     public function logout(): RedirectResponse
@@ -93,12 +88,10 @@ class AuthController extends Controller
                 notify()->error($errorMessage, 'Error');
                 return back();
             }
-
         } catch (RequestException $e) {
-            $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.'; 
+            $errorMessage = 'Koneksi timeout saat mencoba menghubungi server. Silakan coba lagi nanti.';
             notify()->error($errorMessage, 'Error');
             return back();
-
         } catch (\Exception $e) {
             $errorMessage = 'Logout Gagal Coba Lagi, Menunggu Server';
             notify()->error($errorMessage, 'Error');

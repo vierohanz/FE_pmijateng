@@ -28,9 +28,9 @@
                         @else
                             <!-- Container for Resend Verification Email Button -->
                             <div class="flex justify-end items-center mt-2 space-x-2">
-                                <p class="text-sm text-red-500">Email anda belum diverifikasi, </p>
+                                <p class="text-sm text-red-600">Email anda belum diverifikasi, </p>
                                 <button type="button" id="resendVerification"
-                                    class="text-sm font-poppins font-semibold text-red-500 hover:text-red-900 transition-all duration-300">
+                                    class="text-sm font-poppins font-semibold text-red-600 hover:text-red-900 transition-all duration-300">
                                     Verifikasi Email
                                 </button>
                             </div>
@@ -47,7 +47,7 @@
 
                 <div class="mt-6 flex justify-end">
                     <button type="submit"
-                        class="px-6 py-2 text-white hover:scale-105 duration-300 transition-all bg-red-500 hover:bg-red-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 font-poppins font-semibold focus:ring-red-500">
+                        class="px-6 py-2 text-white hover:scale-105 duration-300 transition-all bg-red-600 hover:bg-red-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 font-poppins font-semibold focus:ring-red-600">
                         Save Changes
                     </button>
                 </div>

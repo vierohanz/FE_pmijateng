@@ -135,7 +135,7 @@
 
                         <div class="w-full flex justify-center items-center">
                             <button type="submit"
-                                class="w-3/4 hover:scale-105 transition-all duration-300 h-14 md:h-16 flex justify-center items-center mt-6 rounded-2xl bg-red-500 text-lg md:text-xl font-poppins text-white font-semibold">Lanjutkan</button>
+                                class="w-3/4 hover:scale-105 transition-all duration-300 h-14 md:h-16 flex justify-center items-center mt-6 rounded-2xl bg-red-600 text-lg md:text-xl font-poppins text-white font-semibold">Lanjutkan</button>
                         </div>
                     </div>
                 </div>

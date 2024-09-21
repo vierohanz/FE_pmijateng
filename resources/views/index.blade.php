@@ -16,7 +16,7 @@
         <div class=" bg-no-repeat flex space-x-9 md:space-x-14 grid-cols-2 justify-center items-center">
             <a href="#meetingRooms" data-aos="fade-up">
                 <div
-                    class="bg-red-500 ls:w-40 sm:w-48 lg:w-60 h-52 rounded-3xl p-2 hover:scale-110 transition-all duration-300">
+                    class="bg-red-600 ls:w-40 sm:w-48 lg:w-60 h-52 rounded-3xl p-2 hover:scale-110 transition-all duration-300">
                     <div class="bg-our_rooms bg-center bg-cover h-32 w-full rounded-3xl"></div>
                     <div class="flex justify-center items-center h-16 space-x-3">
                         <p class="font-poppins font-semibold text-lg text-white">Data ruang</p>
@@ -32,7 +32,7 @@
             </a>
             <a href="#packageRooms" data-aos="fade-down">
                 <div
-                    class="bg-red-500 ls:w-40 sm:w-48 lg:w-60 h-52 rounded-3xl p-2 hover:scale-110 transition-all duration-300">
+                    class="bg-red-600 ls:w-40 sm:w-48 lg:w-60 h-52 rounded-3xl p-2 hover:scale-110 transition-all duration-300">
                     <div class="bg-package bg-cover h-32 w-full rounded-3xl"></div>
                     <div class="flex justify-center items-center h-16 space-x-3">
                         <p class="font-poppins font-semibold text-lg text-white">Data paket</p>
@@ -50,7 +50,7 @@
     </div>
 
     <!-- Book Now -->
-    <div class="h-48 hidden lg:grid grid-cols-5 items-center justify-between mx-3  rounded-2xl bg-red-500 px-5 my-3">
+    <div class="h-48 hidden lg:grid grid-cols-5 items-center justify-between mx-3  rounded-2xl bg-red-600 px-5 my-3">
         <div
             class="col-span-1  font-poppins font-bold text-white ls:text-xl md:text-2xl xl:text-3xl space-y-4 flex-col text-end w-60 lg:pr-20 xl:pr-5 justify-start">
             <p>Book now</p>
@@ -94,7 +94,7 @@
                 <!-- Book Now Button -->
                 <div class="flex justify-center items-center">
                     <button type="submit"
-                        class="bg-white border-custom-secondary border-2 text-custom-secondary font-poppins font-bold py-2 px-6 rounded-full hover:scale-110 transition-all duration-200 hover:bg-custom-secondary hover:text-red-500">BOOK
+                        class="bg-white border-custom-secondary border-2 text-custom-secondary font-poppins font-bold py-2 px-6 rounded-full hover:scale-110 transition-all duration-200 hover:bg-custom-secondary hover:text-red-600">BOOK
                         NOW</button>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                     <input type="text" id="searchInput" placeholder="Search"
                         class="autofill:border-none border-black autofill:bg-none w-1/2 h-full px-4 text-lg text-black font-poppins font-normal rounded-2xl bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
                     <button id="searchButton"
-                        class="px-4 py-2 w-44 bg-red-500 text-white hover:scale-110 transition-all duration-300 font-poppins text-xl font-medium h-full rounded-2xl">Search</button>
+                        class="px-4 py-2 w-44 bg-red-600 text-white hover:scale-110 transition-all duration-300 font-poppins text-xl font-medium h-full rounded-2xl">Search</button>
                 </div>
 
                 <button onclick="toggleModal()" class="  text-red-600 flex justify-start items-center">
@@ -143,7 +143,7 @@
                             <div class="flex flex-col items-end space-y-2 ">
                                 <span class="text-lg font-semibold">Rp {{ number_format($room['price'], 0, ',', '.') }},00
                                     /malam</span>
-                                <button class="px-4 py-2 bg-red-500 text-white rounded-lg hover:scale-110">Pesan</button>
+                                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:scale-110">Pesan</button>
                             </div>
                         </a>
                     @endforeach
@@ -156,25 +156,25 @@
     </div>
     <!-- Rooms -->
     <div id="rooms" class="grid grid-cols-5 h-100 xl:h-110 w-full mt-14">
-        <div class="col-span-2 px-7 py-2 border-t-4 border-b-4 border-red-500 flex flex-col justify-between h-full">
+        <div class="col-span-2 px-7 py-2 border-t-4 border-b-4 border-red-600 flex flex-col justify-between h-full">
             <div data-aos="fade-right" class="my-2 w-3/4 h-1/3 bg-rooms_1 bg-cover rounded-lg bg-center"></div>
             <div class="my-2 w-full h-36 text-start">
                 <p data-aos="fade-down" class="font-judson text-xl xl:text-5xl text-black font-medium">Award <span
-                        class="font-freehand text-xl xl:text-5xl text-red-500 font-bold">Winning</span></p>
+                        class="font-freehand text-xl xl:text-5xl text-red-600 font-bold">Winning</span></p>
                 <p data-aos="fade-right" class="font-judson text-xl xl:text-5xl text-black font-medium">style and</p>
                 <p data-aos="fade-right" class="font-judson text-xl xl:text-5xl text-black font-medium">comfort</p>
             </div>
             <div data-aos="fade-left" class="my-2 w-3/4 h-1/3 bg-corousel_4 bg-cover rounded-lg bg-center ml-auto"></div>
         </div>
-        <div class="col-span-3 flex border-t-4 border-b-4 border-red-500">
+        <div class="col-span-3 flex border-t-4 border-b-4 border-red-600">
             <div class="w-1 h-full">
-                <div class="h-24 xl:h-44 w-full bg-red-500"></div>
-                <p class="rotate-90 font-judson font-bold text-3xl text-red-500 my-2">Rooms</p>
-                <div class="mt-24 h-64 xl:h-97 w-full bg-red-500"></div>
+                <div class="h-24 xl:h-44 w-full bg-red-600"></div>
+                <p class="rotate-90 font-judson font-bold text-3xl text-red-600 my-2">Rooms</p>
+                <div class="mt-24 h-64 xl:h-97 w-full bg-red-600"></div>
             </div>
             <div class="w-full h-full ml-2 xl:ml-5 my-2 xl:my-5">
                 <div data-aos="fade-left" class="text-left p-4">
-                    <h2 class="text-xl xl:text-3xl font-bold font-judson text-red-500">OUR ROOMS</h2>
+                    <h2 class="text-xl xl:text-3xl font-bold font-judson text-red-600">OUR ROOMS</h2>
                 </div>
                 <div data-aos="fade-down" id="carousel"
                     class="relative carousel carousel-center rounded-box w-full space-x-4 p-2 xl:p-4 overflow-x-auto">
@@ -200,7 +200,7 @@
                         "Ini adalah kamar mewah kami dengan tempat tidur ukuran king dan fasilitas modern."
                     </p>
                     <button
-                        class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md font-medium hover:scale-110 transition-all duration-300">View
+                        class="mt-4 px-4 py-2 bg-red-600 text-white rounded-md font-medium hover:scale-110 transition-all duration-300">View
                         More</button>
                 </div>
 
@@ -210,7 +210,7 @@
     {{-- Meeting rooms --}}
     <div id="meetingRooms" class="h-104 mt-16 w-full overflow-hidden">
         <div class="pl-7">
-            <p data-aos="fade-right" class="font-freehand font-bold text-red-500 text-3xl lg:text-5xl">Regular
+            <p data-aos="fade-right" class="font-freehand font-bold text-red-600 text-3xl lg:text-5xl">Regular
                 <span data-aos="fade-up" class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>
             </p>
         </div>
@@ -238,7 +238,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -269,7 +269,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -284,7 +284,7 @@
     {{-- Package rooms --}}
     <div id="packageRooms" class="h-104 z-10 mt-10 w-full overflow-hidden">
         <div class="pl-7">
-            <p data-aos="fade-right" class="font-freehand font-bold text-red-500 text-3xl lg:text-5xl">Package
+            <p data-aos="fade-right" class="font-freehand font-bold text-red-600 text-3xl lg:text-5xl">Package
                 <span class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>
             </p>
         </div>
@@ -312,7 +312,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -328,15 +328,15 @@
     {{-- our services --}}
     <div id="services" class="h-120 md:h-80 xl:h-101 mt-14 w-full">
         <div data-aos="fade-zoom" class="grid grid-cols-8 items-center">
-            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-red-500"></div>
+            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-red-600"></div>
             <div class="col-span-3 xl:col-span-1 flex justify-center">
                 <p class="font-judson  text-2xl xl:text-4xl text-black font-bold text-center">Our Services</p>
             </div>
-            <div class="col-span-3 xl:col-span-5 h-1 w-full bg-red-500"></div>
+            <div class="col-span-3 xl:col-span-5 h-1 w-full bg-red-600"></div>
         </div>
         <div class="h-116 w-full mt-10 grid grid-rows-4 md:grid-cols-4 gap-4 p-10 justify-items-center">
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-600 text-red-600 fill-red-600 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -345,7 +345,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Makanan Lezat</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-600 text-red-600 fill-red-600 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -356,7 +356,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Restaurant</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-600 text-red-600 fill-red-600 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -367,7 +367,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Fitness</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-600 text-red-600 fill-red-600 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -381,11 +381,11 @@
     {{-- Our Gallery --}}
     <div class="h-96 xl:h-110 mt-10 w-full">
         <div data-aos="fade-zoom" class="grid grid-cols-9 items-center">
-            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-red-500"></div>
+            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-red-600"></div>
             <div class="col-span-3 xl:col-span-1 flex justify-center">
                 <p class="font-judson  text-2xl xl:text-4xl text-black font-bold text-center">Our Gallery</p>
             </div>
-            <div class="col-span-4 xl:col-span-6 h-1 w-full bg-red-500"></div>
+            <div class="col-span-4 xl:col-span-6 h-1 w-full bg-red-600"></div>
         </div>
         <div class="grid mt-10 h-80 xl:h-108 grid-cols-3 gap-5 p-5">
             <div data-aos="fade-right" class="shadow-lg carousel-item">
@@ -408,7 +408,7 @@
     {{-- About us --}}
     <div id="about_us" class="w-full mt-16">
         <div class="w-full pl-5 xl:pl-7">
-            <p class="font-freehand text-red-500 font-bold text-3xl xl:text-5xl">About Us</p>
+            <p class="font-freehand text-red-600 font-bold text-3xl xl:text-5xl">About Us</p>
         </div>
         <div class="flex flex-col md:flex-row gap-7 p-5 mt-12">
             <!-- Left section (image) -->
@@ -416,12 +416,12 @@
             </div>
 
             <!-- Middle divider -->
-            <div data-aos="fade-down" class="hidden md:block md:w-3 md:bg-red-500"></div>
+            <div data-aos="fade-down" class="hidden md:block md:w-3 md:bg-red-600"></div>
 
             <!-- Right section (text) -->
             <div class="w-full md:w-2/3 xl:pl-5 xl:pr-52">
                 <div class="grid grid-rows-6 gap-4">
-                    <p data-aos="fade-down" class="font-poppins text-red-500 text-xl xl:text-5xl font-bold">
+                    <p data-aos="fade-down" class="font-poppins text-red-600 text-xl xl:text-5xl font-bold">
                         PUSDIKLAT PMI JATENG
                     </p>
                     <p data-aos="fade-up" class="row-span-5 text-xs md:text-sm xl:text-2xl text-black xl:leading-[3rem]">
@@ -490,7 +490,7 @@
             <div
                 class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
                 <div
-                    class="col-span-full mb-10 p-2 rounded-2xl border-red-500 border-4 lg:col-span-2 lg:mb-0  h-fit bg-white  items-center flex">
+                    class="col-span-full mb-10 p-2 rounded-2xl border-red-600 border-4 lg:col-span-2 lg:mb-0  h-fit bg-white  items-center flex">
                     <div class="bg-logo_pmi bg-cover h-32 w-32 "> </div>
                     <div class="ml-3 font-poppins text-black justify-center items-start flex flex-col font-bold text-3xl">
                         <p>Palang</p>
@@ -501,16 +501,16 @@
                 <div class="lg:mx-auto text-left ">
                     <h4 class="text-xl text-custom-third font-medium mb-7">Pagedone</h4>
                     <ul class="text-sm  transition-all duration-500">
-                        <li class="mb-6"><a href="#home" class="text-white hover:text-red-500 text-lg">Home</a></li>
-                        <li class="mb-6"><a href="#rooms" class=" text-white hover:text-red-500 text-lg">Rooms</a>
+                        <li class="mb-6"><a href="#home" class="text-white hover:text-red-600 text-lg">Home</a></li>
+                        <li class="mb-6"><a href="#rooms" class=" text-white hover:text-red-600 text-lg">Rooms</a>
                         </li>
-                        <li class="mb-6"><a href="#meetingRooms" class=" text-white hover:text-red-500 text-lg">Meeting
+                        <li class="mb-6"><a href="#meetingRooms" class=" text-white hover:text-red-600 text-lg">Meeting
                                 rooms</a></li>
                         <li class="mb-6"><a href="#services"
-                                class=" text-white hover:text-red-500 text-lg">Services</a></li>
-                        <li class="mb-6"><a href="#about_us" class=" text-white hover:text-red-500 text-lg">About</a>
+                                class=" text-white hover:text-red-600 text-lg">Services</a></li>
+                        <li class="mb-6"><a href="#about_us" class=" text-white hover:text-red-600 text-lg">About</a>
                         </li>
-                        <li><a href="#contact" class=" text-white hover:text-red-500 text-lg">Contact</a></li>
+                        <li><a href="#contact" class=" text-white hover:text-red-600 text-lg">Contact</a></li>
 
                     </ul>
                 </div>
@@ -519,16 +519,15 @@
                     <ul class="text-sm  transition-all duration-500">
                         <li class="mb-6"><a href="#"
                                 onclick="window.open('https://www.figma.com/'); return false"
-                                class="text-white  hover:text-red-500 text-lg">Figma UI System</a></li>
+                                class="text-white  hover:text-red-600 text-lg">Figma UI System</a></li>
                         <li class="mb-6"><a href="#"
                                 onclick="window.open('https://ionic.io/ionicons'); return false"
-                                class=" text-white  hover:text-red-500 text-lg">IonIcon</a></li>
+                                class=" text-white  hover:text-red-600 text-lg">IonIcon</a></li>
                         <li class="mb-6"><a href="#"
                                 onclick="window.open('https://tailwindcss.com/'); return false"
-                                class=" text-white  hover:text-red-500 text-lg">Tailwind</a></li>
-                        <li><a href="#"
-                                onclick="window.open('https://michalsnik.github.io/aos/'); return false"
-                                class=" text-white  hover:text-red-500 text-lg">Components Library</a></li>
+                                class=" text-white  hover:text-red-600 text-lg">Tailwind</a></li>
+                        <li><a href="#" onclick="window.open('https://michalsnik.github.io/aos/'); return false"
+                                class=" text-white  hover:text-red-600 text-lg">Components Library</a></li>
                     </ul>
                 </div>
                 <div class="lg:mx-auto text-left">
@@ -556,7 +555,7 @@
                         reserved.</span>
                     <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
                         <a href="javascript:;"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-600">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g id="Social Media">
@@ -567,7 +566,7 @@
                             </svg>
                         </a>
                         <a href="#" onclick="window.open('https://www.instagram.com/pmijateng/'); return false"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-600">
                             <svg class="w-[1.25rem] h-[1.125rem] text-white" viewBox="0 0 15 15" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -576,7 +575,7 @@
                             </svg>
                         </a>
                         <a href="javascript:;"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-600">
                             <svg class="w-[1rem] h-[1rem] text-white" viewBox="0 0 13 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -585,7 +584,7 @@
                             </svg>
                         </a>
                         <a onclick="window.open('https://www.youtube.com/@PMIJateng'); return false" href="#"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-600">
                             <svg class="w-[1.25rem] h-[0.875rem] text-white" viewBox="0 0 16 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"

@@ -33,44 +33,44 @@
                     <!-- Navigation Links -->
                     <div class="xl:flex hidden space-x-12 justify-center items-center ">
                         <a href="#home"
-                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-500 group">
+                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-600 group">
                             Home
                             <span
-                                class="absolute left-0 bottom-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 h-0.5 bg-red-600 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
                         </a>
 
                         <a href="#rooms"
-                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-500 group">
+                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-600 group">
                             Rooms
                             <span
-                                class="absolute left-0 bottom-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 h-0.5 bg-red-600 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
                         </a>
                         <a href="#meetingRooms"
-                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-500 group">
+                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-600 group">
                             Meeting rooms
                             <span
-                                class="absolute left-0 bottom-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 h-0.5 bg-red-600 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
                         </a>
                         <a href="#services"
-                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-500 group">
+                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-600 group">
                             Services
                             <span
-                                class="absolute left-0 bottom-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 h-0.5 bg-red-600 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
                         </a>
                         <a href="#about_us"
-                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-500 group">
+                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-600 group">
                             About
                             <span
-                                class="absolute left-0 bottom-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 h-0.5 bg-red-600 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
                         </a>
                         <a href="#contact"
-                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-500 group">
+                            class="relative inline-block font-poppins text-black font-semibold text-lg transition-all duration-300 ease-in-out hover:scale-105 hover:text-red-600 group">
                             Contact
                             <span
-                                class="absolute left-0 bottom-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 h-0.5 bg-red-600 transition-all duration-300 ease-in-out w-0 group-hover:w-full"></span>
                         </a>
                         <div
-                            class=" bg-red-500 cursor-pointer animate-bounce p-4 rounded-full hover:bg-red-700 duration-300 transition-all">
+                            class=" bg-red-600 cursor-pointer animate-bounce p-4 rounded-full hover:bg-red-700 duration-300 transition-all">
                             <a href="#"
                                 class="relative inline-block font-poppins text-sm text-white font-semibold text-lg transition-all duration-300 ease-in-out ">
                                 Book your room
@@ -83,12 +83,12 @@
                         <div>
                             @if (!session()->has('access_token'))
                                 <a href="{{ route('signIn') }}"
-                                    class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-red-500 hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-red-500 border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
+                                    class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-red-600 hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-red-600 border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
                                     Login
                                 </a>
                             @else
                                 <a href="{{ route('account') }}"
-                                    class=" hover:no-underline hover:text-red-500 hover:fill-red-500 flex space-x-2 gap-2 justify-center items-center">
+                                    class=" hover:no-underline hover:text-red-600 hover:fill-red-600 flex space-x-2 gap-2 justify-center items-center">
                                     <div id="profilePicture"
                                         class="bg-profile bg-center hidden xl:flex bg-cover xl:w-12 xl:h-12 rounded-full bg-no-repeat">
                                     </div>
@@ -97,7 +97,7 @@
                                             class="font-poppins text-black font-semibold xs:text-base hidden xl:flex flex-col">
                                             Hello</p>
                                         <p
-                                            class="font-poppins text-red-500 font-bold xs:text-base hidden xl:flex flex-col">
+                                            class="font-poppins text-red-600 font-bold xs:text-base hidden xl:flex flex-col">
                                             {{ implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)) }}
                                         </p>
                                     </div>
@@ -128,9 +128,9 @@
                     </div>
                     <ul class="font-poppins font-semibold text-custom-fourth px-2 py-1">
                         <a href="#home"
-                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-600 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li x-data x-on:click.prevent="$el.scrollIntoView({ behavior: 'smooth', block: 'start' })"
-                                class="p-4 flex items-center gap-3 mt-1 group-hover:bg-red-500 group-hover:text-white active:text-white text-black transition-colors duration-300 rounded-lg">
+                                class="p-4 flex items-center gap-3 mt-1 group-hover:bg-red-600 group-hover:text-white active:text-white text-black transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -143,9 +143,9 @@
                             </li>
                         </a>
                         <a href="#rooms"
-                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-600 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li x-data x-on:click.prevent="$el.scrollIntoView({ behavior: 'smooth', block: 'start' })"
-                                class="p-4 flex items-center gap-3 mt-1 hover:bg-red-500 hover:text-white active:text-white text-black hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="p-4 flex items-center gap-3 mt-1 hover:bg-red-600 hover:text-white active:text-white text-black hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -156,9 +156,9 @@
                             </li>
                         </a>
                         <a href="#meetingRooms"
-                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-600 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li x-data x-on:click.prevent="$el.scrollIntoView({ behavior: 'smooth', block: 'start' })"
-                                class="p-4 flex items-center gap-3 mt-1 hover:bg-red-500 hover:text-white active:text-white text-black hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="p-4 flex items-center gap-3 mt-1 hover:bg-red-600 hover:text-white active:text-white text-black hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -172,9 +172,9 @@
                         </a>
 
                         <a href="#services"
-                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-600 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li
-                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-600 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -186,9 +186,9 @@
                         </a>
 
                         <a href="#about_us"
-                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-600 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li
-                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-600 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -200,9 +200,9 @@
                         </a>
 
                         <a href="#contact"
-                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-600 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li
-                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-600 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -216,9 +216,9 @@
                         @if (session('access_token'))
                             <!-- Check if the access_token exists in the session -->
                             <a href="{{ route('account') }}"
-                                class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                                class="group hover:bg-red-600 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                                 <li
-                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-red-600 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                         class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                         viewBox="0 0 512 512">
@@ -230,9 +230,9 @@
                             </a>
                         @else
                             <a href="{{ route('signIn') }}"
-                                class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                                class="group hover:bg-red-600 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                                 <li
-                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-red-600 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                         class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                         viewBox="0 0 512 512">
