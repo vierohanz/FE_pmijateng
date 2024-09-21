@@ -10,7 +10,7 @@
                 <ul class="flex flex-wrap justify-start space-x-2">
                     <li>
                         <button data-status="all"
-                            class="status-button px-6 py-2 bg-custom-primary font-poppins font-normal xl:font-medium text-white rounded-xl">Semua
+                            class="status-button px-6 py-2 bg-red-500 font-poppins font-normal xl:font-medium text-white rounded-xl">Semua
                         </button>
                     </li>
                     <li>

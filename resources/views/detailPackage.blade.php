@@ -70,27 +70,27 @@
                 <div class="col-span-1 gap-2 flex-col flex items-start justify-start">
                     <p class="font-josefinSans font-bold text-xl xl:text-5xl text-black">{{ $package['name'] }}</p>
                     <div class="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#DA251D" viewBox="0 0 24 24"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#F05252" viewBox="0 0 24 24"
                             class="w-3 h-3 xl:w-6 xl:h-6 ml-2">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#DA251D" viewBox="0 0 24 24"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#F05252" viewBox="0 0 24 24"
                             class="w-3 h-3 xl:w-6 xl:h-6 ml-2">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#DA251D" viewBox="0 0 24 24"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#F05252" viewBox="0 0 24 24"
                             class="w-3 h-3 xl:w-6 xl:h-6 ml-2">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#DA251D" viewBox="0 0 24 24"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#F05252" viewBox="0 0 24 24"
                             class="w-3 h-3 xl:w-6 xl:h-6 ml-2">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#DA251D" viewBox="0 0 24 24"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#F05252" viewBox="0 0 24 24"
                             class="w-3 h-3 xl:w-6 xl:h-6 ml-2">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -101,22 +101,22 @@
                 <div class="col-span-1 flex-col flex justify-start items-end gap-4">
                     <p class="font-poppins font-medium text-black text-sm xl:text-xl">Harga/Package mulai dari</p>
                     <div
-                        class="w-40 xl:w-72 h-10 xl:h-20 rounded-full border-2 items-center justify-center flex border-custom-primary ">
+                        class="w-40 xl:w-72 h-10 xl:h-20 rounded-full border-2 items-center justify-center flex border-red-500 ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" height="32px" width="32px"
                             viewBox="0 0 512 512">
                             <rect x="32" y="80" width="448" height="256" rx="16" ry="16"
-                                transform="rotate(180 256 208)" fill="none" stroke="#DA251D" stroke-linejoin="round"
+                                transform="rotate(180 256 208)" fill="none" stroke="#F05252" stroke-linejoin="round"
                                 stroke-width="32" />
-                            <path fill="none" stroke="#DA251D" stroke-linecap="round" stroke-linejoin="round"
+                            <path fill="none" stroke="#F05252" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="32" d="M64 384h384M96 432h320" />
-                            <circle cx="256" cy="208" r="80" fill="none" stroke="#DA251D"
+                            <circle cx="256" cy="208" r="80" fill="none" stroke="#F05252"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
                             <path
                                 d="M480 160a80 80 0 01-80-80M32 160a80 80 0 0080-80M480 256a80 80 0 00-80 80M32 256a80 80 0 0180 80"
-                                fill="none" stroke="#DA251D" stroke-linecap="round" stroke-linejoin="round"
+                                fill="none" stroke="#F05252" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="32" />
                         </svg>
-                        <p class="ml-2 font-poppins text-custom-primary text-base xl:text-2xl font-semibold">Rp
+                        <p class="ml-2 font-poppins text-red-500 text-base xl:text-2xl font-semibold">Rp
                             {{ (int) $package['price_per_person'] }}/Orang
                         </p>
                     </div>
@@ -133,7 +133,7 @@
             {{-- facilities --}}
             <div class="mt-20 w-full px-6 xl:px-12 flex-col flex ">
                 <div class="flex justify-start items-start">
-                    <p class="font-josefinSans text-custom-primary font-bold text-2xl xl:text-4xl">Fasilitas</p>
+                    <p class="font-josefinSans text-red-500 font-bold text-2xl xl:text-4xl">Fasilitas</p>
                 </div>
                 <div class="grid grid-cols-3 mt-12">
                     <div class="col-span-1 flex gap-3 flex-col items-center justify-center">
@@ -199,14 +199,14 @@
 
             {{-- Checkout --}}
             <div class="h-48 flex flex-col w-full mt-16 px-28">
-                <div class="flex w-full bg-custom-primary h-2"></div>
+                <div class="flex w-full bg-red-500 h-2"></div>
                 <div class="w-full flex items-center justify-between mt-5">
                     <a href="{{ route('index') }}"
-                        class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-custom-primary rounded-2xl">
+                        class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-red-500 rounded-2xl">
                         Back
                     </a>
                     <a href="{{ route('checkout-package', ['id' => $package['id']]) }}"
-                        class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-custom-primary rounded-2xl">
+                        class="h-16 items-center justify-center text-xl hover:scale-110 duration-300 transition-all font-poppins font-semibold text-white flex w-72 bg-red-500 rounded-2xl">
                         Checkout
                     </a>
                 </div>

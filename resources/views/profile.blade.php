@@ -18,7 +18,7 @@
     <x:notify::notify />
     <div class="grid  grid-cols-1 md:grid-cols-10 h-auto md:h-screen w-full">
         <!-- Sidebar -->
-        <div class="col-span-3  bg-[#DA251D] flex-col justify-start pb-10 items-center flex pt-1 md:pt-8 px-5">
+        <div class="col-span-3  bg-[#F05252] flex-col justify-start pb-10 items-center flex pt-1 md:pt-8 px-5">
             <div class="w-full pb-9  pl-4 pt-5 xl:pt-0">
                 <a href="{{ route('index') }}"
                     class=" font-poppins text-white text-lg hover:text-xl transition-all duration-300 font-semibold ">Back</a>
@@ -85,7 +85,7 @@
                 <form method="POST" action="{{ route('signOut') }}">
                     @csrf
                     <button type="submit"
-                        class="w-full bg-red-800 flex px-5 items-center hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
+                        class="w-full bg-red-500 flex px-5 items-center hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
                         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-8 md:w-12 h-8 md:h-12"
                             viewBox="0 0 512 512">
                             <path

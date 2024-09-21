@@ -18,7 +18,7 @@
 
     <div class="h-auto w-full max-w-4xl bg-white rounded-3xl flex flex-col shadow-2xl p-6">
         <a href="{{ route('signIn') }}"
-            class="w-fit cursor-pointer font-poppins font-semibold text-lg text-custom-primary hover:scale-105 transition-all duration-300">
+            class="w-fit cursor-pointer font-poppins font-semibold text-lg text-red-500 hover:scale-105 transition-all duration-300">
             Back</a>
         <div class="grid md:grid-cols-2 grid-cols-1 h-full py-8 px-5 gap-7">
             <div class="bg-reset_pw bg-contain bg-no-repeat bg-center h-64 w-full hidden md:block"></div>
@@ -29,7 +29,7 @@
                 <form class="w-full flex flex-col items-center" method="POST" action="{{ route('forgetPassword') }}">
                     @csrf
                     <input type="email" name="email" placeholder="Email"
-                        class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-white  border-2 border-gray-300 focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                        class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-white  border-2 border-gray-300 focus:border-[#F05252] focus:outline-none focus:ring-0 focus:ring-offset-0">
                     @if ($errors->has('email'))
                         <p class="text-red-500 text-sm mt-1">{{ $errors->first('email') }}</p>
                     @elseif($errors->has('credentials'))

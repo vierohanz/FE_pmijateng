@@ -83,12 +83,12 @@
                         <div>
                             @if (!session()->has('access_token'))
                                 <a href="{{ route('signIn') }}"
-                                    class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-custom-primary hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-custom-primary border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
+                                    class="xl:flex hidden  hover:no-underline rounded-xl bg-[#F9F9F9] border-2 hover:bg-red-500 hover:text-[#F9F9F9] hover:scale-110 transition-all duration-300 text-red-500 border-custom-primary py-2 px-9 font-poppins text-lg xl:text-xl font-bold  flex space-x-2 gap-2 justify-center items-center">
                                     Login
                                 </a>
                             @else
                                 <a href="{{ route('account') }}"
-                                    class=" hover:no-underline hover:text-custom-primary hover:fill-custom-primary flex space-x-2 gap-2 justify-center items-center">
+                                    class=" hover:no-underline hover:text-red-500 hover:fill-red-500 flex space-x-2 gap-2 justify-center items-center">
                                     <div id="profilePicture"
                                         class="bg-profile bg-center hidden xl:flex bg-cover xl:w-12 xl:h-12 rounded-full bg-no-repeat">
                                     </div>
@@ -97,7 +97,7 @@
                                             class="font-poppins text-black font-semibold xs:text-base hidden xl:flex flex-col">
                                             Hello</p>
                                         <p
-                                            class="font-poppins text-custom-primary font-bold xs:text-base hidden xl:flex flex-col">
+                                            class="font-poppins text-red-500 font-bold xs:text-base hidden xl:flex flex-col">
                                             {{ implode(' ', array_slice(explode(' ', session('user')['name'] ?? 'default'), 0, 2)) }}
                                         </p>
                                     </div>
@@ -128,9 +128,9 @@
                     </div>
                     <ul class="font-poppins font-semibold text-custom-fourth px-2 py-1">
                         <a href="#home"
-                            class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li x-data x-on:click.prevent="$el.scrollIntoView({ behavior: 'smooth', block: 'start' })"
-                                class="p-4 flex items-center gap-3 mt-1 group-hover:bg-custom-primary group-hover:text-white active:text-white text-black transition-colors duration-300 rounded-lg">
+                                class="p-4 flex items-center gap-3 mt-1 group-hover:bg-red-500 group-hover:text-white active:text-white text-black transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -143,9 +143,9 @@
                             </li>
                         </a>
                         <a href="#rooms"
-                            class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li x-data x-on:click.prevent="$el.scrollIntoView({ behavior: 'smooth', block: 'start' })"
-                                class="p-4 flex items-center gap-3 mt-1 hover:bg-custom-primary hover:text-white active:text-white text-black hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="p-4 flex items-center gap-3 mt-1 hover:bg-red-500 hover:text-white active:text-white text-black hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -156,9 +156,9 @@
                             </li>
                         </a>
                         <a href="#meetingRooms"
-                            class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li x-data x-on:click.prevent="$el.scrollIntoView({ behavior: 'smooth', block: 'start' })"
-                                class="p-4 flex items-center gap-3 mt-1 hover:bg-custom-primary hover:text-white active:text-white text-black hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="p-4 flex items-center gap-3 mt-1 hover:bg-red-500 hover:text-white active:text-white text-black hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -172,9 +172,9 @@
                         </a>
 
                         <a href="#services"
-                            class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li
-                                class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -186,9 +186,9 @@
                         </a>
 
                         <a href="#about_us"
-                            class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li
-                                class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -200,9 +200,9 @@
                         </a>
 
                         <a href="#contact"
-                            class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                            class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                             <li
-                                class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                     class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                     viewBox="0 0 512 512">
@@ -216,9 +216,9 @@
                         @if (session('access_token'))
                             <!-- Check if the access_token exists in the session -->
                             <a href="{{ route('account') }}"
-                                class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                                class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                                 <li
-                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                         class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                         viewBox="0 0 512 512">
@@ -230,9 +230,9 @@
                             </a>
                         @else
                             <a href="{{ route('signIn') }}"
-                                class="group hover:bg-custom-primary active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
+                                class="group hover:bg-red-500 active:text-white text-black hover:text-white transition-colors duration-300 rounded-lg">
                                 <li
-                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-custom-primary active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
+                                    class="flex items-center gap-3 p-4 mt-1 hover:bg-red-500 active:text-white text-black hover:text-white hover:fill-white transition-colors duration-300 rounded-lg">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
                                         class="ionicon transition-colors duration-300 group-hover:fill-white group-active:fill-white"
                                         viewBox="0 0 512 512">

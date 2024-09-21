@@ -50,7 +50,7 @@
     </div>
 
     <!-- Book Now -->
-    <div class="h-48 hidden lg:grid grid-cols-5 items-center justify-between mx-3  rounded-2xl bg-red-600 px-5 my-3">
+    <div class="h-48 hidden lg:grid grid-cols-5 items-center justify-between mx-3  rounded-2xl bg-red-500 px-5 my-3">
         <div
             class="col-span-1  font-poppins font-bold text-white ls:text-xl md:text-2xl xl:text-3xl space-y-4 flex-col text-end w-60 lg:pr-20 xl:pr-5 justify-start">
             <p>Book now</p>
@@ -94,7 +94,7 @@
                 <!-- Book Now Button -->
                 <div class="flex justify-center items-center">
                     <button type="submit"
-                        class="bg-white border-custom-secondary border-2 text-custom-secondary font-poppins font-bold py-2 px-6 rounded-full hover:scale-110 transition-all duration-200 hover:bg-custom-secondary hover:text-custom-primary">BOOK
+                        class="bg-white border-custom-secondary border-2 text-custom-secondary font-poppins font-bold py-2 px-6 rounded-full hover:scale-110 transition-all duration-200 hover:bg-custom-secondary hover:text-red-500">BOOK
                         NOW</button>
                 </div>
             </div>
@@ -156,25 +156,25 @@
     </div>
     <!-- Rooms -->
     <div id="rooms" class="grid grid-cols-5 h-100 xl:h-110 w-full mt-14">
-        <div class="col-span-2 px-7 py-2 border-t-4 border-b-4 border-custom-primary flex flex-col justify-between h-full">
+        <div class="col-span-2 px-7 py-2 border-t-4 border-b-4 border-red-500 flex flex-col justify-between h-full">
             <div data-aos="fade-right" class="my-2 w-3/4 h-1/3 bg-rooms_1 bg-cover rounded-lg bg-center"></div>
             <div class="my-2 w-full h-36 text-start">
                 <p data-aos="fade-down" class="font-judson text-xl xl:text-5xl text-black font-medium">Award <span
-                        class="font-freehand text-xl xl:text-5xl text-custom-primary font-bold">Winning</span></p>
+                        class="font-freehand text-xl xl:text-5xl text-red-500 font-bold">Winning</span></p>
                 <p data-aos="fade-right" class="font-judson text-xl xl:text-5xl text-black font-medium">style and</p>
                 <p data-aos="fade-right" class="font-judson text-xl xl:text-5xl text-black font-medium">comfort</p>
             </div>
             <div data-aos="fade-left" class="my-2 w-3/4 h-1/3 bg-corousel_4 bg-cover rounded-lg bg-center ml-auto"></div>
         </div>
-        <div class="col-span-3 flex border-t-4 border-b-4 border-custom-primary">
+        <div class="col-span-3 flex border-t-4 border-b-4 border-red-500">
             <div class="w-1 h-full">
-                <div class="h-24 xl:h-44 w-full bg-custom-primary"></div>
-                <p class="rotate-90 font-judson font-bold text-3xl text-custom-primary my-2">Rooms</p>
-                <div class="mt-24 h-64 xl:h-97 w-full bg-custom-primary"></div>
+                <div class="h-24 xl:h-44 w-full bg-red-500"></div>
+                <p class="rotate-90 font-judson font-bold text-3xl text-red-500 my-2">Rooms</p>
+                <div class="mt-24 h-64 xl:h-97 w-full bg-red-500"></div>
             </div>
             <div class="w-full h-full ml-2 xl:ml-5 my-2 xl:my-5">
                 <div data-aos="fade-left" class="text-left p-4">
-                    <h2 class="text-xl xl:text-3xl font-bold font-judson text-custom-primary">OUR ROOMS</h2>
+                    <h2 class="text-xl xl:text-3xl font-bold font-judson text-red-500">OUR ROOMS</h2>
                 </div>
                 <div data-aos="fade-down" id="carousel"
                     class="relative carousel carousel-center rounded-box w-full space-x-4 p-2 xl:p-4 overflow-x-auto">
@@ -200,7 +200,7 @@
                         "Ini adalah kamar mewah kami dengan tempat tidur ukuran king dan fasilitas modern."
                     </p>
                     <button
-                        class="mt-4 px-4 py-2 bg-red-600 text-white rounded-md font-medium hover:scale-110 transition-all duration-300">View
+                        class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md font-medium hover:scale-110 transition-all duration-300">View
                         More</button>
                 </div>
 
@@ -210,7 +210,7 @@
     {{-- Meeting rooms --}}
     <div id="meetingRooms" class="h-104 mt-16 w-full overflow-hidden">
         <div class="pl-7">
-            <p data-aos="fade-right" class="font-freehand font-bold text-custom-primary text-3xl lg:text-5xl">Regular
+            <p data-aos="fade-right" class="font-freehand font-bold text-red-500 text-3xl lg:text-5xl">Regular
                 <span data-aos="fade-up" class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>
             </p>
         </div>
@@ -238,7 +238,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -269,7 +269,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -284,7 +284,7 @@
     {{-- Package rooms --}}
     <div id="packageRooms" class="h-104 z-10 mt-10 w-full overflow-hidden">
         <div class="pl-7">
-            <p data-aos="fade-right" class="font-freehand font-bold text-custom-primary text-3xl lg:text-5xl">Package
+            <p data-aos="fade-right" class="font-freehand font-bold text-red-500 text-3xl lg:text-5xl">Package
                 <span class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>
             </p>
         </div>
@@ -312,7 +312,7 @@
                             </div>
                             <div class="p-6 pb-6 absolute bottom-0">
                                 <button
-                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-custom-primary text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:scale-110 transition-all duration-300 hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                                     type="button">
                                     Pesan
                                 </button>
@@ -328,15 +328,15 @@
     {{-- our services --}}
     <div id="services" class="h-120 md:h-80 xl:h-101 mt-14 w-full">
         <div data-aos="fade-zoom" class="grid grid-cols-8 items-center">
-            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-custom-primary"></div>
+            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-red-500"></div>
             <div class="col-span-3 xl:col-span-1 flex justify-center">
                 <p class="font-judson  text-2xl xl:text-4xl text-black font-bold text-center">Our Services</p>
             </div>
-            <div class="col-span-3 xl:col-span-5 h-1 w-full bg-custom-primary"></div>
+            <div class="col-span-3 xl:col-span-5 h-1 w-full bg-red-500"></div>
         </div>
         <div class="h-116 w-full mt-10 grid grid-rows-4 md:grid-cols-4 gap-4 p-10 justify-items-center">
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -345,7 +345,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Makanan Lezat</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -356,7 +356,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Restaurant</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -367,7 +367,7 @@
                 <p class="font-judson font-semibold text-xl xl:text-3xl">Fitness</p>
             </div>
             <div
-                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-custom-primary text-custom-primary fill-custom-primary hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
+                class="shadow-lg bg-[#D9D9D9] rounded-3xl hover:bg-red-500 text-red-500 fill-red-500 hover:fill-custom-third hover:text-custom-third transition-all duration-300 aspect-square h-60 md:h-40 xl:h-80 flex-col gap-3 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-[80px] h-[80px]  xl:w-[170px] xl:h-[170px]"
                     viewBox="0 0 512 512">
                     <path
@@ -381,11 +381,11 @@
     {{-- Our Gallery --}}
     <div class="h-96 xl:h-110 mt-10 w-full">
         <div data-aos="fade-zoom" class="grid grid-cols-9 items-center">
-            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-custom-primary"></div>
+            <div class="col-span-2 xl:col-span-2 h-1 w-full bg-red-500"></div>
             <div class="col-span-3 xl:col-span-1 flex justify-center">
                 <p class="font-judson  text-2xl xl:text-4xl text-black font-bold text-center">Our Gallery</p>
             </div>
-            <div class="col-span-4 xl:col-span-6 h-1 w-full bg-custom-primary"></div>
+            <div class="col-span-4 xl:col-span-6 h-1 w-full bg-red-500"></div>
         </div>
         <div class="grid mt-10 h-80 xl:h-108 grid-cols-3 gap-5 p-5">
             <div data-aos="fade-right" class="shadow-lg carousel-item">
@@ -408,7 +408,7 @@
     {{-- About us --}}
     <div id="about_us" class="w-full mt-16">
         <div class="w-full pl-5 xl:pl-7">
-            <p class="font-freehand text-custom-primary font-bold text-3xl xl:text-5xl">About Us</p>
+            <p class="font-freehand text-red-500 font-bold text-3xl xl:text-5xl">About Us</p>
         </div>
         <div class="flex flex-col md:flex-row gap-7 p-5 mt-12">
             <!-- Left section (image) -->
@@ -416,12 +416,12 @@
             </div>
 
             <!-- Middle divider -->
-            <div data-aos="fade-down" class="hidden md:block md:w-3 md:bg-custom-primary"></div>
+            <div data-aos="fade-down" class="hidden md:block md:w-3 md:bg-red-500"></div>
 
             <!-- Right section (text) -->
             <div class="w-full md:w-2/3 xl:pl-5 xl:pr-52">
                 <div class="grid grid-rows-6 gap-4">
-                    <p data-aos="fade-down" class="font-poppins text-custom-primary text-xl xl:text-5xl font-bold">
+                    <p data-aos="fade-down" class="font-poppins text-red-500 text-xl xl:text-5xl font-bold">
                         PUSDIKLAT PMI JATENG
                     </p>
                     <p data-aos="fade-up" class="row-span-5 text-xs md:text-sm xl:text-2xl text-black xl:leading-[3rem]">
@@ -501,17 +501,16 @@
                 <div class="lg:mx-auto text-left ">
                     <h4 class="text-xl text-custom-third font-medium mb-7">Pagedone</h4>
                     <ul class="text-sm  transition-all duration-500">
-                        <li class="mb-6"><a href="#home"
-                                class="text-white hover:text-custom-primary text-lg">Home</a></li>
-                        <li class="mb-6"><a href="#rooms"
-                                class=" text-white hover:text-custom-primary text-lg">Rooms</a></li>
-                        <li class="mb-6"><a href="#meetingRooms"
-                                class=" text-white hover:text-custom-primary text-lg">Meeting rooms</a></li>
+                        <li class="mb-6"><a href="#home" class="text-white hover:text-red-500 text-lg">Home</a></li>
+                        <li class="mb-6"><a href="#rooms" class=" text-white hover:text-red-500 text-lg">Rooms</a>
+                        </li>
+                        <li class="mb-6"><a href="#meetingRooms" class=" text-white hover:text-red-500 text-lg">Meeting
+                                rooms</a></li>
                         <li class="mb-6"><a href="#services"
-                                class=" text-white hover:text-custom-primary text-lg">Services</a></li>
-                        <li class="mb-6"><a href="#about_us"
-                                class=" text-white hover:text-custom-primary text-lg">About</a></li>
-                        <li><a href="#contact" class=" text-white hover:text-custom-primary text-lg">Contact</a></li>
+                                class=" text-white hover:text-red-500 text-lg">Services</a></li>
+                        <li class="mb-6"><a href="#about_us" class=" text-white hover:text-red-500 text-lg">About</a>
+                        </li>
+                        <li><a href="#contact" class=" text-white hover:text-red-500 text-lg">Contact</a></li>
 
                     </ul>
                 </div>
@@ -519,13 +518,13 @@
                     <h4 class="text-xl text-custom-third font-medium mb-7">Products</h4>
                     <ul class="text-sm  transition-all duration-500">
                         <li class="mb-6"><a href="https://www.figma.com/"
-                                class="text-white  hover:text-custom-primary text-lg">Figma UI System</a></li>
+                                class="text-white  hover:text-red-500 text-lg">Figma UI System</a></li>
                         <li class="mb-6"><a href="https://ionic.io/ionicons"
-                                class=" text-white  hover:text-custom-primary text-lg">IonIcon</a></li>
+                                class=" text-white  hover:text-red-500 text-lg">IonIcon</a></li>
                         <li class="mb-6"><a href="https://tailwindcss.com/"
-                                class=" text-white  hover:text-custom-primary text-lg">Tailwind</a></li>
+                                class=" text-white  hover:text-red-500 text-lg">Tailwind</a></li>
                         <li><a href="https://michalsnik.github.io/aos/"
-                                class=" text-white  hover:text-custom-primary text-lg">Components Library</a></li>
+                                class=" text-white  hover:text-red-500 text-lg">Components Library</a></li>
                     </ul>
                 </div>
                 <div class="lg:mx-auto text-left">
@@ -553,7 +552,7 @@
                         reserved.</span>
                     <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
                         <a href="javascript:;"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <g id="Social Media">
@@ -564,7 +563,7 @@
                             </svg>
                         </a>
                         <a href="https://www.instagram.com/pmijateng/"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg class="w-[1.25rem] h-[1.125rem] text-white" viewBox="0 0 15 15" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -573,7 +572,7 @@
                             </svg>
                         </a>
                         <a href="javascript:;"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg class="w-[1rem] h-[1rem] text-white" viewBox="0 0 13 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -582,7 +581,7 @@
                             </svg>
                         </a>
                         <a href="https://www.youtube.com/@PMIJateng"
-                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-custom-primary">
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg class="w-[1.25rem] h-[0.875rem] text-white" viewBox="0 0 16 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"

@@ -15,7 +15,7 @@
                         <div>
                             <p class="font-poppins font-semibold text-black text-base md:text-lg">Jumlah Ruangan</p>
                             <input id="amount_room" type="number" name="amount" min="1"
-                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0"
+                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#F05252] focus:outline-none focus:ring-0 focus:ring-offset-0"
                                 placeholder="Masukkan jumlah Ruangan">
                         </div>
 
@@ -24,7 +24,7 @@
                                 Tanggal masuk
                             </p>
                             <input id="tanggal-masuk" name="start_date" type="text" placeholder="dd/mm/yy"
-                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#F05252] focus:outline-none focus:ring-0 focus:ring-offset-0">
                         </div>
 
                         <div>
@@ -32,7 +32,7 @@
                                 Tanggal
                                 keluar</p>
                             <input id="tanggal-keluar" name="end_date" type="text" placeholder="dd/mm/yy"
-                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#F05252] focus:outline-none focus:ring-0 focus:ring-offset-0">
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2">
@@ -62,7 +62,7 @@
 
                         <div class="w-full flex justify-center items-center">
                             <button type="submit"
-                                class="w-3/4 hover:scale-105 transition-all duration-300 h-14 md:h-16 flex justify-center items-center mt-6 rounded-2xl bg-custom-primary text-lg md:text-xl font-poppins text-white font-semibold">Lanjutkan</button>
+                                class="w-3/4 hover:scale-105 transition-all duration-300 h-14 md:h-16 flex justify-center items-center mt-6 rounded-2xl bg-red-500 text-lg md:text-xl font-poppins text-white font-semibold">Lanjutkan</button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                             @foreach ($room as $item)
                                 <input type="number" id="person-count" name="person_count"
                                     min="{{ $item['min_person_quantity'] }}"
-                                    class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0"
+                                    class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#F05252] focus:outline-none focus:ring-0 focus:ring-offset-0"
                                     placeholder="Masukkan jumlah orang">
                             @endforeach
                         </div>
@@ -93,7 +93,7 @@
                                 class="font-poppins font-semibold text-black text-base md:text-lg">Tanggal masuk
                             </p>
                             <input id="tanggal-masuk-package" name="start_date" type="text" placeholder="dd/mm/yy"
-                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#F05252] focus:outline-none focus:ring-0 focus:ring-offset-0">
                         </div>
 
                         <div>
@@ -101,7 +101,7 @@
                                 class="font-poppins font-semibold text-black text-base md:text-lg">Tanggal
                                 keluar</p>
                             <input id="tanggal-keluar-package" name="end_date" type="text" placeholder="dd/mm/yy"
-                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#DA251D] focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                class="w-full mt-2 px-4 text-base md:text-lg text-black font-poppins font-normal rounded-2xl h-12 md:h-14 bg-white border-2 border-transparent focus:border-[#F05252] focus:outline-none focus:ring-0 focus:ring-offset-0">
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2">
@@ -135,7 +135,7 @@
 
                         <div class="w-full flex justify-center items-center">
                             <button type="submit"
-                                class="w-3/4 hover:scale-105 transition-all duration-300 h-14 md:h-16 flex justify-center items-center mt-6 rounded-2xl bg-custom-primary text-lg md:text-xl font-poppins text-white font-semibold">Lanjutkan</button>
+                                class="w-3/4 hover:scale-105 transition-all duration-300 h-14 md:h-16 flex justify-center items-center mt-6 rounded-2xl bg-red-500 text-lg md:text-xl font-poppins text-white font-semibold">Lanjutkan</button>
                         </div>
                     </div>
                 </div>
@@ -146,12 +146,12 @@
                 <input type="hidden" value="{{ $api_url_v2 }}" readonly name="api_url_v2">
             </form>
         @endif
-        
+
 
         <script src="https://app.sandbox.midtrans.com/snap/snap.js"
             data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
         <script>
             window.accessToken = @json(session('access_token'));
         </script>
-        
+
     @endsection

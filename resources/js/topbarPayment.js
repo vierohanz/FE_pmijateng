@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Mengubah warna step-2 menjadi merah
         const step2 = document.getElementById("step-2");
         if (step2) {
-            step2.classList.add("bg-red-700");
+            step2.classList.add("bg-red-600");
             step2.classList.remove("bg-gray-500");
-            step2.classList.add("bg-red-700");
+            step2.classList.add("bg-red-600");
         }
     }
 });
