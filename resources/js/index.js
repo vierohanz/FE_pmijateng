@@ -224,7 +224,6 @@ async function loadReviews() {
                                 <p class="font-poppins font-semibold text-lg xl:text-xl px-4 xl:px-0 text-custom-third mt-4">
                                     ${review.review}
                                 </p>
-
                             </div>
                         </div>
                     </div>`;

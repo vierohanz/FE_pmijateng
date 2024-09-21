@@ -37,7 +37,7 @@
             <div class="h-1 w-full bg-white my-6 md:my-10"></div>
             <div class="w-full px-8 md:px-12 mb-4">
                 <a href="{{ route('account') }}"
-                    class="w-full bg-red-500 flex items-center px-5 hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
+                    class="w-full bg-red-400 flex items-center px-5 hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" class="ionicon w-8 md:w-12 h-8 md:h-12"
                         viewBox="0 0 512 512">
                         <path stroke="#fff"
@@ -50,7 +50,7 @@
             </div>
             <div class="w-full px-8 md:px-12 mb-4">
                 <a href="{{ route('changePassword') }}"
-                    class="w-full bg-red-500 flex items-center  px-5 hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
+                    class="w-full bg-red-400 flex items-center  px-5 hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-8 md:w-12 h-8 md:h-12"
                         viewBox="0 0 512 512">
                         <path
@@ -63,7 +63,7 @@
 
             <div class="w-full px-8 md:px-12 mb-4">
                 <a href="{{ route('historyTransaction') }}"
-                    class="w-full bg-red-500 flex items-center px-5 hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
+                    class="w-full bg-red-400 flex items-center px-5 hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-8 md:w-12 h-8 md:h-12"
                         viewBox="0 0 512 512">
                         <rect x="32" y="80" width="448" height="256" rx="16" ry="16"
@@ -85,7 +85,7 @@
                 <form method="POST" action="{{ route('signOut') }}">
                     @csrf
                     <button type="submit"
-                        class="w-full bg-red-500 flex px-5 items-center hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
+                        class="w-full bg-red-400 flex px-5 items-center hover:scale-105 duration-300 transition-all rounded-xl space-x-4 md:space-x-5 h-12 md:h-16">
                         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-8 md:w-12 h-8 md:h-12"
                             viewBox="0 0 512 512">
                             <path

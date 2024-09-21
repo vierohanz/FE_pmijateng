@@ -16,11 +16,11 @@
             <!-- Logo and Title Section -->
             <div class="row-span-1 w-full h-full flex space-x-2 items-center justify-start">
                 <div class="hidden xl:flex flex-col justify-end items-end text-end">
-                    <p class="font-poppins font-bold text-custom-primary text-base sm:text-lg md:text-xl">PUSDIKLAT</p>
+                    <p class="font-poppins font-bold text-red-500 text-base sm:text-lg md:text-xl">PUSDIKLAT</p>
                     <p class="font-poppins font-normal text-custom-secondary text-xs sm:text-sm">Provinsi Jawa Tengah
                     </p>
                 </div>
-                <div class="h-3/4 hidden xl:flex w-2 bg-custom-primary"></div>
+                <div class="h-3/4 hidden xl:flex w-2 bg-red-500"></div>
                 <div class="flex">
                     <div class="bg-logo_pmi bg-cover h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"></div>
                     <div
@@ -36,7 +36,7 @@
                 <!-- Step 1: Active -->
                 <div class="flex items-center">
                     <div
-                        class="relative flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-red-700 text-white">
+                        class="relative flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-red-500 text-white">
                         1
                     </div>
                     <p class="ml-2 text-gray-800 text-xs sm:text-sm font-medium">Pesan</p>

@@ -118,6 +118,7 @@
                             class="w-full h-16 bg-[#F05252] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">
                             Sign In
                         </button>
+
                         <div class="h-1 flex justify-between w-full items-center ">
                             <div class="w-full h-1 bg-gray-200"></div>
                             <p class="mx-2 font-poppins font-medium ">or</p>

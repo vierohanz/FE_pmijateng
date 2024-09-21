@@ -489,10 +489,10 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div
                 class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
-                <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0  h-fit  items-center flex">
+                <div
+                    class="col-span-full mb-10 p-2 rounded-2xl border-red-500 border-4 lg:col-span-2 lg:mb-0  h-fit bg-white  items-center flex">
                     <div class="bg-logo_pmi bg-cover h-32 w-32 "> </div>
-                    <div
-                        class="ml-3 font-poppins text-custom-third justify-center items-start flex flex-col font-bold text-3xl">
+                    <div class="ml-3 font-poppins text-black justify-center items-start flex flex-col font-bold text-3xl">
                         <p>Palang</p>
                         <p>Merah</p>
                         <p>Indonesia</p>
@@ -517,13 +517,17 @@
                 <div class="lg:mx-auto text-left ">
                     <h4 class="text-xl text-custom-third font-medium mb-7">Products</h4>
                     <ul class="text-sm  transition-all duration-500">
-                        <li class="mb-6"><a href="https://www.figma.com/"
+                        <li class="mb-6"><a href="#"
+                                onclick="window.open('https://www.figma.com/'); return false"
                                 class="text-white  hover:text-red-500 text-lg">Figma UI System</a></li>
-                        <li class="mb-6"><a href="https://ionic.io/ionicons"
+                        <li class="mb-6"><a href="#"
+                                onclick="window.open('https://ionic.io/ionicons'); return false"
                                 class=" text-white  hover:text-red-500 text-lg">IonIcon</a></li>
-                        <li class="mb-6"><a href="https://tailwindcss.com/"
+                        <li class="mb-6"><a href="#"
+                                onclick="window.open('https://tailwindcss.com/'); return false"
                                 class=" text-white  hover:text-red-500 text-lg">Tailwind</a></li>
-                        <li><a href="https://michalsnik.github.io/aos/"
+                        <li><a href="#"
+                                onclick="window.open('https://michalsnik.github.io/aos/'); return false"
                                 class=" text-white  hover:text-red-500 text-lg">Components Library</a></li>
                     </ul>
                 </div>
@@ -562,7 +566,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/pmijateng/"
+                        <a href="#" onclick="window.open('https://www.instagram.com/pmijateng/'); return false"
                             class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg class="w-[1.25rem] h-[1.125rem] text-white" viewBox="0 0 15 15" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -580,7 +584,7 @@
                                     fill="currentColor" />
                             </svg>
                         </a>
-                        <a href="https://www.youtube.com/@PMIJateng"
+                        <a onclick="window.open('https://www.youtube.com/@PMIJateng'); return false" href="#"
                             class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-red-500">
                             <svg class="w-[1.25rem] h-[0.875rem] text-white" viewBox="0 0 16 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
