@@ -25,13 +25,13 @@ class HomeController extends Controller
                     return [
                         'response' => [],
                         'response2' => $response2->json(),
-                        'error' => 'API request failed with status: ' . $response->status() . ' and ' . $response2->status(),
+                        'error' => 'API request failed with status: ' . $response->status(),
                     ];
                 } elseif ($response2->failed()) {
                     return [
                         'response' => $response->json(),
                         'response2' => [],
-                        'error' => 'API request failed with status: ' . $response->status() . ' and ' . $response2->status(),
+                        'error' => 'API request failed with status: '. $response2->status(),
                     ];
                 }
 
@@ -46,6 +46,7 @@ class HomeController extends Controller
                 'response2' => [],
             ];
         }
+        
 
         // Pastikan untuk memeriksa apakah kunci ada sebelum mengaksesnya
         $rooms = isset($responseData['response']) ? array_filter($responseData['response'], fn($room) => in_array($room['id'], [1, 2])) : [];
