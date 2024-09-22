@@ -115,11 +115,14 @@
                         </div>
 
                         <button type="submit" id="reset-password-btn"
-                            class="w-full h-16 bg-[#E02424] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">
+                            class="w-full h-16 bg-[#E02424] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl mt-5 mb-2 hover:scale-105 transition-all duration-300">
                             Sign In
                         </button>
+                        <a href="{{ route('signUp') }}"
+                            class="font-poppins xl:hidden hover:scale-105 transition-all duration-300  text-[#E02424] font-semibold">Belum
+                            punya akun?</a>
 
-                        <div class="h-1 flex justify-between w-full items-center ">
+                        {{-- <div class="h-1 flex justify-between w-full items-center ">
                             <div class="w-full h-1 bg-gray-200"></div>
                             <p class="mx-2 font-poppins font-medium ">or</p>
                             <div class="w-full h-1 bg-gray-200"></div>
@@ -129,7 +132,7 @@
                             <div class="bg-google bg-contain bg-no-repeat h-7 w-10"></div>
                             <span class="font-normal text-black font-poppins text-base rounded-2xl ml-4">Login With
                                 Google</span>
-                        </a>
+                        </a> --}}
                     </form>
                 </div>
             </div>

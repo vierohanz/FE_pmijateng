@@ -155,6 +155,7 @@ document
                 if (!response.ok) {
                     return Promise.reject(response);
                 }
+
                 return response.json();
             })
             .then((data) => {

@@ -54,11 +54,13 @@
                         </div>
 
                         <button id="reset-password-btn" type="submit"
-                            class="w-full h-16 bg-[#E02424] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl my-5 hover:scale-105 transition-all duration-300">
+                            class="w-full h-16 bg-[#E02424] flex justify-center items-center text-white font-josefinSans font-bold text-xl rounded-2xl mt-5 mb-3 hover:scale-105 transition-all duration-300">
                             Sign Up
                         </button>
-
-
+                        <a href="{{ route('signUp') }}"
+                            class="font-poppins xl:hidden hover:scale-105 transition-all duration-300  text-[#E02424] font-semibold">Sudah
+                            punya akun?
+                        </a>
                     </form>
                 </div>
             </div>

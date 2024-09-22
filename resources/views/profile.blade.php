@@ -16,7 +16,7 @@
 
 <body>
     <x:notify::notify />
-    <div class="grid  grid-cols-1 md:grid-cols-10 h-auto md:h-screen w-full">
+    <div class="grid  grid-cols-1 xl:grid-cols-10 h-auto md:h-screen w-full">
         <!-- Sidebar -->
         <div class="col-span-3  bg-[#E02424] flex-col justify-start pb-10 items-center flex pt-1 md:pt-8 px-5">
             <div class="w-full pb-9  pl-4 pt-5 xl:pt-0">
