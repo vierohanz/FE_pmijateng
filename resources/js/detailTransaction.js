@@ -1,15 +1,12 @@
 import Swal from "sweetalert2";
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Mendapatkan elemen status dan kontainer ikon
     const statusText = document.getElementById("status-text").innerText;
     const textInformation = document.getElementById("text-information");
     const iconContainer = document.getElementById("icon-container");
 
-    // Kosongkan kontainer ikon sebelum memasukkan ikon yang sesuai
     iconContainer.innerHTML = "";
 
-    // Menampilkan ikon berdasarkan status
     if (statusText === "success") {
         iconContainer.innerHTML = `
           <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" viewBox="0 0 24 24">
@@ -44,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function copyToClipboard() {
         const orderId = document.getElementById("order-id").innerText;
 
-        // Membuat elemen textarea sementara untuk menyalin teks
         const tempInput = document.createElement("textarea");
         tempInput.value = orderId;
         document.body.appendChild(tempInput);
@@ -52,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.execCommand("copy");
         document.body.removeChild(tempInput);
 
-        // Menampilkan pesan konfirmasi (opsional)
         alert("ID Pesanan berhasil disalin ke clipboard!");
     }
 
@@ -70,8 +65,9 @@ function highlightStars(star) {
 
 // Fungsi untuk mengatur skor saat bintang diklik
 function rateStar(star) {
-    selectedScore = star; // Simpan skor yang dipilih
-    highlightStars(star); // Sorot bintang yang dipilih
+    selectedScore = star;
+    h;
+    highlightStars(star);
 }
 
 // Fungsi untuk mereset bintang ke skor yang sudah dipilih
@@ -79,9 +75,9 @@ function resetStars() {
     for (let i = 1; i <= 5; i++) {
         const starElement = document.getElementById(`star${i}`);
         if (i <= selectedScore) {
-            starElement.classList.add("text-yellow-300"); // Sorot jika skor sudah dipilih
+            starElement.classList.add("text-yellow-300");
         } else {
-            starElement.classList.remove("text-yellow-300"); // Hapus sorotan jika tidak dipilih
+            starElement.classList.remove("text-yellow-300");
         }
     }
 }
@@ -91,15 +87,16 @@ for (let i = 1; i <= 5; i++) {
     document
         .getElementById(`star${i}`)
         .addEventListener("mouseover", function () {
-            highlightStars(i); // Sorot bintang saat di-hover
+            highlightStars(i);
         });
     document
         .getElementById(`star${i}`)
-        .addEventListener("mouseout", resetStars); // Reset saat mouse keluar
+        .addEventListener("mouseout", resetStars);
     document.getElementById(`star${i}`).addEventListener("click", function () {
-        rateStar(i); // Set skor saat bintang diklik
+        rateStar(i);
     });
 }
+
 // Fungsi untuk mendapatkan parameter dari URL
 function getQueryParams() {
     const params = {};
@@ -144,7 +141,6 @@ fetch(
         console.error("Error fetching transaction details:", error);
     });
 
-// Event listener untuk tombol submit review
 document
     .getElementById("submitReviewBtn")
     .addEventListener("click", function () {

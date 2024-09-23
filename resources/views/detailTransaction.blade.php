@@ -22,8 +22,8 @@
                     Salin
                 </button>
             </div>
-            <div class="h-auto mt-10 w-full grid grid-cols-1 md:grid-cols-6 gap-4">
-                <div class="col-span-1 md:col-span-2 bg-black">
+            <div class="h-auto  mt-10 w-full grid grid-cols-1 md:grid-cols-6 gap-4">
+                <div class="col-span-1 h-full md:col-span-2 bg-black">
                     <img src="{{ $transaction['room_detail']['room_image'] }}" class="bg-cover h-full w-full bg-center">
                 </div>
                 <div class="col-span-1 md:col-span-4 pl-0 md:pl-1 grid grid-rows-4 space-y-4">
@@ -185,7 +185,6 @@
 
         </div>
     </div>
-
     <script>
         document.getElementById('payment-button').addEventListener('click', function() {
             var snapToken = `{{ $transaction['payment_information']['snap_token'] }}`;
