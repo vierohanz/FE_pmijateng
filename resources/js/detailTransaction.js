@@ -115,15 +115,36 @@ function getQueryParams() {
 
     return params;
 }
+
 const queryParams = getQueryParams();
 const userEmail = queryParams.user_email;
 const userTransactionId = queryParams.id;
+
 console.log("User Email:", userEmail);
 console.log("Transaction ID:", userTransactionId);
 
-let selectedScore = 0; // Untuk menyimpan skor yang dipilih
-const reviewInput = document.querySelector('input[name="review"]'); // Ambil elemen input review
+let roomTypes = [];
+let selectedScore = 0;
+const reviewInput = document.querySelector('input[name="review"]');
 
+fetch(
+    `https://dashboard.palmerinjateng.id/api/v1/user_transaction/detail?user_email=${userEmail}&id=${userTransactionId}`
+)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then((data) => {
+        roomTypes = data.room_detail.room_type_id;
+        console.log("Room Type ID:", roomTypes);
+    })
+    .catch((error) => {
+        console.error("Error fetching transaction details:", error);
+    });
+
+// Event listener untuk tombol submit review
 document
     .getElementById("submitReviewBtn")
     .addEventListener("click", function () {
@@ -138,24 +159,23 @@ document
             return;
         }
 
-        fetch(
-            `https://dashboard.palmerinjateng.id/api/v1/review/postReview?user_transaction_id=${userTransactionId}&user_email=${userEmail}`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    review: review,
-                    score: selectedScore,
-                }),
-            }
-        )
+        fetch(`https://dashboard.palmerinjateng.id/api/v1/review/postReview`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                user_email: userEmail,
+                user_transaction_id: userTransactionId,
+                room_types: roomTypes,
+                score: selectedScore,
+                review: review,
+            }),
+        })
             .then((response) => {
                 if (!response.ok) {
                     return Promise.reject(response);
                 }
-
                 return response.json();
             })
             .then((data) => {
@@ -188,7 +208,7 @@ document
     });
 
 async function getReviewForCurrentTransaction() {
-    const userTransactionId = queryParams.id; // Ambil ID transaksi
+    const userTransactionId = queryParams.id;
     const url = `https://dashboard.palmerinjateng.id/api/v1/review/getReviewForCurrentTransaction?user_transaction_id=${userTransactionId}`;
 
     try {

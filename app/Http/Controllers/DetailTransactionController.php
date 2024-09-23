@@ -25,14 +25,16 @@ class DetailTransactionController extends Controller
             ]);
 
             if ($response->successful()) {
-                $transaction = [];
                 $transaction = $response->json();
 
+                // Menambahkan properti untuk room_type_id
+                $transaction['room_type_id'] = $transaction['room_detail']['room_type_id']; // Mendapatkan room_type_id
                 $transaction['check_in'] = Carbon::parse($transaction['check_in'])->translatedFormat('d F Y');
                 $transaction['check_out'] = Carbon::parse($transaction['check_out'])->translatedFormat('d F Y');
+
                 return view('detailTransaction', ['transaction' => $transaction]);
             } else {
-                $errorMessage =  $response->json('error') ?? $response->json('message') ?? 'Gagal Mendapatkan Detail Transaksi, Coba lagi';
+                $errorMessage = $response->json('error') ?? $response->json('message') ?? 'Gagal Mendapatkan Detail Transaksi, Coba lagi';
                 notify()->error('Gagal Mendapatkan Detail Transaksi, Coba lagi', 'Error');
                 return redirect()->route('historyTransaction');
             }
