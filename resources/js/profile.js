@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 // profile change
 const profilePicture = document.getElementById("profilePicture");
 const fileInput = document.getElementById("fileInput");
@@ -50,18 +51,20 @@ fileInput.addEventListener("change", function (event) {
 
 document
     .getElementById("logout-button")
-    .addEventListener("click", function (e) {
-        e.preventDefault();
+    .addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission
+
         Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            title: "Apakah anda yakin?",
+            text: "Akun anda akan dikeluarkan!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, logout!",
+            confirmButtonText: "Ya, logout!",
         }).then((result) => {
             if (result.isConfirmed) {
+                // Submit the form if confirmed
                 document.getElementById("logout-form").submit();
             }
         });

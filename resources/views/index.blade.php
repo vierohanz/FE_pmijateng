@@ -210,8 +210,8 @@
     {{-- Meeting rooms --}}
     <div id="meetingRooms" class="h-104 mt-16 w-full overflow-hidden">
         <div class="pl-7">
-            <p data-aos="fade-right" class="font-freehand font-bold text-red-600 text-3xl lg:text-5xl">Regular
-                <span data-aos="fade-up" class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>
+            <p data-aos="fade-right" class="font-freehand font-bold text-red-600 text-4xl lg:text-5xl">Regular
+                <span data-aos="fade-up" class="font-judson text-4xl lg:text-5xl font-bold text-black">Rooms</span>
             </p>
         </div>
         <div data-aos="fade-left" class=" mt-10 w-full h-104 pl-5 overflow-x-auto overflow-hidden no-scrollbar"
@@ -284,8 +284,8 @@
     {{-- Package rooms --}}
     <div id="packageRooms" class="h-104 z-10 mt-10 w-full overflow-hidden">
         <div class="pl-7">
-            <p data-aos="fade-right" class="font-freehand font-bold text-red-600 text-3xl lg:text-5xl">Package
-                <span class="font-judson text-3xl lg:text-5xl font-bold text-black">Rooms</span>
+            <p data-aos="fade-right" class="font-freehand font-bold text-red-600 text-4xl lg:text-5xl">Package
+                <span class="font-judson text-4xl lg:text-5xl font-bold text-black">Rooms</span>
             </p>
         </div>
         <div data-aos="fade-left" class=" mt-10 w-full h-104 pl-5 overflow-x-auto overflow-hidden no-scrollbar"
