@@ -186,6 +186,15 @@
         </div>
     </div>
     <script>
+        // Mendapatkan access token dari session PHP dan menyimpannya di sessionStorage
+        const accessToken = "{{ session('access_token') }}";
+
+        if (accessToken) {
+            sessionStorage.setItem("access_token", accessToken);
+            console.log("Access Token disimpan di sessionStorage:", accessToken);
+        }
+    </script>
+    <script>
         document.getElementById('payment-button').addEventListener('click', function() {
             var snapToken = `{{ $transaction['payment_information']['snap_token'] }}`;
             snap.pay(snapToken, {

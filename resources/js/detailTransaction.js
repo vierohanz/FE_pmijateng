@@ -146,6 +146,20 @@ document
     .addEventListener("click", function () {
         const review = reviewInput.value;
 
+        const accessToken = sessionStorage.getItem("access_token"); // Ambil token yang disimpan di sessionStorage
+        console.log("Access Token:", accessToken);
+
+        // Check if the token exists
+        if (!accessToken) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Token tidak ditemukan. Silakan login ulang.",
+            });
+            return;
+        }
+
+        // Validate review and score
         if (review.trim() === "" || selectedScore === 0) {
             Swal.fire({
                 icon: "error",
@@ -155,10 +169,12 @@ document
             return;
         }
 
+        // Make the fetch request
         fetch(`https://dashboard.palmerinjateng.id/api/v1/review/postReview`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                Authorization: `Bearer ${accessToken}`, // Use the retrieved token
             },
             body: JSON.stringify({
                 user_email: userEmail,
@@ -181,7 +197,7 @@ document
                     text: "Ulasan berhasil dikirim!",
                     icon: "success",
                 });
-                reviewInput.value = "";
+                reviewInput.value = ""; // Reset the input field
             })
             .catch((error) => {
                 if (error.json) {

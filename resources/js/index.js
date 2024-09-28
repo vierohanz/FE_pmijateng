@@ -213,16 +213,15 @@ async function loadReviews() {
                         index === 0 ? "block" : "hidden"
                     }" data-carousel-item>
                         <div class="flex flex-col xl:flex-row justify-center items-center h-full w-full space-x-4 p-4">
-                            <div class="flex-shrink-0 w-28 h-28 xl:w-48 xl:h-48 bg-admin rounded-full"></div>
-                            <div class="text-center xl:text-left mt-4 xl:mt-0">
-                                <p class="font-judson font-semibold text-xl xl:text-4xl text-yellow-400">${
+                            <div class="text-center justify-center flex flex-col items-center xl:text-left mt-4 xl:mt-0">
+                                <p class="font-judson font-semibold text-xl xl:text-4xl ">${
                                     review.name
                                 }</p>
                                 <div class="flex justify-center xl:justify-start space-x-1 mt-2">
                                     ${stars}
                                 </div>
-                                <p class="font-poppins font-semibold text-lg xl:text-xl px-4 xl:px-0 text-custom-third mt-4">
-                                    ${review.review}
+                                <p class="font-poppins italic font-semibold text-lg xl:text-xl px-4 xl:px-0 text-custom-third mt-4">
+                                    "${review.review}"
                                 </p>
                             </div>
                         </div>

@@ -18,7 +18,7 @@
 
     <div class="h-auto w-full max-w-4xl bg-white rounded-3xl flex flex-col shadow-2xl p-6">
         <a href="{{ route('signIn') }}"
-            class="w-fit cursor-pointer font-poppins font-semibold text-lg text-red-500 hover:scale-105 transition-all duration-300">
+            class="w-fit cursor-pointer font-poppins font-semibold text-lg text-red-600 hover:scale-105 transition-all duration-300">
             Back</a>
         <div class="grid md:grid-cols-2 grid-cols-1 h-full py-8 px-5 gap-7">
             <div class="bg-reset_pw bg-contain bg-no-repeat bg-center h-64 w-full hidden md:block"></div>
@@ -31,9 +31,9 @@
                     <input type="email" name="email" placeholder="Email"
                         class="w-full px-4 text-lg text-black font-poppins font-normal rounded-2xl h-14 bg-white  border-2 border-gray-300 focus:border-[#F05252] focus:outline-none focus:ring-0 focus:ring-offset-0">
                     @if ($errors->has('email'))
-                        <p class="text-red-500 text-sm mt-1">{{ $errors->first('email') }}</p>
+                        <p class="text-red-600 text-sm mt-1">{{ $errors->first('email') }}</p>
                     @elseif($errors->has('credentials'))
-                        <p class="text-red-500 text-sm  mt-1">{{ $errors->first('credentials') }} </p>
+                        <p class="text-red-600 text-sm  mt-1">{{ $errors->first('credentials') }} </p>
                     @endif
                     <button id="reset-password-btn" type="submit"
                         class="mt-5 hover:scale-105 transition-all duration-300 w-full max-w-sm px-4 py-3 rounded-xl bg-cus text-white font-poppins font-semibold text-lg">
