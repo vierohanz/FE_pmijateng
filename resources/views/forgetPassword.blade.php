@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forget Password</title>
     @vite('resources/css/app.css')
-    @vite('resources/js/forgetPassword.js')
     @include('notify::components.notify')
 
     @notifyCss
