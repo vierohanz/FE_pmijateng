@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUSDIKLAT PMI</title>
+    <link rel="icon" href="{{ asset('images/logo1.png') }}">
     @vite('resources/css/app.css')
     @vite('resources/js/navbar.js')
     @include('notify::components.notify')

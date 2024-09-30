@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Forget Password</title>
+    <title>PUSDILLAT PMI</title>
+    <link rel="icon" href="{{ asset('images/logo1.png') }}">
     @vite('resources/css/app.css')
     @include('notify::components.notify')
 
