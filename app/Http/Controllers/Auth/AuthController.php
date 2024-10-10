@@ -79,6 +79,7 @@ class AuthController extends Controller
             $response = Http::withToken($token)->post($this->api_url_v1 . 'logout');
 
             if ($response->successful()) {
+
                 session()->invalidate();
                 session()->flush();
                 notify()->success('Berhasil logout', 'Success');

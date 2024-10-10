@@ -109,7 +109,7 @@
                             <img src="{{ captcha_src() }}" alt="captcha" class="w-full">
                             <input type="text" name="captcha"
                                 class="form-control focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-[#E02424] text-black font-poppins w-full @error('captcha') is-invalid @enderror"
-                                placeholder="masukkan">
+                                placeholder="Masukkan totalnya">
                             @error('captcha')
                                 <span class="text-red-600 text-sm">{{ $message }}</span>
                             @enderror
